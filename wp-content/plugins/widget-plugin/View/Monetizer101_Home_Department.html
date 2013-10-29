@@ -8,174 +8,596 @@
 
 <style type="text/css">
 
-    #container{
-        margin:40px 0px 80px 50px;
+    #container_departments{
+        margin:-85px 0px 40px 50px;
         height: 543px;
         position: relative;
-        width: 1004px;
-        border: 1px solid #e4e4e4;
+        width: 1004px;;
         padding-bottom: 10px;
     }
-    #container #box1{
+    #container_departments #row1 {
         position: relative;
-        width: 226px; height: 543px;
-        border-right: 1px solid #e4e4e4;
-        font-size: 18px;
-        font-weight: normal;
-        color: #303030;
-        margin-top: 0px; float: left;
+        margin-top: 0px; float: left; margin-left: -16px;
     }
-    #container #box1 .title1{
+    #container_departments #row2 {
+        position: relative;
+        margin-top: 18px; float: left; margin-left: -16px;
+    }
+    #container_departments #row5 {
+        position: relative;
+        margin-top: 18px; float: left; margin-left: -16px;
+    }
+    #container_departments #row3 {
+        position: relative;
+        margin-top: 18px; float: left; margin-left: -16px;
+    }
+    #container_departments #row4 {
+        position: relative;
+        margin-top: 18px; float: left; margin-left: -16px;
+    }
+    #container_departments .box{
+        position: relative;
+        width: 205px; height: 225px;
+        border: 1px solid #c2c2c2;
+        margin-top: 0px; float: left; margin-left: 36px;
+    }
+    #container_departments .box:hover{
+        border: 1px solid #0869ab;
+    }
+    #container_departments .box #pro_img{
+        position: relative;
+        width: 70px; height: 225px; padding: 10px 0px 0px 2px;
+        border-right: 1px solid #c2c2c2;
+        margin-top: 0px; float: left; margin-left: 0px;
+    }
+    #container_departments .box:hover #pro_img{
+        border-right: 1px solid #0869ab;
+    }
+    #container_departments .box #pro_shadow{
         position: absolute;
-        font-family: Calibri;
-        font-size: 18px;
-        font-weight: bold;
-        color: #0866a6;
+        top: 226px; left: 1px; width: 202px; 
     }
-    
+    #container_departments .box #pro_info{
+        position: relative;
+        top: -30px; left: 110px;
+    }
+    #container_departments .box  #pro_info #pro_title{
+        position: absolute; width: 125px; height: 20px;
+        font-family: 'helvetica_neuelight'; font-size: 17px; color: #303030;
+        top: 28px; left: -19px;
+    }
+    #container_departments .box:hover  #pro_info #pro_title{
+        color: #0869ab;
+    }
+    #container_departments .box #pro_info #pro_desc{
+        position: absolute;
+        line-height: 20px;
+        top: 75px; font-family: Arial; font-size: 14px; color: #303030;
+        left: -58px; width: 125px; height: 165px;
+    }
+    #container_departments .box #pro_label{
+        position: absolute;
+        top: 123px;
+        left: 129px; 
+    }
+    #container_departments .box #pro_label #pro_view_more{
+        position: absolute;
+        top: 60px; font-family: Arial; font-size: 13px; color: #565656;
+        padding: 7px 12px 7px 11px;
+        background-color: #f1f1f1;
+        width: 80px; border-top: 1px solid #c2c2c2;
+    }
+    #container_departments .box:hover #pro_label #pro_view_more{
+        top: 60px; font-family: Arial; font-size: 13px; color: white;
+        background-color: #0869ab;
+        width: 80px; border-top: 1px solid #0869ab;
+    }
+    .title2{
+        position: relative; font-family: 'helvetica_neuethin'; margin-left: 22px;
+        font-size: 22px;
+        color: #131313;
+    }
+    #line{
+        height: 7px; width: 800px; background-image: url("wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png");
+        background-repeat: repeat-x;
+    }
+
 
 </style>
 
 
-<div id="container">
+<div id="container_departments">
 
+    <p class='title2'>DEPARTMENTS</p>
+    <div id='line'>
+        <img style='position: absolute; top: 9px; left: 188px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Title_Line.png'>
+    </div>
     <div id='row1'>
-        <div id='box1'>
+
+        <div id='pro1' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
         </div>
-        <div id='box2'>
+        <div id='pro2' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
         </div>
-        <div id='box3'>
+        <div id='pro3' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
         </div>
+        <div id='pro4' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+    </div>
+    
+    <div id='row2'>
+         <div id='pro1' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+        <div id='pro2' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+        <div id='pro3' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+        <div id='pro4' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+    </div>
+    <div id='row3'>
+         <div id='pro1' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+        <div id='pro2' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+        <div id='pro3' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+        <div id='pro4' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+    </div>
+    <div id='row4'>
+         <div id='pro1' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+        <div id='pro2' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+        <div id='pro3' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+        <div id='pro4' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+    </div>
+    <div id='row5'>
+         <div id='pro1' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+        <div id='pro2' class='box'>
+            <div id='pro_img'>
+                <img style='overflow: hidden; width: 70px; height: 70px;' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png'>
+            </div>
+            <div id='pro_info'>
+                <p id='pro_title'>CLOTHING</p>
+                <ul id='pro_desc'>
+                    <li>
+                        Men's
+                    </li>
+                    <li>
+                        Women's
+                    </li>
+                    <li>
+                        Beachwear
+                    </li>
+                    <li>
+                        Apparel
+                    </li>
+                    <li>
+                        Winter
+                    </li>
+                </ul>
+            </div>         
+            <img id='pro_shadow' src='wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Box_Shadow.png'>
+        </div>
+      
     </div>
 </div>
 
 
 
 <script type="text/javascript">
-
-    console.log('Slider');
-    $('.banner').unslider({
-    speed: 500,               //  The speed to animate each slide (in milliseconds)
-    delay: 3000,              //  The delay between slide animations (in milliseconds)
-    complete: function() {},  //  A function that gets called after every slide animation
-    keys: true,               //  Enable keyboard (left, right) arrow shortcuts
-    dots: true,               //  Display dot navigation
-    fluid: false              //  Support responsive design. May break non-responsive designs
-    });
-
-    (function(e, t) {
-    if (!e)
-    return t;
-    var n = function() {
-    this.el = t;
-    this.items = t;
-    this.sizes = [];
-    this.max = [0, 0];
-    this.current = 0;
-    this.interval = t;
-    this.opts = {speed: 500, delay: 3e3, complete: t, keys: !t, dots: t, fluid: t};
-    var n = this;
-    this.init = function(t, n) {
-    this.el = t;
-    this.ul = t.children("ul");
-    this.max = [t.outerWidth(), t.outerHeight()];
-    this.items = this.ul.children("li").each(this.calculate);
-    this.opts = e.extend(this.opts, n);
-    this.setup();
-    return this
-    };
-    this.calculate = function(t) {
-    var r = e(this), i = r.outerWidth(), s = r.outerHeight();
-    n.sizes[t] = [i, s];
-    if (i > n.max[0])
-    n.max[0] = i;
-    if (s > n.max[1])
-    n.max[1] = s
-    };
-    this.setup = function() {
-    this.el.css({overflow: "hidden", width: n.max[0], height: this.items.first().outerHeight()});
-    this.ul.css({width: this.items.length * 100 + "%", position: "relative"});
-    this.items.css("width", 100 / this.items.length + "%");
-    if (this.opts.delay !== t) {
-    this.start();
-    this.el.hover(this.stop, this.start)
-    }
-    this.opts.keys && e(document).keydown(this.keys);
-    this.opts.dots && this.dots();
-    if (this.opts.fluid) {
-    var r = function() {
-    n.el.css("width", Math.min(Math.round(n.el.outerWidth() / n.el.parent().outerWidth() * 100), 100) + "%")
-    };
-    r();
-    e(window).resize(r)
-    }
-    if (this.opts.arrows) {
-    this.el.parent().append('<p class="arrows"><span class="prev">←</span><span class="next">→</span></p>').find(".arrows span").click(function() {
-    e.isFunction(n[this.className]) && n[this.className]()
-    })
-    }
-    if (e.event.swipe) {
-    this.el.on("swipeleft", n.prev).on("swiperight", n.next)
-    }
-    };
-    this.move = function(t, r) {
-    if (!this.items.eq(t).length)
-    t = 0;
-    if (t < 0)
-    t = this.items.length - 1;
-    var i = this.items.eq(t);
-    var s = {height: i.outerHeight()};
-    var o = r ? 5 : this.opts.speed;
-    if (!this.ul.is(":animated")) {
-    n.el.find(".dot:eq(" + t + ")").addClass("active").siblings().removeClass("active");
-    this.el.animate(s, o) && this.ul.animate(e.extend({left: "-" + t + "00%"}, s), o, function(i) {
-    n.current = t;
-    e.isFunction(n.opts.complete) && !r && n.opts.complete(n.el)
-    })
-    }
-    };
-    this.start = function() {
-    n.interval = setInterval(function() {
-    n.move(n.current + 1)
-    }, n.opts.delay)
-    };
-    this.stop = function() {
-    n.interval = clearInterval(n.interval);
-    return n
-    };
-    this.keys = function(t) {
-    var r = t.which;
-    var i = {37: n.prev, 39: n.next, 27: n.stop};
-    if (e.isFunction(i[r])) {
-    i[r]()
-    }
-    };
-    this.next = function() {
-    return n.stop().move(n.current + 1)
-    };
-    this.prev = function() {
-    return n.stop().move(n.current - 1)
-    };
-    this.dots = function() {
-    var t = '<ol class="dots">';
-    e.each(this.items, function(e) {
-    t += '<li class="dot' + (e < 1 ? " active" : "") + '">' + (e + 1) + "</li>"
-    });
-    t += "</ol>";
-    this.el.addClass("has-dots").append(t).find(".dot").click(function() {
-    n.move(e(this).index())
-    })
-    }
-    };
-    e.fn.unslider = function(t) {
-    var r = this.length;
-    return this.each(function(i) {
-    var s = e(this);
-    var u = (new n).init(s, t);
-    s.data("unslider" + (r > 1 ? "-" + (i + 1) : ""), u)
-    })
-    }
-    })(window.jQuery, false)
 
 
 </script>

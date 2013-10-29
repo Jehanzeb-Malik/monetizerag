@@ -21,7 +21,7 @@ a, a:visited, a:hover, a:active {
 }
 
 ul{
-     list-style:none;
+    list-style:none;
 }
 
 h1,
@@ -75,7 +75,7 @@ h6 {
 
 #wrapper{
     margin: 0px;
-    margin-top: -42px;
+    margin-top: 29px;
     width: 1263px;
 
 }
@@ -269,6 +269,8 @@ select {
     min-height: 400px;
     margin: 0px;
     width: 100%;
+    display:block;
+    overflow:hidden;
 
 }
 
