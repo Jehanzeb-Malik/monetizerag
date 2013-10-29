@@ -1,0 +1,69 @@
+
+/*************** CONTAINER ***************/
+
+#container{
+    /*    background-image: url('images/EG_Shop_Home_Categories.png');
+        background-repeat:no-repeat;*/
+    margin:10px 0px 0px 0px;
+    position: relative;
+    width: 285px;
+
+}
+
+#container-1{
+    background-image: url('images/EG_Shop_Home_Categories.png');
+    background-repeat:no-repeat;    
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+#container-2{
+    /*    background-color: #f8f8f8;*/
+    position: relative;
+    top: 35px;
+    left: 20px;  
+}
+#container-3{
+    background-color: #f8f8f8;
+    width: 272px;; height: 100%;
+    position: absolute;
+    top: 45px;
+    left: 10px;  
+    bottom: 1px;
+    /*    border: 2px #a2a2a2 solid;*/
+}
+
+#container-4{
+
+    width: 278px;; height: 100%;
+    position: absolute;
+    top: 45px;
+    left: 7px; 
+    border-left:    1px #e1e1e1 solid;
+    border-right:  1px #e1e1e1 solid;
+    border-bottom: 1px #e1e1e1 solid;
+}
+
+
+/*************** TABS ***************/
+
+div.simpleTabs {  width: 250px; margin-top: -20px;  }
+ul.simpleTabsNavigation { margin:0 0px; padding:0; text-align:left; }
+ul.simpleTabsNavigation li { list-style:none; display:inline; background-image: url('images/EG_Shop_Home_Categories_Tab.png');
+                          color: black;
+}
+ul.simpleTabsNavigation li a {  font-size:18px; text-decoration:none; font-family: 'kreonregular';
+                            border-bottom:1px solid #fff; color: black;
+}
+ul.simpleTabsNavigation li a:hover { background-image: url('images/EG_Shop_Home_Categories_Tab_Selected.png'); color: black; margin-top: 55px;}
+ul.simpleTabsNavigation li a.current { background-image: url('images/EG_Shop_Home_Categories_Tab_Selected.png'); color: black; border-bottom:1px solid #fff; }
+div.simpleTabsContent {  padding:1px 0px 0px; margin-top:3px; display:none; background-color: #edb91a; }
+div.simpleTabsContent.currentTab { display:block; }
+
+
+#list li a { color: black;  text-decoration: none; width: 249px; padding-left: 10px; font: 12px bold Arial; font-family: Arial bold; }
+#list li a:hover  { color: white;  text-decoration: none; width: 249px; padding-left: 10px; font: 12px bold Arial; font-family: Arial bold; }
+#list li { border-bottom: 1px black solid; line-height: 1em; }

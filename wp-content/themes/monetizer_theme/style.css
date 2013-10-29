@@ -1,0 +1,291 @@
+root { 
+    display: block;
+}
+
+html{
+    margin-top: -28px !important;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    margin-top: -15px;
+}
+p{
+    font-family: Calibri;
+}
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul{
+     list-style:none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+    font-family: Calibri, serif;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 33px 0;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 25px 0;
+}
+
+h3 {
+    font-size: 22px;
+    margin: 22px 0;
+}
+
+h4 {
+    font-size: 20px;
+    margin: 25px 0;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0866a6;
+    margin: 30px 0;
+}
+
+h6 {
+    font-size: 20px;
+    color: #0866a6;
+    font-family: 'helvetica_neuethin';
+}
+
+
+/*#######################################################################################################
+------------------------------------------------HEADER-------------------------------------------------
+#######################################################################################################*/
+
+#wrapper{
+    margin: 0px;
+    margin-top: -42px;
+    width: 1263px;
+
+}
+
+#header #top-bar{
+    background-color: #0866a6;
+    background-repeat: repeat-x;
+    height: 42px;
+    padding: 5px 5px 5px 5px;
+    color: white;
+    font-family: calibri; font-size: 17px;
+
+}
+#header #top-bar2{
+    margin-top: -18px;
+    position: relative;
+
+}
+#header #top-bar2 #logo1{
+    margin-left: 85px;
+    float: left;
+    margin-top: -20px;
+
+}
+#header #top-bar2 #logo1 .logo{
+    font-family: 'helvetica_neuethin';
+    font-size: 37px;
+    color: #003b7d; 
+    font-weight:lighter;
+}
+#header #top-bar2 #logo1 #M{
+    color: #ed7500;
+    text-decoration: none;
+    font-family: 'helvetica_neuelight';
+
+}
+#header #top-bar2 #logo1 #AG{
+    color: black;
+    text-decoration: none;
+    font-family: 'helvetica_neuelight';
+
+}
+#header #top-bar2 #drop-down-lists{
+    float: left;
+    margin-top: 22px;
+    position: relative;
+    margin-left:30px;
+}
+/*  IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT  */
+/*############## Dropdown list style in superfish.css*/
+
+#header #top-bar2 #drop-down-lists .styled-select {
+
+    width: 250px;
+    height: 34px;
+    overflow: hidden;
+    border: 1px solid #d9d9d9;
+    color: #656565;
+    margin-left: 20px;
+    font-family: calibri; font-size: 17px;
+}
+/*input tag for the dropdown list*/
+.styled-list{
+    width: 250px;
+    height: 34px;
+    overflow: hidden;
+    border: 1px solid #d9d9d9;
+    color: #656565;
+    margin-left: 20px;
+    font-family: calibri; font-size: 17px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+#header #top-bar2 #drop-down-lists .styled-label {
+    position: absolute;
+    left: 430px;
+    display: inline-block;
+    padding: 7px 12px 7px 12px;
+    background-color: #ed7500;
+}
+#header #top-bar2 #drop-down-lists .styled-label1 {
+    position: absolute;
+    left: 510px;
+    display: inline-block;
+    padding: 7px 12px 7px 12px;
+    background-color: #005795;
+}
+select {
+    padding: 2px 10px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance:  none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+
+}
+#header #top-bar3{
+    margin-top: 130px;
+    margin-left: 90px;
+}
+
+#header #top-bar3 #menu{
+    float: left;
+    border: 1px solid #e4e4e4;
+    margin-top: -20px;
+    width: 820px;
+    color: #e4e4e4;
+    padding: 10px 0px 10px 0px;
+}
+#header #top-bar3 #menu li{
+    display: inline;
+    font-family: Calibri; font-size: 17px;
+    color: #474747;
+    padding: 0px 16px 0px 16px;
+}
+#header #top-bar3 .menu-label {
+    /*    position: absolute;
+        left: 230px;
+        display: inline-block;*/
+    float: left; margin-top: -20px;
+    font-family: Calibri; font-weight: bold; font-size: 18px; color: white;
+    padding: 11px 31px 10px 31px;
+    background-color: #ed7500;
+}
+
+
+/*#######################################################################################################
+--------------------------------------------------FOOTER-------------------------------------------------
+#######################################################################################################*/
+
+#footer{
+    background-color: #282828;
+    position: relative;
+    color: #a2a2a2;
+    font-family: calibri;
+    line-height:10px;
+    height: 202px;
+}
+#footer #footer-1{
+    font-size: 14px;
+    float: left;
+    margin: 10px 0px 0px 110px;
+}
+#footer #footer-2{
+    font-size: 14px;
+    float: left;
+    margin: 10px 0px 0px 220px;
+}
+#footer #footer-3{
+    font-size: 14px;
+    float: left;
+    margin: 10px 0px 0px 220px;
+}
+#footer #copyrights{
+    font-size: 11px;
+    background-color: #222222;
+    font-family: Arial;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+    width: 100%;
+    /*    padding: 5px;*/
+    top: 180px;   
+}
+#footer #bar1{
+    position: absolute;
+    background-color: #343434;
+    height: 132px; width: 1px;
+    top: 30px; left: 520px;
+}
+#footer #bar2{
+    position: absolute;
+    background-color: #343434;
+    height: 132px; width: 1px;
+    top: 30px; left: 820px;
+}
+#footer #copyrights p{
+    padding: 2px 0px 2px 120px;
+    color: #7a7a7a;
+}
+
+/*#######################################################################################################
+---------------------------------------------------Main--------------------------------------------------
+#######################################################################################################*/
+
+#main{
+    position: relative;
+    min-height: 400px;
+    margin: 0px;
+    width: 100%;
+
+}
+
+/*#######################################################################################################
+------------------------------------------------Side bars------------------------------------------------
+#######################################################################################################*/
+
+
+#sidebar_Home-Left{
+    list-style: none;
+    width: 300px
+}
+
+#sidebar_Home-Main{
+    list-style: none;
+}
+
+#sidebar_Home-Department{
+    list-style: none;
+}

@@ -1,0 +1,24 @@
+
+/*************** CONTAINER ***************/
+
+#container{
+    /*    background-image: url('images/EG_Shop_Home_Categories.png');
+        background-repeat:no-repeat;*/
+    margin:10px 0px 0px 0px;
+    position: relative;
+    width: 228px;
+    border: 1px solid #e5e5e5;
+}
+
+#container #asd{
+    font-family: Calibri;
+    size: 18px;
+    font-weight: bold;
+    color: #0866a6;
+}
+
+#container h4{
+    font-family: Calibri;
+    size: 18px;
+    color: #0866a6;
+}

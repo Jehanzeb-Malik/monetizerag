@@ -1,0 +1,50 @@
+<script id="shop_departments" type="text/xml">
+    {{#serviceOutcome}}
+            <ul id="list">
+            {{#response}}
+            <li class="cat-list-elem"><a>{{.}} </a></li>
+            {{/response}}
+            </ul>
+        {{/serviceOutcome}}
+
+</script> 
+
+<script id="shop_merchants" type="text/xml">
+    {{#serviceOutcome}}
+            <ul id="list">
+            {{#response}}
+                <li class="merc-list-elem"><a>{{name}}<a/></li>
+            {{/response}}
+            </ul>
+        {{/serviceOutcome}}
+
+</script>
+
+<div id="container">
+    <div id="container-1"></div>
+    <div id="container-3"></div>
+    <div id="container-4"></div>
+    <div id="container-2">
+
+        <p style="font-size: 20pt; font-family: 'kreonregular' ">Shop Categories</p>
+
+        <div class="simpleTabs">
+            <ul class="simpleTabsNavigation">
+                <li><a href="#" style="padding:3px 14px 3px 14px;">Departments</a></li>
+                <li><a href="#" style="padding:3px 37px 3px 37px;">Sellers</a></li>
+            </ul>
+            <div class="simpleTabsContent">
+
+
+
+            </div>
+            <div class="simpleTabsContent">		      
+                
+                    
+            </div>
+        </div>      
+    </div> 
+
+
+</div>
+

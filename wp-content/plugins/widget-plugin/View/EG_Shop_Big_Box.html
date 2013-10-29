@@ -1,0 +1,61 @@
+<script id="shop_products" type="text/xml">
+    {{#serviceOutcome}}
+
+
+
+
+    {{#response}}
+    {{#products}}
+     <ul>
+    {{#productList}}
+    {{#show}}
+
+   
+    <li id="list_test" style="display: inline; list-style:none; background-color: #000">  
+
+        <div id="container2">
+
+        <div id="container-12"></div>
+
+        <div id="container-32"></div> 
+
+        <div id="container-22">
+
+        <p ID="product_title1" style="font-size: 14px; font-family: Arial Bold; margin-left: 0px; line-height:96%; width: 200px;">{{name}}</p>
+
+        <a href="#" id="get_discount" class="get_discount_click" style="padding:3px 14px 3px 24px;">GET DISCOUNT NOW</a>
+
+        <img id="product_image" src={{imageUrl}} alt={{description}}>
+
+        </div>
+
+        <div id="container-42"></div>
+
+        <p class="discount_text" style="font-size: 12px; left: 140px; top: 72px; ">Category name</p>
+
+        <p class="discount_text" style="font-size: 14px; left: 116px; top: 78px; ">DISCOUNT {{discountRate}}%</p>
+
+        <p class="discount_text" style="font-size: 16px; left: 88px; top: 88px; ">YOU SAVE ${{saveAmount}}</p>
+
+        </div>
+
+    </li>
+    
+
+    {{/show}}
+    {{/productList}}
+    </ul>
+    {{/products}}
+    {{/response}}
+
+
+
+    {{/serviceOutcome}}
+
+
+</script>
+<div>
+   
+            <div id="Product_widget"></div>
+       
+</div>

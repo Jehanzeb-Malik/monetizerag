@@ -1,0 +1,50 @@
+
+/*************** CONTAINER ***************/
+
+#container1{
+    /*    background-image: url('images/EG_Shop_Home_Categories.png');
+        background-repeat:no-repeat;*/
+    margin:10px 0px 0px 0px;
+    position: relative;
+    width: 700px; height: 500px;
+/*    float:left;*/
+
+}
+
+#container-11{
+    background-image: url('images/EG_Shop_Home_Categories_Rignt_Top.png');
+    background-repeat:no-repeat;    
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+#container-21{
+    /*    background-color: #f8f8f8;*/
+    position: relative;
+    top: 85px;
+    left: 20px;  
+}
+#container-31{
+    background-color: #f8f8f8;
+    width: 656px;; height: 100%;
+    position: absolute;
+    top: 315px;
+    left: 13px;  
+    bottom: 1px;
+    /*    border: 2px #a2a2a2 solid;*/
+}
+
+#container-41{
+
+    width: 662px;; height: 100%;
+    position: absolute;
+    top: 315px;
+    left:10px; 
+    border-left:    1px #e1e1e1 solid;
+    border-right:  1px #e1e1e1 solid;
+    border-bottom: 1px #e1e1e1 solid;
+}
+

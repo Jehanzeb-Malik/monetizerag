@@ -1,0 +1,117 @@
+#main #boxes{
+    margin-left: 86px;
+    margin-top: 50px;
+    position: relative;
+    width: 1000px;
+}
+.circle{
+    background-color: #0866a6; 
+    position: absolute;
+    font-size: 18px; 
+    border: 1px solid; 
+    border-radius: 50%; 
+    padding: 8px 15px 8px 15px; 
+    color: white; 
+    font-family: Calibri; font-size: 18px;
+}
+.circle-border{
+    position: absolute;
+    border: 1px solid; 
+    border-radius: 50%; 
+    border-color: #d4d4d4;
+    padding: 23px 23px 23px 23px;
+    top: -4px;
+    left: -3px;
+    /*    border-top: 1px solid white;*/
+}
+
+.circle-hide{
+    position: absolute;
+    background-color: white; 
+    padding: 13px 26px 13px 23px;
+    top: -5px;
+    left: -4px;
+    /*    border-top: 1px solid white;*/
+}
+
+#main #boxes #step1 #circle1{
+    position: absolute;
+    top: -20px;
+    left: 112px;
+}
+
+#main #boxes #step1 #box1{
+    width: 230px; height: 293px;
+    border: 1px solid #d4d4d4;
+    margin-left: 18px;
+    float: left;
+}
+
+#main #boxes #step2{
+    
+}
+
+#main #boxes #step2 #circle2{
+    position: absolute;
+    top: -20px;
+    left: 362px;
+}
+
+#main #boxes #step2 #box2{
+    width: 230px; height: 293px;
+    border: 1px solid #d4d4d4;
+    margin-left: 18px;
+    float: left;
+}
+#main #boxes #step3 #circle3{
+    position: absolute;
+    top: -20px;
+    left: 612px;
+}
+
+#main #boxes #step3 #box3{
+    width: 230px; height: 293px;
+    border: 1px solid #d4d4d4;
+    margin-left: 18px;
+    float: left;
+}
+#main #boxes #step4 #circle4{
+    position: absolute;
+    top: -20px;
+    left: 862px;
+}
+
+#main #boxes #step4 #box4{
+    width: 230px; height: 293px;
+    border: 1px solid #d4d4d4;
+    margin-left: 18px;
+    float: left;
+}
+
+#main #box_arrows{
+    
+}
+
+#main #box_arrows #box_arrow1{
+    width: 62px;
+    height: 15px;
+    position: absolute;
+    left: 315px;
+    top: 47px;
+}
+
+#main #box_arrows #box_arrow2{
+    width: 62px;
+    height: 15px;
+    position: absolute;
+    left: 568px;
+    top: 47px;
+}
+
+#main #box_arrows #box_arrow3{
+    width: 62px;
+    height: 15px;
+    position: absolute;
+    left: 817px;
+    top: 47px;
+}

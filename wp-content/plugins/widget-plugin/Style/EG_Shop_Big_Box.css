@@ -1,0 +1,86 @@
+
+/*************** CONTAINER ***************/
+
+#container2{
+    /*    background-image: url('images/EG_Shop_Home_Categories.png');
+        background-repeat:no-repeat;*/
+    margin:10px 0px 0px 0px;
+/*    padding: 10px 10px 10px 10px;*/
+    position: relative;
+    width: 221px; height: 300px;
+    background-color: #fff0c7;
+    border: 2px #fff solid;
+float: left;
+}
+
+#container-12{
+/*    background-image: url('images/EG_Shop_Home_Categories_Rignt_Top.png');*/
+    background-repeat:no-repeat;    
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+#container-22{
+    /*    background-color: #f8f8f8;*/
+    position: relative;
+    top: 14px;
+    left: 10px;  
+}
+
+.discount_text{
+   
+    -webkit-transform: rotate(45deg);
+    color: white; 
+    position: absolute;
+    
+    font-family: 'kreonregular';
+}
+
+
+#get_discount{
+    /*    background-color: #f8f8f8;*/
+    background-image: url('images/EG_Shop_Big_Box_Get_Discount.png');
+    background-repeat:no-repeat;    
+    position: absolute;
+    color: #fff;
+    font-size: 16px; font-family: 'kreonregular'; font-style: normal; 
+    width: 100%; 
+/*    height: 100%;*/
+    top: 244px;
+    left: 3px;  
+}
+
+#product_image{
+    /*    background-color: #f8f8f8;*/
+    position: absolute;
+    width: 198px; height: 198px;
+    top: 34px;
+    left: 1px;  
+}
+
+#container-32{
+    background-color: #fff;
+    width: 200px; height: 200px;
+    position: absolute;
+    top: 47px;
+    left: 10px;  
+    bottom: 1px;
+    border: 1px #4db7c3 solid;
+}
+
+#container-42{
+
+    background-image: url('images/EG_Shop_Big_Box_Ribbon.png');
+    background-repeat: no-repeat;
+    width: 100%; height: 100%;
+    position: absolute;
+    top: 42px;
+    left:74px; 
+    /*border-left:    1px #e1e1e1 solid;
+    border-right:  1px #e1e1e1 solid;
+    border-bottom: 1px #e1e1e1 solid;*/
+}
+
