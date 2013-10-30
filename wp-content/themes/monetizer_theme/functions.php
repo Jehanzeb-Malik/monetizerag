@@ -32,7 +32,7 @@ if (function_exists('register_sidebar')) {
         'name' => 'Home Left Sidebar',
         'id' => 'Home-Left-sidebar',
         'description' => 'Appears as the sidebar on the left hand side on categories page',
-        'before_widget' => '<div style="height: 20px"></div>',
+        'before_widget' => '<div style="height: 0px"></div>',
         'after_widget' => '',
         'before_title' => '',
         'after_title' => '',
@@ -44,7 +44,7 @@ if (function_exists('register_sidebar')) {
         'name' => 'Home Main Sidebar',
         'id' => 'Home-Main-sidebar',
         'description' => 'Appears on the home page with slider etc',
-        'before_widget' => '<div style="height: 20px"></div>',
+        'before_widget' => '<div style="height: 0px"></div>',
         'after_widget' => '',
         'before_title' => '',
         'after_title' => '',
@@ -56,7 +56,19 @@ if (function_exists('register_sidebar')) {
         'name' => 'Home Department Sidebar',
         'id' => 'Home-Department-sidebar',
         'description' => 'Appears on the home page below slider and shows department products',
-        'before_widget' => '<div style="height: 20px"></div>',
+        'before_widget' => '<div style="height: 0px"></div>',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+}
+
+if (function_exists('register_sidebar')) {
+    register_sidebar(array(
+        'name' => 'Home Right Sidebar',
+        'id' => 'Home-Right-sidebar',
+        'description' => 'Appears on the right side on most of the pages',
+        'before_widget' => '<div style="height: 0px"></div>',
         'after_widget' => '',
         'before_title' => '',
         'after_title' => '',
