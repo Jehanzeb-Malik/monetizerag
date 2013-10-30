@@ -8,7 +8,7 @@
 
 <div id="main">
     <?php  get_sidebar('Home-Left'); ?>
-    <?php  get_sidebar('Home-Department'); ?>
+    <?php  get_sidebar('Home-Right'); ?>
 </div>
 
 

@@ -1,0 +1,28 @@
+#container_all_sellers{
+        margin:0px 0px 40px 50px;
+        height: 100%; float:left;
+        position: relative;
+        width: 735px;
+        padding-bottom: 10px;
+        border: 1px red;    
+    }
+    #container_all_sellers #title3{
+        margin: 2px 0px 40px -88px;
+        position: relative;
+        padding-bottom: 10px;
+        font-family: 'helvetica_neuelight'; font-size: 22px;
+    }
+    #container_all_sellers #link_box{
+        margin: -33px 0px 40px -88px;
+        position: relative;
+        width: 730px; height: 50px;
+        background-color: #f6fcff; border: 1px #dce3e7 solid;
+    }
+    #container_all_sellers #list{
+        position: relative; margin: 14px 0px 0px -18px;
+        font-family: 'helvetica_neuelight'; font-size: 20px;
+    }
+    #container_all_sellers #list li{
+        display: inline-block; margin: 0px 0px 0px 6px;
+    }
+    

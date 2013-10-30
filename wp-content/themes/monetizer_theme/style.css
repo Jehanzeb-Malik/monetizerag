@@ -513,6 +513,9 @@ select {
     min-height: 400px;
     margin: 0px auto;
     width: 981px;
+    display: block;
+    overflow: hidden;
+
 }
 
 /*#######################################################################################################
@@ -522,14 +525,15 @@ select {
 
 #sidebar_Home-Left{
     list-style: none;
-    width: 300px
+    width: 300px; float: left; margin-left: -40px;
 }
 
 #sidebar_Home-Main{
-    list-style: none;
+    list-style: none; 
 }
 
 #sidebar_Home-Right{
-    list-style: none;
-    width: 735px;
+    width: 738px;
+    float: left;
+    margin-left: -18px;
 }
