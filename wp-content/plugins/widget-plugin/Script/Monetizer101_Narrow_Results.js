@@ -1,30 +1,19 @@
-
-
-   console.log('dfasfsdfgsf');
-   alert('working');
-   
-
-
-
-jQuery(document).ready(function() {
-    console.log(faqTab);
-    var faqTab = jQuery('.faq-row-handle'),
-    faqTabContainer = jQuery('.faq-row-container');
-    console.log('test');
+$(document).ready(function() {
+    
+    var faqTab = $('.faq-row-handle'),
+    faqTabContainer = $('.faq-row-container');
+    
     if(faqTab.length){
 
-    faqTab.off('click').on('click', function(){
-    var faqRow = jQuery(this).parent(),
-    faqContent = jQuery(this).parent().find('.faq-row-content');
+        faqTab.off('click').on('click', function(){
+            var faqRow = $(this).parent(),
+            faqContent = $(this).parent().find('.faq-row-content');
 
-    faqTabContainer.find('.faq-row').not(faqRow).removeClass('open');
-    console.log('test');
-    faqContent.stop().slideToggle('slow', function() {
-    faqRow.toggleClass('open', faqContent.is(':visible'));
-    });
-    });
-    console.log('test');
-    
+            faqTabContainer.find('.faq-row').not(faqRow).removeClass('open');
+            
+            faqContent.stop().slideToggle('slow', function() {
+                faqRow.toggleClass('open', faqContent.is(':visible'));
+            });
+        }); 
     }
-
-    });
+});

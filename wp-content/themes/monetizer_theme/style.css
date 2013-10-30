@@ -3,13 +3,12 @@ root {
 }
 
 html{
-    margin-top: -28px !important;
+    margin-top: 0px !important;
 }
 
 body{
     margin: 0;
     padding: 0;
-    margin-top: -15px;
 }
 p{
     font-family: Calibri;
@@ -21,7 +20,7 @@ a, a:visited, a:hover, a:active {
 }
 
 ul{
-     list-style:none;
+    list-style:none;
 }
 
 h1,
@@ -68,37 +67,86 @@ h6 {
     font-family: 'helvetica_neuethin';
 }
 
+.clear-both{
+    clear: both;
+}
 
 /*#######################################################################################################
 ------------------------------------------------HEADER-------------------------------------------------
 #######################################################################################################*/
 
 #wrapper{
-    margin: 0px;
-    margin-top: -42px;
-    width: 1263px;
-
+    margin: 0 auto;
+    width: 100%;
+    min-width: 981px;
 }
 
-#header #top-bar{
+#header {
+    width: 981px;
+    margin: 0 auto;
+}
+
+#header-content-wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+#left-sidebar{
+    width: 228px;
+    min-height: 725px;
+    float: left;
+}
+
+#main-content-area{
+    width: 753px;
+    min-height: 725px;
+    float: left;
+}
+
+#wrapper #top-bar{
     background-color: #0866a6;
-    background-repeat: repeat-x;
-    height: 42px;
-    padding: 5px 5px 5px 5px;
-    color: white;
-    font-family: calibri; font-size: 17px;
-
+    height: 38px;
+    color: #daf4ff;
+    font-family: calibri;
+    font-size: 17px;
 }
-#header #top-bar2{
-    margin-top: -18px;
-    position: relative;
 
+#wrapper #top-bar #blue-bar-wrapper {
+    width: 981px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#wrapper #top-bar .blue-bar-label {
+    float: left;
+    margin-top: 0px;
+}
+
+#wrapper #top-bar .blue-bar-label:not(:last-child) {
+    margin-right: 135px;
+}
+
+#wrapper #top-bar .blue-bar-label .blue-bar-icon{
+    margin-top: 6px;
+}
+
+#wrapper #top-bar .blue-bar-label .blue-bar-text{
+    margin-top: -6px;
+    display: inline-table;
+}
+
+#header #top-bar2{
+    width: 100%;
+    height: 86px;
+    position: relative;
 }
 #header #top-bar2 #logo1{
-    margin-left: 85px;
     float: left;
-    margin-top: -20px;
-
+    width: 263px;
+}
+#header #top-bar2 #logo1 #affiliate-logo{
+    margin-top: 28px;
 }
 #header #top-bar2 #logo1 .logo{
     font-family: 'helvetica_neuethin';
@@ -106,23 +154,51 @@ h6 {
     color: #003b7d; 
     font-weight:lighter;
 }
-#header #top-bar2 #logo1 #M{
-    color: #ed7500;
-    text-decoration: none;
-    font-family: 'helvetica_neuelight';
 
-}
-#header #top-bar2 #logo1 #AG{
-    color: black;
-    text-decoration: none;
-    font-family: 'helvetica_neuelight';
-
-}
 #header #top-bar2 #drop-down-lists{
-    float: left;
-    margin-top: 22px;
+    position: absolute;
+    left: 263px;
+    top: 25px;
+}
+
+#header #top-bar2 #drop-down-lists #drop-down-list2 > select{
+    height: 40px;
+}
+
+#header #top-bar2 #drop-down-lists #drop-down-list1 #departments-dropdown > li.current{
+    height: 38px;
+}
+
+#header #top-bar2 #drop-down-lists #drop-down-list1 #departments-dropdown span.macro-list-item{
+    border-left-color: rgb(216, 216, 216);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-top-color: rgb(216, 216, 216);
+    border-top-style: solid;
+    border-top-width: 1px;
+    color: rgb(48, 48, 48);
+    cursor: auto;
+    display: block;
+    font-family: Calibri;
+    font-size: 18px;
+    height: auto;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 13.5px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 13.5px;
     position: relative;
-    margin-left:30px;
+    text-align: left;
+    text-decoration: none;
+    white-space: nowrap;
+    width: auto;
+    zoom: 1;
 }
 /*  IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT  */
 /*############## Dropdown list style in superfish.css*/
@@ -137,9 +213,34 @@ h6 {
     margin-left: 20px;
     font-family: calibri; font-size: 17px;
 }
+
+#header #top-bar2 #how-does-it-work{
+    width: 175px;
+    height: 24px;
+    color: #000000;
+    font-family: Cambria;
+    font-size: 18px;
+    position: absolute;
+    left: 806px;
+    top: 30px;
+}
+
+#header #top-bar2 #how-does-it-work span{
+    float: left;
+    margin-right: 5px;
+    border: 1px solid;border-radius: 50%;
+    padding: 1px 7px 1px 7px;
+    color: #005896;
+}
+
+#header #top-bar2 #how-does-it-work p{
+    position: relative;
+    top: -17px;
+}
+
 /*input tag for the dropdown list*/
 .styled-list{
-    width: 250px;
+    width: 246px;
     height: 34px;
     overflow: hidden;
     border: 1px solid #d9d9d9;
@@ -177,32 +278,52 @@ select {
 
 }
 #header #top-bar3{
-    margin-top: 130px;
-    margin-left: 90px;
+    clear: both;
+    width: 100%;
+    height: 45px;
+    top: -4px;
+    position: relative;
 }
 
 #header #top-bar3 #menu{
     float: left;
     border: 1px solid #e4e4e4;
-    margin-top: -20px;
-    width: 820px;
+    width: 784px;
+    height: 32px;
     color: #e4e4e4;
-    padding: 10px 0px 10px 0px;
+    margin: 0px;
+    padding: 12px 0px 0px 0px;
 }
+
 #header #top-bar3 #menu li{
     display: inline;
-    font-family: Calibri; font-size: 17px;
-    color: #474747;
+    font-family: Calibri;
+    font-size: 16px;
+    color: #303030;
     padding: 0px 16px 0px 16px;
 }
+
+#header #top-bar3 #menu li:hover{
+    color: #000000;
+}
+
 #header #top-bar3 .menu-label {
-    /*    position: absolute;
-        left: 230px;
-        display: inline-block;*/
-    float: left; margin-top: -20px;
-    font-family: Calibri; font-weight: bold; font-size: 18px; color: white;
-    padding: 11px 31px 10px 31px;
+    width: 195px;
+    height: 45px;
+    float: left;
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
     background-color: #ed7500;
+}
+
+#header #top-bar3 .menu-label span{
+
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
 }
 
 
@@ -267,9 +388,8 @@ select {
 #main{
     position: relative;
     min-height: 400px;
-    margin: 0px;
-    width: 100%;
-
+    margin: 0px auto;
+    width: 981px;
 }
 
 /*#######################################################################################################
