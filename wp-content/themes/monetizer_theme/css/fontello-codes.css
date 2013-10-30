@@ -6,3 +6,11 @@
 .icon-left-dir:before { content: '\e803'; } /* '' */
 .icon-right-dir:before { content: '\e804'; } /* '' */
 .icon-right:before { content: '\e806'; } /* '' */
+.icon-th-large:before { content: '\e801'; } /* '' */
+.icon-th:before { content: '\e800'; } /* '' */
+.icon-angle-double-left:before { content: '\e80a'; } /* '' */
+.icon-angle-double-right:before { content: '\e807'; } /* '' */
+.icon-angle-double-up:before { content: '\e808'; } /* '' */
+.icon-angle-double-down:before { content: '\e809'; } /* '' */
+.icon-right:before { content: '\e806'; } /* '' */
+.icon-home:before { content: '\e800'; } /* '' */

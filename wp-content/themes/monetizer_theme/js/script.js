@@ -1,10 +1,10 @@
 jQuery(document).ready(function() {
 
-    try{
+    try {
         // initialise plugin
-        var example = $('#departments-dropdown').superfish({
+        var example = $('#example').superfish({
             //add options here if required
-            });
+        });
 
         // buttons to demonstrate Superfish's public methods
         jQuery('.destroy').on('click', function() {
@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
         jQuery('.close').on('click', function() {
             example.children('li:first').superfish('hide');
         });
-    }catch(e){
+    } catch (e) {
         console.log(e.message);
     }
 });

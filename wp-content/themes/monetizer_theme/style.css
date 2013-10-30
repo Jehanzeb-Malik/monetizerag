@@ -317,6 +317,9 @@ select {
     color: #fff;
     background-color: #ed7500;
 }
+/*#######################################################################################################
+------------------------------------------------HEADER-2-------------------------------------------------
+#######################################################################################################*/
 
 #header #top-bar3 .menu-label span{
 
@@ -324,6 +327,126 @@ select {
     text-align: center;
     display: block;
     margin-top: 10px;
+}
+
+#header2 #top-bar{
+    background-color: #0866a6;
+    background-repeat: repeat-x;
+    height: 42px;
+    padding: 5px 5px 5px 5px;
+    color: white;
+    font-family: calibri; font-size: 17px;
+
+}
+#header2 #top-bar2{
+    margin-top: -18px;
+    position: relative;
+
+}
+#header2 #top-bar2 #logo1{
+    margin-left: 85px;
+    float: left;
+    margin-top: -20px;
+
+}
+#header2 #top-bar2 #logo1 .logo{
+    font-family: 'helvetica_neuethin';
+    font-size: 37px;
+    color: #003b7d; 
+    font-weight:lighter;
+}
+#header2 #top-bar2 #logo1 #M{
+    color: #ed7500;
+    text-decoration: none;
+    font-family: 'helvetica_neuelight';
+
+}
+#header2 #top-bar2 #logo1 #AG{
+    color: black;
+    text-decoration: none;
+    font-family: 'helvetica_neuelight';
+
+}
+#header2 #top-bar2 #drop-down-lists{
+    float: left;
+    margin-top: 22px;
+    position: relative;
+    margin-left:92px;
+}
+/*  IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT  */
+/*############## Dropdown list style in superfish.css*/
+
+#header2 #top-bar2 #drop-down-lists .styled-select {
+
+    width: 250px;
+    height: 34px;
+    overflow: hidden;
+    border: 1px solid #d9d9d9;
+    color: #656565;
+    margin-left: 20px;
+    font-family: calibri; font-size: 17px;
+}
+/*input tag for the dropdown list*/
+.styled-list{
+    width: 250px;
+    height: 34px;
+    overflow: hidden;
+    border: 1px solid #d9d9d9;
+    color: #656565;
+    margin-left: 20px;
+    font-family: calibri; font-size: 17px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+#header2 #top-bar2 #drop-down-lists .styled-label {
+    position: absolute;
+    left: 430px;
+    display: inline-block;
+    padding: 7px 12px 7px 12px;
+    background-color: #ed7500;
+}
+#header2 #top-bar2 #drop-down-lists .styled-label1 {
+    position: absolute;
+    left: 510px;
+    display: inline-block;
+    padding: 7px 12px 7px 12px;
+    background-color: #005795;
+}
+select {
+    padding: 2px 10px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance:  none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+
+}
+#header2 #top-bar3{
+    margin-top: 130px;
+    margin-left: 90px; padding-bottom: 4px;
+}
+
+#header2 #top-bar3 #partner_link {
+    /*    position: absolute;
+        left: 230px;
+        display: inline-block;*/
+    font-family: calibri; font-size: 15px; color: #0866a6; 
+    float: left; margin-top: -30px;
+
+}
+#header2 #top-bar3 .menu-label {
+    /*    position: absolute;
+        left: 230px;
+        display: inline-block;*/
+    float: left; margin-top: -40px;
+    font-family: Calibri; font-weight: bold; font-size: 18px; color: white;
+    padding: 11px 31px 10px 31px;
+    background-color: #ed7500;  
+    margin-left: 821px;
 }
 
 
@@ -406,6 +529,7 @@ select {
     list-style: none;
 }
 
-#sidebar_Home-Department{
+#sidebar_Home-Right{
     list-style: none;
+    width: 735px;
 }

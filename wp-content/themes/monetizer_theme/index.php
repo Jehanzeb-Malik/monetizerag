@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<div id="main" style="min-height: 500px;">
+<div id="main">
 
-    <?php get_sidebar('Home-Left'); ?>
+    <?php get_sidebar('Home-Main'); ?>
 
 
 

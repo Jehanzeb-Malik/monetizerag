@@ -30,8 +30,6 @@ function api_scripts_method() {
     wp_register_script('jquery.min', plugins_url() . '/widget-plugin/Script/jquery.min.js');
     wp_enqueue_script('jquery.min');
 
-
-    /////////////////////////// Register Scripts For Widgets Here \\\\\\\\\\\\\\\\\\\\\\\\\\\\
     /////////////////////////// kreon font \\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //    wp_enqueue_style('stylesheet', plugins_url() . '/widget-plugin/Style/stylesheet.css');
     //If template is for coupon bought
@@ -206,6 +204,7 @@ class wp_my_plugin extends WP_Widget {
             'EG_Shop_Home_Main' => 'test etst',
             'Monetizer101_Home_Slider' => 'Monetizer101 Home Page Slider',
             'Monetizer101_Home_Department' => 'Monetizer101 Home Page Department box',
+            'Monetizer101_All_Sellers' => 'Monetizer101 All Sellers Widget',
             'Monetizer101_Narrow_Results' => 'Monetizer101 Narrow Results Widget'
         );
         return $lists;
@@ -257,6 +256,18 @@ class wp_my_plugin extends WP_Widget {
 
         wp_register_style('Monetizer101_Home_Department_Style', plugins_url() . '/widget-plugin/Style/Monetizer101_Home_Department.css');
         wp_enqueue_style('Monetizer101_Home_Department', plugins_url() . '/widget-plugin/Style/Monetizer101_Home_Department.css');
+    }
+    
+    ///////////////////////// Monetizer101_All_Sellers \\\\\\\\\\\\\\\\\\\\\\\\
+
+    function load_Monetizer101_All_Sellers($page, $title) {
+
+        include('View/Monetizer101_All_Sellers.html');
+
+        wp_register_script('Monetizer101_All_Sellers', plugins_url() . '/widget-plugin/Script/Monetizer101_All_Sellers.js');
+        wp_enqueue_script('Monetizer101_All_Sellers');
+        
+        wp_enqueue_style('Monetizer101_All_Sellers', plugins_url() . '/widget-plugin/Style/Monetizer101_All_Sellers.css');
     }
 
 }
