@@ -1,0 +1,144 @@
+<script id="product_viewer_tpl" type="text/xml">
+    {{#showlayout}}
+    <div id="{{layout}}-container" style="margin-left: -5px;">
+    {{/showlayout}}
+        {{#data}}
+        <div class="product-{{layout}}" id="product-{{index}}">
+            <div class="product-widget-content">
+                <div class="product-image-holder">
+                    <span></span>
+                    <img alt="{{name}}" src="{{imageURL}}">
+                </div>
+                <div class="product-title">
+                    <span class="product-name">{{name}}</span>
+                    {{#showCategory}}
+                    <span class="product-category">Party Dresses</span>
+                    {{/showCategory}}
+                </div>
+                <div class="product-price">
+                    <div class="product-price-tag">
+                        <span class="product-original-price">&#{{currencyType}} {{retailPrice}}</span>
+                        <span class="product-discounted-price">&#{{currencyType}} {{salePrice}}</span>
+                    </div>
+                    <div class="product-price-next-btn"></div>
+                </div>
+                <div class="product-merchant-logo">
+                    <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/{{layout}}_affiliate_logo.png" >
+                </div>
+            </div>
+            <div class="product-widget-dropshadow"></div>
+        </div>
+        {{/data}}
+    </div>
+</script>
+
+<div id="product-viewer">
+    <div id="product-viewer-header">
+        <div id="drop-down-sort">
+            <span class="product-viewer-header-title">Sort By:</span>
+            <ul class="sf-menu" id="product-viewer-sort-dropdown">
+                <li class="current">
+                    <input class="styled-list" readonly placeholder="<?php
+                           if (isset($_GET['sort'])) {
+                           if ($_GET['sort'] == '1') {
+                           ?>
+                           Biggest Discount
+                           <?php }
+                           else if($_GET['sort'] == '2') {
+                           ?>
+                           Price: Lowest First
+                           <?php
+                           }
+                           else if($_GET['sort'] == '3') {
+                           ?>
+                           Price: Highest First
+                           <?php
+                           }
+                           else if($_GET['sort'] == '4') {
+                           ?>
+                           Newest
+                           <?php
+                           }
+                           } else{ ?>
+                           Biggest Discount
+                           <?php }
+                           ?>" style="background:  url('<?php bloginfo('template_directory'); ?>/images/product-viewer-sort.png') no-repeat 100%; padding: 2px 10px;"></input>
+                    <ul>
+                        <li class="current"><a href="#">Biggest Discount</a></li>
+                        <li><a href="#">Price: Lowest First</a></li>
+                        <li><a href="#">Price: Highest First</a></li>
+                        <li><a href="#">Newest</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="product-viewer-layout-selector">
+            <span class="product-viewer-header-title">View:</span>
+            <div id="view-btn-holder">
+                <div class="view-layout-btn" id="2column">
+                    <?php
+                    if (isset($_GET['layout'])) {
+                    if ($_GET['layout'] == '2col') {
+                    ?>
+                    <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_2x2_active.png">
+                    <?php } else {
+                    ?>
+                    <a href=""><img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_2x2_inactive.png"></a>
+                    <?php
+                    }
+                    } else{ ?>
+                    <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_2x2_active.png">
+                    <?php }
+                    ?>
+                </div>
+                <div class="view-layout-btn" id="3column">
+                    <?php
+                    if (isset($_GET['layout'])) {
+                    if ($_GET['layout'] == '3col') {
+                    ?>
+                    <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_3x3_active.png">
+                    <?php } else {
+                    ?>
+                    <a href=""><img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_3x3_inactive.png"></a>
+                    <?php
+                    }
+                    } else{ ?>
+                    <a href=""><img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_3x3_inactive.png"></a>
+                    <?php }
+                    ?>
+                </div>
+                <div class="view-layout-btn" id="4column">
+                    <?php
+                    if (isset($_GET['layout'])) {
+                    if ($_GET['layout'] == '4col') {
+                    ?>
+                    <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_4x4_active.png">
+                    <?php } else {
+                    ?>
+                    <a href=""><img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_4x4_inactive.png"></a>
+                    <?php
+                    }
+                    } else{ ?>
+                    <a href=""><img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_4x4_inactive.png"></a>
+                    <?php }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="product-viewer-paginator" id="product-viewer-paginator-header">
+            <div class="btn-prev"></div>
+            <div class="page-counter">Page 1 of 7</div>
+            <div class="btn-next"></div>
+        </div>
+    </div>
+    <div id="product-viewer-content">
+
+    </div>
+    <div id="product-viewer-footer">
+        <div class="product-viewer-paginator" id="product-viewer-paginator-footer">
+            <div class="btn-prev"></div>
+            <div class="page-counter">Page 1 of 7</div>
+            <div class="btn-next"></div>
+        </div>
+    </div>
+</div>

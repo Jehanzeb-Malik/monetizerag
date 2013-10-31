@@ -1,8 +1,7 @@
 jQuery(document).ready(function() {
-
-    try {
+//    try {
         // initialise plugin
-        var example = $('#example').superfish({
+        var example = jQuery('#departments-dropdown').superfish({
             //add options here if required
         });
 
@@ -22,9 +21,9 @@ jQuery(document).ready(function() {
         jQuery('.close').on('click', function() {
             example.children('li:first').superfish('hide');
         });
-    } catch (e) {
-        console.log(e.message);
-    }
+//    } catch (e) {
+//        console.log(e.message);
+//    }
 });
 
 

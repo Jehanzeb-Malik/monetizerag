@@ -99,9 +99,10 @@ h6 {
 }
 
 #main-content-area{
-    width: 753px;
+    width: 734px;
     min-height: 725px;
     float: left;
+    margin-left: 19px;
 }
 
 #wrapper #top-bar{
@@ -165,11 +166,11 @@ h6 {
     height: 40px;
 }
 
-#header #top-bar2 #drop-down-lists #drop-down-list1 #departments-dropdown > li.current{
+.sf-menu > li.current{
     height: 38px;
 }
 
-#header #top-bar2 #drop-down-lists #drop-down-list1 #departments-dropdown span.macro-list-item{
+.sf-menu span.macro-list-item{
     border-left-color: rgb(216, 216, 216);
     border-left-style: solid;
     border-left-width: 1px;
@@ -181,7 +182,7 @@ h6 {
     display: block;
     font-family: Calibri;
     font-size: 18px;
-    height: auto;
+    height: 22px;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -191,13 +192,13 @@ h6 {
     margin-top: 0px;
     padding-bottom: 13.5px;
     padding-left: 18px;
-    padding-right: 18px;
+    padding-right: 45px;
     padding-top: 13.5px;
     position: relative;
     text-align: left;
     text-decoration: none;
     white-space: nowrap;
-    width: auto;
+    width: 211px;
     zoom: 1;
 }
 /*  IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT  */
@@ -509,10 +510,12 @@ select {
 #######################################################################################################*/
 
 #main{
-    position: relative;
     min-height: 400px;
     margin: 0px auto;
     width: 981px;
+    margin-top: 44px;
+    margin-bottom: 25px;
+    overflow: hidden;
 }
 
 /*#######################################################################################################

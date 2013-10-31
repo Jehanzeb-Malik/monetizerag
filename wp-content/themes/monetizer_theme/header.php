@@ -1,6 +1,6 @@
 <?php
 /**
- * The Header for our theme.
+ * The Header for the theme.
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
@@ -28,10 +28,14 @@
         <![endif]-->
 
         <?php wp_head(); ?>
-
+        <script type="text/javascript">
+            var monetizer_site_url = "<?php echo bloginfo('siteurl'); ?>";
+        </script>
     </head>
 
     <body <?php body_class(); ?>>
+
+        <script id="monetizer101-api" data-main="<?php echo bloginfo('siteurl'); ?>/js/api/monetizer101-api.js" data-onload="onReady()" data-log='{"level":"INFO"}' src="<?php echo bloginfo('siteurl'); ?>/js/require.js"> </script>
         <div id="wrapper">
             <div id="top-bar">
                 <div id="blue-bar-wrapper">

@@ -29,6 +29,14 @@ function api_scripts_method() {
     /////////////////////////// jQuery.min \\\\\\\\\\\\\\\\\\\\\\\\\\\\
     wp_register_script('jquery.min', plugins_url() . '/widget-plugin/Script/jquery.min.js');
     wp_enqueue_script('jquery.min');
+    
+    wp_deregister_script('script-common');
+    wp_register_script('script-common', plugins_url() . '/widget-plugin/Script/script-common.js');
+    wp_enqueue_script('script-common');
+    
+    wp_deregister_script('mustache');
+    wp_register_script('mustache', plugins_url() . '/widget-plugin/Script/mustache.min.js');
+    wp_enqueue_script('mustache');
 
     /////////////////////////// kreon font \\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //    wp_enqueue_style('stylesheet', plugins_url() . '/widget-plugin/Style/stylesheet.css');
@@ -205,7 +213,8 @@ class wp_my_plugin extends WP_Widget {
             'Monetizer101_Home_Slider' => 'Monetizer101 Home Page Slider',
             'Monetizer101_Home_Department' => 'Monetizer101 Home Page Department box',
             'Monetizer101_All_Sellers' => 'Monetizer101 All Sellers Widget',
-            'Monetizer101_Narrow_Results' => 'Monetizer101 Narrow Results Widget'
+            'Monetizer101_Narrow_Results' => 'Monetizer101 Narrow Results Widget',
+            'product_viewer' => 'Product Viewer'
         );
         return $lists;
     }
@@ -231,6 +240,23 @@ class wp_my_plugin extends WP_Widget {
         wp_enqueue_script('Monetizer101_Narrow_Results');
 
         wp_enqueue_style('Monetizer101_Narrow_Results', plugins_url() . '/widget-plugin/Style/Monetizer101_Narrow_Results.css');
+    }
+
+    ///////////////////////// Monetizer101_Narrow_Results \\\\\\\\\\\\\\\\\\\\\\\\
+
+    function load_product_viewer($page, $title) {
+
+        include('View/product_viewer.html');
+        //  echo(plugins_url().'/widget-plugin/Script/Monetizer101_Narrow_Results.js');
+
+        wp_register_script('product_viewer_script', plugins_url() . '/widget-plugin/Script/product_viewer.js');
+        wp_enqueue_script('product_viewer_script');
+
+        wp_register_script('hover_intent', plugins_url() . '/widget-plugin/Script/hoverIntent.js');
+        wp_enqueue_script('hover_intent');
+
+        wp_enqueue_style('product_viewer_style', plugins_url() . '/widget-plugin/Style/product_viewer.css');
+        wp_enqueue_style('superfish_vertical', plugins_url() . '/widget-plugin/Style/superfish-vertical.css');
     }
 
     ///////////////////////// Monetizer101_Home_Slider \\\\\\\\\\\\\\\\\\\\\\\\
@@ -277,6 +303,12 @@ add_action('wp_footer', 'print_my_script');
 function print_my_script() {
     
     //Add Conditional Statements Here
+    wp_print_scripts('product_viewer_style');
+    wp_print_scripts('superfish_vertical');
+    wp_print_scripts('product_viewer_script');
+    wp_print_scripts('hover_intent');
+    
+    //Add Conditional Statements Here
     wp_print_scripts('Monetizer101_Narrow_Results_Script');
     wp_print_scripts('Monetizer101_Narrow_Results_Style');
     wp_print_scripts('unslider');
@@ -287,13 +319,13 @@ add_action('init', 'register_widget_scripts');
 function register_widget_scripts() {
 
     //Results Filter - Start
-    wp_deregister_script('Monetizer101_Narrow_Results_Script');
-    wp_register_script('Monetizer101_Narrow_Results_Script', plugins_url() . '/widget-plugin/Script/Monetizer101_Narrow_Results.js', null, false, true);
-
-    wp_deregister_script('unslider');
-    wp_register_script('unslider', plugins_url() . '/widget-plugin/Script/unslider.min.js');
-
-    wp_register_style('Monetizer101_Narrow_Results_Style', plugins_url() . '/widget-plugin/Style/Monetizer101_Narrow_Results.css');
+//    wp_deregister_script('Monetizer101_Narrow_Results_Script');
+//    wp_register_script('Monetizer101_Narrow_Results_Script', plugins_url() . '/widget-plugin/Script/Monetizer101_Narrow_Results.js', null, false, true);
+//
+//    wp_deregister_script('unslider');
+//    wp_register_script('unslider', plugins_url() . '/widget-plugin/Script/unslider.min.js');
+//
+//    wp_register_style('Monetizer101_Narrow_Results_Style', plugins_url() . '/widget-plugin/Style/Monetizer101_Narrow_Results.css');
     //Results Filter - End
 }
 

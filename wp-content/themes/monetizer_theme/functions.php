@@ -508,6 +508,25 @@ function monetizer101_widgets_init() {
             'after_title' => '',
         ));
     register_sidebar(array(
+            'name' => __('Categories Left Content Area', 'monetizer_theme'),
+            'id' => 'categories_left_content_area',
+            'description' => __('Categories Left Content Area', 'monetizer_theme'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
+        ));
+    
+    register_sidebar(array(
+            'name' => __('Categories Main Content Area', 'monetizer_theme'),
+            'id' => 'categories_content_area',
+            'description' => __('Categories Content Area', 'monetizer_theme'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
+        ));
+    register_sidebar(array(
             'name' => __('All Sellers Left Content Area', 'monetizer_theme'),
             'id' => 'all_sellers_left_content_area',
             'description' => __('All Sellers Left Content Area', 'monetizer_theme'),
@@ -612,7 +631,7 @@ function monetizer101_include_resources() {
     wp_enqueue_style('stylesheet', get_template_directory_uri() . '/css/stylesheet.css');
     wp_enqueue_style('fontello', get_template_directory_uri() . '/css/fontello.css');
     wp_enqueue_style('fontello-codes', get_template_directory_uri() . '/css/fontello-codes.css');
-    wp_enqueue_style('fontello-embedded', get_template_directory_uri() . '/css/fontello-embedded.css');
+//    wp_enqueue_style('fontello-embedded', get_template_directory_uri() . '/css/fontello-embedded.css');
     wp_enqueue_style('superfish', get_template_directory_uri() . '/css/superfish.css');
     wp_enqueue_style('template-404', get_template_directory_uri() . '/css/template-404.css');
     wp_enqueue_style('template-How_it_works', get_template_directory_uri() . '/css/template-How_it_works.css');
