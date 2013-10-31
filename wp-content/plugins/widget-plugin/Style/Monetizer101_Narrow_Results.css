@@ -4,6 +4,7 @@
     width: 227px;
     border: 1px solid #e6eaed;
     margin-bottom: 10px;
+    
 }
 
 #container #title1{
@@ -50,7 +51,7 @@
 }
 
 .faq-row-content p {
-    padding: 0 14px 10px 14px;
+    padding: 0 9px 10px 14px;
 }
 
 #container #dress_occasion{

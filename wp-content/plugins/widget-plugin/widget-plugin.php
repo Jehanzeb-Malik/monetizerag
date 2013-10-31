@@ -266,6 +266,7 @@ class wp_my_plugin extends WP_Widget {
         include('View/Monetizer101_Home_Slider.html');
 
 //        wp_print_scripts('Monetizer101_Home_Slider');
+        wp_register_script('Monetizer101_Home_Slider', plugins_url() . '/widget-plugin/Script/Monetizer101_Home_Slider.js');
         wp_enqueue_script('Monetizer101_Home_Slider');
 
         wp_enqueue_style('Monetizer101_Home_Slider_Style', plugins_url() . '/widget-plugin/Style/Monetizer101_Home_Slider.css');

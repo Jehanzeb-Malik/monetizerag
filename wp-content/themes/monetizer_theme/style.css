@@ -158,7 +158,7 @@ h6 {
 
 #header #top-bar2 #drop-down-lists{
     position: absolute;
-    left: 263px;
+    left: 260px;
     top: 25px;
 }
 
@@ -211,7 +211,7 @@ h6 {
     overflow: hidden;
     border: 1px solid #d9d9d9;
     color: #656565;
-    margin-left: 20px;
+    margin-left: 15px;
     font-family: calibri; font-size: 17px;
 }
 
@@ -525,14 +525,15 @@ select {
 
 #sidebar_Home-Left{
     list-style: none;
-    width: 300px
+    width: 300px; float: left; margin-left: -40px;
 }
 
 #sidebar_Home-Main{
-    list-style: none;
+    list-style: none; 
 }
 
 #sidebar_Home-Right{
-    list-style: none;
-    width: 735px;
+    width: 738px;
+    float: left;
+    margin-left: -18px;
 }
