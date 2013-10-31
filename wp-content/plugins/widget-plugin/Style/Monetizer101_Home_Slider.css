@@ -1,24 +1,57 @@
+ #container_home_slider{
+        margin: 0px 0px 80px -40px;
+        height: 533px;
+        position: relative;
+        width: 1004px;
+        border: 1px solid #e4e4e4;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    #container_home_slider #box1{
+        position: relative;
+        width: 226px; height: 543px;
+        border-right: 1px solid #e4e4e4;
+        font-size: 18px;
+        font-weight: normal;
+        color: #303030;
+        margin-top: 0px; float: left;
+    }
+    #container_home_slider #box1 .title1{
+        position: absolute;
+        font-family: Calibri;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0866a6;
+    }
+    #container_home_slider #box1 #department{
+        position: absolute;
+        left: 16px;
+        top: 50px;
+        line-height: 18px;
+    }
+    #container_home_slider #box1 #more{
+        position: absolute;
+        left: 16px;
+        top: 340px;
+        line-height: 18px;
+    }
+    #container_home_slider #box2{
+        position: relative;
+        width: 557px; height: 543px;
+        border-right: 1px solid #e4e4e4;
+        margin-top: 0px;
+        float: left;
+    }
+    #container_home_slider #box2 .banner { position: relative; overflow: auto; width: 557px; height: 550px; }
+    #container_home_slider #box2 .banner li { list-style: none; }
+    #container_home_slider #box2 .banner ul li { float: left; margin-left: 0px; }
+    #container_home_slider #box2 .banner ul { float: left; margin-left: -40px; }
 
-/*************** CONTAINER ***************/
-
-#container{
-    /*    background-image: url('images/EG_Shop_Home_Categories.png');
-        background-repeat:no-repeat;*/
-    margin:10px 0px 0px 0px;
-    position: relative;
-    width: 228px;
-    border: 1px solid #e5e5e5;
-}
-
-#container #asd{
-    font-family: Calibri;
-    size: 18px;
-    font-weight: bold;
-    color: #0866a6;
-}
-
-#container h4{
-    font-family: Calibri;
-    size: 18px;
-    color: #0866a6;
-}
+    #container_home_slider #box3{
+        position: relative;
+        background: url('images/Monetizer101_Home_Box3_BG.png');
+        background-repeat: repeat;
+        width: 196px; height: 543px; overflow: hidden;
+        margin-top: 0px;
+        float: left;
+    }
