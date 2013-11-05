@@ -1,9 +1,7 @@
 #container_all_sellers{
-    margin:0px 0px 40px -35px;
     height: 100%; float:left;
     position: relative;
     width: 735px;
-    padding-bottom: 10px;
     border: 1px red;    
 }
 #container_all_sellers #title3{
@@ -18,14 +16,21 @@
     width: 730px; height: 50px;
     background-color: #f6fcff; border: 1px #dce3e7 solid;
 }
+#container_all_sellers #link_box .all-seller-header-active{
+    color: #131313;
+    cursor: pointer;
+}
+#container_all_sellers #link_box .all-seller-header-inactive{
+    color: #b6c5cc;
+}
 #container_all_sellers #list{
     position: relative; margin: 14px 0px 0px -18px;
     font-family: 'helvetica_neuelight'; font-size: 20px;
 }
 #container_all_sellers #list li{
-    display: inline-block; margin: 0px 0px 0px 6px;
+    width: 14px; text-align: center; display: inline-block; margin: 0px 0px 0px 6px;
 }
-#container_all_sellers #list li:hover{
+#container_all_sellers #list .all-seller-header-list-item-active:hover{
     display: inline-block; margin: 0px 0px 0px 6px; font-weight: bold;
 }
 #container_all_sellers .Sellers{
@@ -54,11 +59,12 @@
     height: 4px; margin-top: 30px; 
     margin-bottom: 20px;
 }
-#container_all_sellers .Sellers .back{
+#container_all_sellers .Sellers .back-to-top{
     position: absolute; font-family: calibri; font-size: 15px; color: #005795; 
     text-decoration:underline; top: 20px;
     left: 640px;
+    cursor: pointer;
 }
-#container_all_sellers .Sellers .back:hover{
+#container_all_sellers .Sellers .back-to-top:hover{
     font-weight: bold;
 }

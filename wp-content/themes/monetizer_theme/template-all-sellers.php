@@ -1,6 +1,7 @@
+<!--include global $wpdb;-->
+
 <?php
-/*
- * Template Name:  All Sellers
+/* Template Name:  All Sellers
  */
 ?>
 <?php get_header(); ?>

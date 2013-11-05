@@ -1,0 +1,37 @@
+<script id="all_sellers_tpl" type="text/xml">
+    {{#show}}
+    <div class="Sellers" id="seller-{{tag}}">
+        <p id='alphabet'>{{tag}}</p>
+        <ul id='seller_links'>
+            {{#list}}
+            <li><a href="<?php echo bloginfo('siteurl'); ?>/seller/?id={{id}}&layout=2col&sort=1">{{name}}</a></li>
+            {{/list}}
+        </ul>
+        <div id='bottom_line'>
+        </div>
+        <a class='back-to-top' tabindex="0">Back to top </a>
+    </div>
+    {{/show}}
+</script>
+
+<script id="all_sellers_header_tpl" type="text/xml">
+    {{#active}}
+    <li class="all-seller-header-list-item-active"><a tabindex="0" class="all-seller-header-active">{{tag}}</a></li>
+    {{/active}}
+    {{#inactive}}
+    <li class="all-seller-header-list-item-inactive"><a tabindex="0" class="all-seller-header-inactive">{{tag}}</a></li>
+    {{/inactive}}
+</script>
+<!--<li><a href="#seller-{{tag}}" class="all-seller-header-active">{{tag}}</a></li>-->
+<div id="container_all_sellers">
+
+    <p id='title3'>ALL SELLERS</p>
+
+    <div id="link_box">
+        <ul id="list">
+
+        </ul>
+    </div>
+
+</div>
+

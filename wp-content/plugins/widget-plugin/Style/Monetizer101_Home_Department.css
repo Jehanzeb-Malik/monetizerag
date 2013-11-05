@@ -1,112 +1,156 @@
-#container_departments{
-    margin: 40px 0px 0px -53px;
-    height: 543px;
-    position: relative;
-    width: 1004px;;
-    padding-bottom: 10px;
-}
-#container_departments a:hover{
-    color: #0866a6; font-weight: 400;
-}
-#container_departments #row1 {
-    position: relative;
-    margin-top: 0px; float: left; margin-left: -16px;
-}
-#container_departments #row2 {
-    position: relative;
-    margin-top: 18px; float: left; margin-left: -16px;
-}
-#container_departments #row5 {
-    position: relative;
-    margin-top: 18px; float: left; margin-left: -16px;
-}
-#container_departments #row3 {
-    position: relative;
-    margin-top: 18px; float: left; margin-left: -16px;
-}
-#container_departments #row4 {
-    position: relative;
-    margin-top: 18px; float: left; margin-left: -16px;
-}
-#container_departments #row5 {
-    position: relative;
-    margin-top: 18px; float: left; margin-left: -16px;
-}
-#container_departments #row6 {
-    position: relative;
-    margin-top: 18px; float: left; margin-left: -16px;
-}
-#container_departments .box{
-    position: relative;
-    width: 205px; height: 225px;
-    border: 1px solid #c2c2c2;
-    margin-top: 0px; float: left; margin-left: 36px;
-}
-#container_departments .box:hover{
-    border: 1px solid #0869ab;
-}
-#container_departments .box #pro_img{
-    position: relative;
-    width: 70px; height: 225px; padding: 1px 1px 0px 1px;
-    border-right: 1px solid #c2c2c2;
-    margin-top: 0px; float: left; margin-left: 0px;
-}
-#container_departments .box:hover #pro_img{
-    border-right: 1px solid #0869ab;
-}
-#container_departments .box #pro_shadow{
-    position: absolute;
-    top: 226px; left: 1px; width: 202px; 
-}
-#container_departments .box #pro_info{
-    position: relative;
-    top: -30px; left: 97px;
-}
-#container_departments .box  #pro_info #pro_title{
-    position: absolute;
-    width: 125px;
-    height: 33px;
-    height: 71px;
-    font-family: 'helvetica_neuelight';
-    font-size: 17px;
-    color: #303030;
-    top: 28px;
-    left: -20px;
-   /* text-align: center;  */
-}
-#container_departments .box:hover  #pro_info #pro_title{
-    color: #0869ab;
-}
-#container_departments .box #pro_info #pro_desc{
-    position: absolute;
-    line-height: 20px;
-    top: 105px; font-family: Arial; font-size: 14px; color: #303030;
-    left: -58px; width: 121px; height: 165px;
-}
-#container_departments .box #pro_label{
-    position: absolute;
-    top: 123px;
-    left: 129px; 
-}
-#container_departments .box #pro_label #pro_view_more{
-    position: absolute;
-    top: 60px; font-family: Arial; font-size: 13px; color: #565656;
-    padding: 7px 12px 7px 11px;
-    background-color: #f1f1f1;
-    width: 80px; border-top: 1px solid #c2c2c2;
-}
-#container_departments .box:hover #pro_label #pro_view_more{
-    top: 60px; font-family: Arial; font-size: 13px; color: white;
-    background-color: #0869ab;
-    width: 80px; border-top: 1px solid #0869ab;
-}
-.title2{
-    position: relative; font-family: 'helvetica_neuethin'; margin-left: 22px;
-    font-size: 22px;
-    color: #131313;
-}
-#line{
-    height: 7px; width: 800px; background-image: url("wp-content\plugins\widget-plugin\View\Monetizer101_Home_Department_Shirt.png");
-    background-repeat: repeat-x;
+#departments-list-widget{
+    width: 981px;
+    margin-top: 40px;
+    overflow: hidden;
 }
 
+#departments-list-widget #departments-list-widget-header{
+    width: 981px;
+    height: 20px;
+}
+
+#departments-list-widget #departments-list-widget-title{
+    width: 174px;
+    height: 20px;
+    font-family: 'helvetica_neuethin';
+    font-size: 22px;
+    color: #131313;
+    float: left;
+}
+
+#departments-list-widget #departments-list-widget-seperator{
+    width: 807px;
+    height: 20px;
+    float: left;
+    background: url('images/home-departments-widget/seperator.png') repeat-x;
+}
+
+#departments-list-widget #departments-list-widget-items{
+    width: 981px;
+    margin-top: 25px;
+    overflow: hidden;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item{
+    width: 234px;
+    height: 222px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item:not(:nth-child(4n)){
+    margin-right: 15px;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content{
+    width: 232px;
+    height: 212px;
+    border: 1px solid #c2c2c2;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content:hover{
+    border: 1px solid #a6c8df;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content:hover > .department-item-region-left{
+    border-right: 1px solid #a6c8df;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-region-left{
+    width: 117px;
+    height: 212px;
+    border-right: 1px solid #c2c2c2;
+    background: #fff;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-image-holder{
+    width: 117px;
+    height: 100px;
+    margin-top: 9px;
+    margin-left: -2px;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-image-holder{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    top: 0px;
+    position: relative;
+    z-index: 50;
+    float: left;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-image-holder * {
+    vertical-align: middle;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-image-holder {
+    display: block;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-image-holder span {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-image-holder img{
+    max-width: 112px;
+    max-height: 100px;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-region-left{
+    float: left;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-region-right{
+    float: left;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-region-right .department-item-title{
+    width: 114px;
+    height: 55px;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-region-right .department-item-title span{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-family: 'helvetica_neuelight';
+    font-size: 16px;
+    color: #0868aa;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-region-right .department-item-title span:hover{
+    font-family: 'helvetica_neueregular';
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-region-right .department-item-sub-list{
+    width: 109px;
+    height: 152px;
+    padding-top: 5px;
+    margin-left: 5px;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-region-right .department-item-sub-list-item{
+    width: 114px;
+    height: 22px;
+    padding-top: 5px;
+    font-family: Arial;
+    font-size: 13px;
+    color: #404040;
+    display: block;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-content .department-item-region-right .department-item-sub-list-item:hover{
+    width: 112px;
+    margin-left: 2px;
+}
+
+#departments-list-widget #departments-list-widget-items .department-item .department-item-drop-shadow{
+    width: 231px;
+    height: 8px;
+    background: url('images/home-departments-widget/widget-drop-shadow.png') no-repeat;
+}

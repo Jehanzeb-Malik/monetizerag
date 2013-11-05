@@ -26,9 +26,13 @@ add_action('wp_enqueue_scripts', 'api_scripts_method');
 
 function api_scripts_method() {
 
-    /////////////////////////// jQuery.min \\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    wp_register_script('jquery.min', plugins_url() . '/widget-plugin/Script/jquery.min.js');
-    wp_enqueue_script('jquery.min');
+    wp_enqueue_script('jquery');
+    
+    wp_enqueue_style('jquery-ui-effects-style', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
+    
+    wp_deregister_script('jquery-ui-effects-style');
+    wp_register_script('jquery-ui-effects-style', 'http://code.jquery.com/ui/1.10.3/jquery-ui.js', array('jquery'));
+    wp_enqueue_script('jquery-ui-effects-style');
     
     wp_deregister_script('script-common');
     wp_register_script('script-common', plugins_url() . '/widget-plugin/Script/script-common.js');
@@ -180,6 +184,7 @@ class wp_my_plugin extends WP_Widget {
         if ($name && !empty($name)) {    /////////////////////////????????????????????????????????????
             //$this->define_view($name, $page, $title);
             $func_name = 'load_' . $abc;
+//            echo $func_name;exit;
             $this->$func_name($page, $title);
         }
         /* After widget (defined by themes). */
@@ -208,13 +213,13 @@ class wp_my_plugin extends WP_Widget {
 
     function widget_lists() {
         $lists = array(
-            'testing_widget_1' => 'A testing widget 1',
-            'EG_Shop_Home_Main' => 'test etst',
             'Monetizer101_Home_Slider' => 'Monetizer101 Home Page Slider',
             'Monetizer101_Home_Department' => 'Monetizer101 Home Page Department box',
-            'Monetizer101_All_Sellers' => 'Monetizer101 All Sellers Widget',
+            'all_sellers' => 'All Sellers Widget',
             'Monetizer101_Narrow_Results' => 'Monetizer101 Narrow Results Widget',
-            'product_viewer' => 'Product Viewer'
+            'product_viewer' => 'Product Viewer',
+            'category_basic' => 'Category Basic',
+            'search_basic' => 'Search Basic'
         );
         return $lists;
     }
@@ -225,9 +230,6 @@ class wp_my_plugin extends WP_Widget {
      * when creating your form elements. This handles the confusing stuff.
      * @param $instance
      */
-    function load_testing_widget_1($page, $title) {
-        include('View/testing_widget_1.html');
-    }
 
     ///////////////////////// Monetizer101_Narrow_Results \\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -265,11 +267,12 @@ class wp_my_plugin extends WP_Widget {
 
         include('View/Monetizer101_Home_Slider.html');
 
-//        wp_print_scripts('Monetizer101_Home_Slider');
         wp_register_script('Monetizer101_Home_Slider', plugins_url() . '/widget-plugin/Script/Monetizer101_Home_Slider.js');
-        wp_enqueue_script('Monetizer101_Home_Slider');
+        
+        wp_register_script('flexslider', plugins_url() . '/widget-plugin/Script/jquery.flexslider-min.js');
 
         wp_enqueue_style('Monetizer101_Home_Slider_Style', plugins_url() . '/widget-plugin/Style/Monetizer101_Home_Slider.css');
+        wp_enqueue_style('flexslider_style', plugins_url() . '/widget-plugin/Style/flexslider.css');
     }
 
     ///////////////////////// Monetizer101_Home_Department \\\\\\\\\\\\\\\\\\\\\\\\
@@ -287,14 +290,52 @@ class wp_my_plugin extends WP_Widget {
     
     ///////////////////////// Monetizer101_All_Sellers \\\\\\\\\\\\\\\\\\\\\\\\
 
-    function load_Monetizer101_All_Sellers($page, $title) {
+    function load_all_sellers($page, $title) {
 
-        include('View/Monetizer101_All_Sellers.html');
+        include('View/all_sellers.html');
 
-        wp_register_script('Monetizer101_All_Sellers', plugins_url() . '/widget-plugin/Script/Monetizer101_All_Sellers.js');
-        wp_enqueue_script('Monetizer101_All_Sellers');
+        wp_register_script('all_sellers_script', plugins_url() . '/widget-plugin/Script/all_sellers.js');
         
-        wp_enqueue_style('Monetizer101_All_Sellers', plugins_url() . '/widget-plugin/Style/Monetizer101_All_Sellers.css');
+        wp_enqueue_style('all_sellers_style', plugins_url() . '/widget-plugin/Style/all_sellers.css');
+    }
+    
+    ///////////////////////// Category Basic \\\\\\\\\\\\\\\\\\\\\\\\
+
+    function load_category_basic($page, $title) {
+
+        include('View/category_basic.html');
+
+        wp_deregister_script('all_sellers_script');
+        wp_register_script('all_sellers_script', plugins_url() . '/widget-plugin/Script/category_basic.js');
+        wp_enqueue_script('all_sellers_script');
+        
+        wp_enqueue_style('all_sellers_style', plugins_url() . '/widget-plugin/Style/category_basic.css');
+    }
+    
+    ///////////////////////// Search Basic \\\\\\\\\\\\\\\\\\\\\\\\
+
+    function load_search_basic($page, $title) {
+
+        include('View/search_basic.html');
+
+        wp_deregister_script('search_basic_script');
+        wp_register_script('search_basic_script', plugins_url() . '/widget-plugin/Script/search_basic.js');
+        wp_enqueue_script('search_basic_script');
+        
+        wp_enqueue_style('search_basic_style', plugins_url() . '/widget-plugin/Style/search_basic.css');
+    }
+    
+    ///////////////////////// Sub Category Basic \\\\\\\\\\\\\\\\\\\\\\\\
+
+    function load_sub_category_basic($page, $title) {
+
+        include('View/sub_category_basic.html');
+
+        wp_deregister_script('all_sellers_script');
+        wp_register_script('all_sellers_script', plugins_url() . '/widget-plugin/Script/sub_category_basic.js');
+        wp_enqueue_script('all_sellers_script');
+        
+        wp_enqueue_style('all_sellers_style', plugins_url() . '/widget-plugin/Style/category_basic.css');
     }
 
 }
@@ -303,10 +344,23 @@ add_action('wp_footer', 'print_my_script');
 
 function print_my_script() {
     
+        
+    //Add Conditional Statements Here
+    wp_print_scripts('Monetizer101_Home_Slider');
+    wp_print_scripts('Monetizer101_Home_Slider');
+    wp_print_scripts('flexslider');
+    wp_print_scripts('flexslider_style');
+    
+    //Add Conditional Statements Here
+    wp_print_scripts('all_sellers_style');
+    wp_print_scripts('all_sellers_script');
+    wp_print_scripts('superfish_vertical');
+    wp_print_scripts('hover_intent');
+        
     //Add Conditional Statements Here
     wp_print_scripts('product_viewer_style');
-    wp_print_scripts('superfish_vertical');
     wp_print_scripts('product_viewer_script');
+    wp_print_scripts('superfish_vertical');
     wp_print_scripts('hover_intent');
     
     //Add Conditional Statements Here

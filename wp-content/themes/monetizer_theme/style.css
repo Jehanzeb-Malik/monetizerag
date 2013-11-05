@@ -71,6 +71,25 @@ h6 {
     clear: both;
 }
 
+.loading-container{
+    width: 100%;
+    height: 340px;
+}
+
+.loading-container img{
+    display: block;
+    margin: 10px auto;
+}
+
+.loading-container .loading-container-text{
+    width: 100%;
+    margin: 0px auto;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    color: #373737;
+}
 /*#######################################################################################################
 ------------------------------------------------HEADER-------------------------------------------------
 #######################################################################################################*/
@@ -91,6 +110,11 @@ h6 {
     margin: 0 auto;
 }
 
+
+#full-width-content-area{
+    width: 981px;
+    margin: 10px auto;
+}
 
 #left-sidebar{
     width: 228px;
@@ -161,9 +185,54 @@ h6 {
     left: 260px;
     top: 25px;
 }
+#header #top-bar2 #drop-down-lists .dropdown-container{
+    width: 246px;
+    height: 40px;
+    float: left;
+}
 
 #header #top-bar2 #drop-down-lists #drop-down-list2 > select{
     height: 40px;
+}
+
+#header #top-bar2 #drop-down-lists #drop-down-list3{
+    margin-left: 34px;
+}
+
+#header #header-iframe #top-bar2 #drop-down-lists #drop-down-list2{
+    margin-left: 13px;
+}
+
+#header #header-iframe #top-bar2 #drop-down-lists #drop-down-list3{
+    margin-left: 13px;
+}
+
+#header #top-bar2 #drop-down-lists #drop-down-list3 > select{
+    height: 40px;
+}
+
+#header #top-bar2 #drop-down-lists .search-input{
+    width: 185px;
+    height: 36px;
+    outline: 0;
+    border: 1px solid #d9d9d9;
+    border-right: 0px;
+    font-family: Calibri;
+    font-size: 17px;
+    color: #656565;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+}
+
+#header #top-bar2 #drop-down-lists .search-button-header{
+    background: url('images/button-2.png') no-repeat;
+    width: 40px;
+    height: 40px;
+    outline: 0;
+    border: 0px;
+    cursor: pointer;
+    float: left;
 }
 
 .sf-menu > li.current{
@@ -317,7 +386,16 @@ select {
     font-size: 18px;
     color: #fff;
     background-color: #ed7500;
+    position: absolute;
+    right: 0px;
 }
+
+
+/**** Styling (Positioning) of Header for iFrame - Start ****/
+#header #header-iframe #top-bar2 #drop-down-lists{
+    left: 0px;
+}
+/**** Styling (Positioning) of Header for iFrame - End   ****/
 /*#######################################################################################################
 ------------------------------------------------HEADER-2-------------------------------------------------
 #######################################################################################################*/
@@ -389,7 +467,7 @@ select {
 }
 /*input tag for the dropdown list*/
 .styled-list{
-    width: 250px;
+    width: 246px;
     height: 34px;
     overflow: hidden;
     border: 1px solid #d9d9d9;

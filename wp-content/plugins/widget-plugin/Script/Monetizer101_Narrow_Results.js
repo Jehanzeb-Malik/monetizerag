@@ -1,13 +1,13 @@
-$(document).ready(function() {
+jQuery(document).ready(function() {
     
-    var faqTab = $('.faq-row-handle'),
-    faqTabContainer = $('.faq-row-container');
+    var faqTab = jQuery('.faq-row-handle'),
+    faqTabContainer = jQuery('.faq-row-container');
     
     if(faqTab.length){
 
         faqTab.off('click').on('click', function(){
-            var faqRow = $(this).parent(),
-            faqContent = $(this).parent().find('.faq-row-content');
+            var faqRow = jQuery(this).parent(),
+            faqContent = jQuery(this).parent().find('.faq-row-content');
 
             faqTabContainer.find('.faq-row').not(faqRow).removeClass('open');
             

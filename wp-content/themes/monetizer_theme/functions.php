@@ -499,9 +499,94 @@ function include_header_files(){
 function monetizer101_widgets_init() {
     
     register_sidebar(array(
+            'name' => __('Home Page Content Area', 'monetizer_theme'),
+            'id' => 'home_page_content_area',
+            'description' => __('Home Page Content Area', 'monetizer_theme'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
+        ));
+    register_sidebar(array(
             'name' => __('All Sellers Main Content Area', 'monetizer_theme'),
             'id' => 'all_sellers_content_area',
             'description' => __('All Sellers Content Area', 'monetizer_theme'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
+        ));
+    register_sidebar(array(
+            'name' => __('Categories Basic Left Content Area', 'monetizer_theme'),
+            'id' => 'categories_basic_left_content_area',
+            'description' => __('Categories Basic Left Content Area', 'monetizer_theme'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
+        ));
+    
+    register_sidebar(array(
+            'name' => __('Categories Basic Main Content Area', 'monetizer_theme'),
+            'id' => 'categories_basic_content_area',
+            'description' => __('Categories Basic Content Area', 'monetizer_theme'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
+        ));
+    register_sidebar(array(
+            'name' => __('Sub Categories Basic Left Content Area', 'monetizer_theme'),
+            'id' => 'sub_categories_basic_left_content_area',
+            'description' => __('Sub Categories Basic Left Content Area', 'monetizer_theme'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
+        ));
+    
+    register_sidebar(array(
+            'name' => __('Sub Categories Basic Main Content Area', 'monetizer_theme'),
+            'id' => 'sub_categories_basic_content_area',
+            'description' => __('Sub Categories Basic Content Area', 'monetizer_theme'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
+        ));
+    register_sidebar(array(
+            'name' => __('Seller Basic Left Content Area', 'monetizer_theme'),
+            'id' => 'seller_basic_left_content_area',
+            'description' => __('Seller Basic Left Content Area', 'monetizer_theme'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
+        ));
+    
+    register_sidebar(array(
+            'name' => __('Seller Basic Main Content Area', 'monetizer_theme'),
+            'id' => 'seller_basic_content_area',
+            'description' => __('Seller Basic Content Area', 'monetizer_theme'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
+        ));
+    register_sidebar(array(
+            'name' => __('Search Basic Left Content Area', 'monetizer_theme'),
+            'id' => 'seller_basic_left_content_area',
+            'description' => __('Seller Basic Left Content Area', 'monetizer_theme'),
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
+        ));
+    
+    register_sidebar(array(
+            'name' => __('Search Basic Main Content Area', 'monetizer_theme'),
+            'id' => 'seller_basic_content_area',
+            'description' => __('Seller Basic Content Area', 'monetizer_theme'),
             'before_widget' => '',
             'after_widget' => '',
             'before_title' => '',
