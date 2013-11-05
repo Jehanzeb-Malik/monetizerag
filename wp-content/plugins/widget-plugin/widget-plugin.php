@@ -217,6 +217,7 @@ class wp_my_plugin extends WP_Widget {
             'Monetizer101_Home_Department' => 'Monetizer101 Home Page Department box',
             'all_sellers' => 'All Sellers Widget',
             'Monetizer101_Narrow_Results' => 'Monetizer101 Narrow Results Widget',
+            'Monetizer101_Pop_up_widget' => 'Monetizer101 Product Popup Widget',
             'product_viewer' => 'Product Viewer',
             'category_basic' => 'Category Basic',
             'search_basic' => 'Search Basic'
@@ -337,6 +338,19 @@ class wp_my_plugin extends WP_Widget {
         
         wp_enqueue_style('all_sellers_style', plugins_url() . '/widget-plugin/Style/category_basic.css');
     }
+      
+    ///////////////////////// Monetizer101_Pop_up_widget \\\\\\\\\\\\\\\\\\\\\\\\
+
+    function load_Monetizer101_Pop_up_widget($page, $title) {
+
+        include('View/Monetizer101_Pop_up_widget.html');
+
+        wp_register_script('Monetizer101_Pop_up_widget', plugins_url() . '/widget-plugin/Script/Monetizer101_Pop_up_widget.js');
+        wp_enqueue_script('Monetizer101_Pop_up_widget');
+        
+        wp_enqueue_style('Monetizer101_Pop_up_widget', plugins_url() . '/widget-plugin/Style/Monetizer101_Pop_up_widget.css');
+    }
+
 
 }
 

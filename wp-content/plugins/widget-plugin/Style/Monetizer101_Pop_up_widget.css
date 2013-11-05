@@ -1,0 +1,103 @@
+.overlay {
+    position:absolute;
+    display:none; 
+
+    /* color with alpha transparency */
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* stretch to screen edges */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.popup {
+    position: absolute;
+    width: 810px;
+    height: 573px;
+    display: none;
+    background-color: white;
+
+    /* center it ? */
+    top: 30%;
+    left: 30%;
+    margin-left: -150px;
+    margin-top: -75px;
+}
+
+.popup #box1{
+    position: relative;
+    width: 357px;
+    height: 573px;
+    border: 1px solid #aeaeae;
+    float: left;
+    background: #ebf4f4;
+}
+
+.popup #box2{
+    position: relative;
+    float: left;
+}
+.popup #box2 #bar1{
+    position: relative;
+    width: 394px;
+    /*    height: 573px;*/
+    border-bottom: 1px solid #aeaeae;
+    margin-left: 29px;
+}
+.popup #box2 #bar1 p{
+    font-family: 'helvetica_neuelight'; font-size: 19px; color: #096fae;
+}
+.popup #box2 #bar2{
+    position: absolute;
+    width: 394px;
+    height: 63px;
+    border-bottom: 1px solid #aeaeae;
+    margin-left: 29px;
+    top: 75px;
+}
+.popup #box2 #bar2 p{
+    font-family: 'helvetica_neueregular'; font-size: 23px; color: #096fae; float: left; padding-right: 22px;
+}
+.popup #box2 #bar3{
+    position: absolute;
+    width: 394px;
+    height: 78px;
+    border-bottom: 1px solid #aeaeae;
+    margin-left: 29px;
+    top: 135px;
+}
+.popup #box2 #bar3 p{
+    float: left; padding-right: 18px;
+}
+.popup #box2 #bar3 #logo{
+    width: 88px;
+    height: 48px;
+}
+.popup #box2 #bar3 #view_store{
+    font-family: calibri; font-size: 15px; color: white; background: url('images/Monetizer101_Popup_view_store.png') no-repeat;
+    font-weight: bold; top: 22px;
+    padding: 8px 20px 10px 44px;
+    position: absolute;
+}
+.popup #box2 #bar4{
+    position: absolute;
+    width: 394px;
+    margin-left: 29px;
+    top: 213px;
+}
+.popup #box2 #bar4 p{
+    font-family: calibri; font-size: 18px;
+}
+.popup #box2 #bar4 #points{
+    font-family: calibri; font-size: 17px; color: #595959; margin-left: -38px;
+}
+.popup #popup_close{
+    position: absolute;
+    background: url('images/Monetizer101_Popup_close_button.png') no-repeat;
+    width: 28px;
+    height: 28px;
+    left: 796px;
+    top: -13px;
+    cursor: pointer;
+}
