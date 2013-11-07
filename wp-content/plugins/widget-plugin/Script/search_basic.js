@@ -101,6 +101,7 @@ function loadSearchWidgets(){
         function( jsResponse )
         {
             Commons.consoleLogger.debug( JSON.stringify(jsResponse) );
+            console.log(jsResponse);
             
             var layout = getParameterByName('layout');
             var showCategory = false;

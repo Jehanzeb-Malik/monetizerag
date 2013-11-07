@@ -23,6 +23,10 @@ function loadHomeWidgets(){
                 var example = jQuery('#departments-dropdown').superfish({
                     width: '246px'
                 });
+                jQuery('#drop-down-list2-404').html(createMarkup('', jsResponse.data, true, 0));
+                var example = jQuery('#departments-dropdown-404').superfish({
+                    width: '246px'
+                });
 //            }
         });
     

@@ -3,7 +3,7 @@
     <div id="grid-container" style="margin-left: -5px;">
     {{/showlayout}}
         {{#data}}
-        <div class="grid-product product-{{layout}}" id="product-{{index}}">
+        <div class="grid-product product-{{layout}} {{classes}}" id="product-{{index}}">
             <div class="product-widget-content">
                 <div class="product-image-holder">
                     <span></span>
@@ -12,7 +12,7 @@
                 <div class="product-title">
                     <span class="product-name">{{name}}</span>
                     {{#showCategory}}
-                    <span class="product-category">Party Dresses</span>
+                    <span class="product-category">{{categoryName}}</span>
                     {{/showCategory}}
                 </div>
                 <div class="product-price">
@@ -20,7 +20,9 @@
                         <span class="product-original-price">&#{{currencyType}} {{retailPrice}}</span>
                         <span class="product-discounted-price">&#{{currencyType}} {{salePrice}}</span>
                     </div>
+                    <a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&categoryIds={{id}}&percentOffMin=30&resultLimit=&resultOffset=200">
                     <div class="product-price-next-btn"></div>
+                    </a>
                 </div>
                 <div class="product-merchant-logo">
                     <span></span>

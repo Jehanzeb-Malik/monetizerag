@@ -61,3 +61,27 @@ function getParameterByName(name)
         console.log(e.message);
     }
 }
+
+
+/********************************************/
+/*    Get Category name against ID       */
+/********************************************/
+
+function getCategoryName(data, id, name){
+    try {
+        var category_name = name;
+        for(var x in data){
+            if(data[x].id == id){
+                category_name = data[x].name;
+                break;
+            }
+            else if(data[x].children && data[x].children.length > 0 && name != ''){
+                category_name = getCategoryName(data[x].children, id, category_name);
+            }
+        }
+        
+        return category_name;
+    } catch (e) {
+        console.log(e.message);
+    }
+}
