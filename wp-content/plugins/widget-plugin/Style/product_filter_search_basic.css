@@ -1,0 +1,175 @@
+#product-filter-widget-wrapper{
+    width: 228px;
+    overflow: hidden;
+}
+
+#product-filter-widget-wrapper #product-filter-widget-container{
+    width: 226px;
+    overflow: hidden;
+}
+
+#product-filter-widget-wrapper #product-filter-widget-container #product-filter-widget-title{
+    width: 224px;
+    height: 52px;
+    border-left: 1px solid #e6eaed;
+    border-top: 1px solid #e6eaed;
+    border-right: 1px solid #e6eaed;
+    font-family: Calibri;
+    font-weight: Bold;
+    font-size: 18px;
+    text-align: center;
+    background: #fff;
+    color: #096fae;
+    position: relative;
+}
+
+#product-filter-widget-wrapper #product-filter-widget-container #product-filter-widget-title span{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 2px;
+    top: 13px;
+}
+
+#product-filter-widget-wrapper #product-filter-widget-container #panelbar{
+    display: none;
+}
+
+.k-panelbar>.k-item>.k-link {
+    border-color: #e6eaed !important;
+}
+
+.k-panelbar>li>.k-link {
+    color: #096fae !important;
+}
+
+.k-block, .k-header, .k-grid-header, .k-toolbar, .k-grouping-header, .k-pager-wrap, .k-button, .k-draghandle {
+    background-color: #f4fbff !important;
+}
+
+.k-state-hover,
+.k-state-hover:hover,
+.k-splitbar-horizontal-hover:hover,
+.k-splitbar-vertical-hover:hover,
+.k-list>.k-state-hover,
+.k-scheduler .k-scheduler-toolbar ul li.k-state-hover,
+.k-pager-wrap .k-link:hover,
+.k-dropdown .k-state-focused,
+.k-imagebrowser-dropzone {
+    color: #096fae !important;
+    background-color: #f4fbff !important;
+    border-color: #e6eaed !important;
+}
+
+.k-state-focused.k-state-selected,
+.k-list>.k-state-focused.k-state-selected,
+.k-listview>.k-state-focused.k-state-selected,
+td.k-state-focused.k-state-selected,
+.k-button:focus:active {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.k-header,
+.k-button:hover,
+.k-button:focus,
+.k-button.k-state-focused,
+.k-textbox:hover,
+.k-state-hover,
+.k-state-hover:hover,
+.k-pager-wrap .k-link:hover,
+.k-other-month.k-state-hover .k-link,
+div.k-imagebrowser-dropzone em,
+.k-draghandle:hover {
+    background-image: none;
+    background-color: #f4fbff !important;
+}
+
+.k-panelbar>li.k-item{
+    background-color: #f4fbff !important;
+}
+
+.k-panelbar-expand,
+.k-panelbar-collapse {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+}
+
+.k-panelbar .k-content,
+.k-panelbar .k-panel,
+.k-panelbar .k-item {
+    border-color: #e6eaed !important;
+}
+
+.k-link{
+    overflow: hidden;
+}
+
+.k-state-selected,
+.k-state-selected:link,
+.k-state-selected:visited,
+.k-list>.k-state-selected,
+.k-list>.k-state-highlight,
+.k-panel>.k-state-selected,
+.k-button:active,
+.k-ghost-splitbar-vertical,
+.k-ghost-splitbar-horizontal,
+.k-draghandle.k-state-selected:hover,
+.k-scheduler .k-scheduler-toolbar .k-state-selected,
+.k-marquee-color {
+    color: #000 !important;
+    background-color: #f4fbff !important;
+    border-color: #e6eaed !important;
+}
+
+.product-filter-menu-item{
+    height: 38px;
+}
+
+.product-filter-menu-item,
+.product-filter-menu-item span.k-link{
+    color: #303030 !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: default;
+}
+.product-filter-menu-item:hover,
+.product-filter-menu-item > span.k-link:hover{
+    color: #303030 !important;
+    background-color: #ffffff !important;
+}
+
+.product-filter-menu-item span.k-link .product-filter-menu-item-label{
+    width: 100%;
+    font-family: Calibri !important;
+    font-size: 18px !important;
+    cursor: pointer;
+}
+
+.checkbox, .radio {
+    width: 19px;
+    height: 25px;
+    padding: 0 5px 0 0;
+    background: url('images/product-filter/checkbox.png') no-repeat;
+    display: block;
+    clear: left;
+    float: left;
+    position: relative;
+    top: 7px;
+}
+
+.radio {
+    background: url('images/product-filter/radio.png') no-repeat;
+}
+
+input.styled {
+    display: none;
+}
+
+.disabled {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}

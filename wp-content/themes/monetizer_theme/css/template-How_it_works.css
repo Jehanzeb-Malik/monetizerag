@@ -1,9 +1,40 @@
-#main #boxes{
-    margin-left: 86px;
-    margin-top: 50px;
+#how-does-it-work-container{
     position: relative;
-    width: 1000px;
+    width: 981px;
+    overflow: hidden;
 }
+
+#how-does-it-work-container #boxes{
+    position: relative;
+    width: 981px;
+    height: 325px;
+    margin: 30px auto;
+}
+
+.step-count{
+    position: relative;
+    width: 232px;
+    float: left;
+}
+
+.step-count:not(:nth-child(4n)){
+    margin-right: 17px;
+}
+
+.step-count span{
+    display: block;
+}
+
+.step-count img{
+    position: relative;
+    left: 65px;
+    top: 50px;
+}
+
+.step-count .box-container{
+    position: relative;
+}
+
 .circle{
     background-color: #0866a6; 
     position: absolute;
@@ -37,81 +68,107 @@
 #main #boxes #step1 #circle1{
     position: absolute;
     top: -20px;
-    left: 112px;
+    left: 102px;
+    z-index: 1;
 }
 
 #main #boxes #step1 #box1{
     width: 230px; height: 293px;
     border: 1px solid #d4d4d4;
-    margin-left: 18px;
     float: left;
 }
 
 #main #boxes #step2{
-    
+
 }
 
 #main #boxes #step2 #circle2{
     position: absolute;
     top: -20px;
-    left: 362px;
+    left: 102px;
+    z-index: 1;
 }
 
 #main #boxes #step2 #box2{
     width: 230px; height: 293px;
     border: 1px solid #d4d4d4;
-    margin-left: 18px;
     float: left;
 }
 #main #boxes #step3 #circle3{
     position: absolute;
     top: -20px;
-    left: 612px;
+    left: 102px;
+    z-index: 1;
 }
 
 #main #boxes #step3 #box3{
     width: 230px; height: 293px;
     border: 1px solid #d4d4d4;
-    margin-left: 18px;
     float: left;
 }
 #main #boxes #step4 #circle4{
     position: absolute;
     top: -20px;
-    left: 862px;
+    left: 102px;
+    z-index: 1;
 }
 
 #main #boxes #step4 #box4{
     width: 230px; height: 293px;
     border: 1px solid #d4d4d4;
-    margin-left: 18px;
     float: left;
 }
 
 #main #box_arrows{
-    
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 78px;
 }
 
 #main #box_arrows #box_arrow1{
     width: 62px;
     height: 15px;
-    position: absolute;
-    left: 315px;
-    top: 47px;
+    position: relative;
+    left: 209px;
+    top: 10px;
 }
 
 #main #box_arrows #box_arrow2{
     width: 62px;
     height: 15px;
-    position: absolute;
-    left: 568px;
-    top: 47px;
+    position: relative;
+    left: 392px;
+    top: 10px;
 }
 
 #main #box_arrows #box_arrow3{
     width: 62px;
     height: 15px;
-    position: absolute;
-    left: 817px;
-    top: 47px;
+    position: relative;
+    left: 575px;
+    top: 10px;
+}
+
+.how-it-works-box-title{
+    position: relative;
+    top: 52px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    font-family: Calibri;
+    font-size: 25px;
+    color: #303030;
+}
+
+.how-it-works-box-text{
+    position: relative;
+    top: 38px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Calibri;
+    font-size: 17px;
+    color: #303030;
 }

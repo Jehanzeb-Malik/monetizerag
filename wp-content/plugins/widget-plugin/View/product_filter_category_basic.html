@@ -1,0 +1,44 @@
+<script id="product_filter_sub_categories_tpl" type="text/xml">
+    {{#.}}
+    <li class="product-filter-menu-item"><input id="product-filter-sub-category-checkbox-{{id}}" type="checkbox" name="product-filter-sub-category-checkbox" class="product-filter-sub-category styled" checked /><label class="product-filter-menu-item-label" for="product-filter-sub-category-checkbox-{{id}}">{{name}}</label></li>
+    {{/.}}
+</script>
+<div id="product-filter-widget-wrapper">
+    <div id="product-filter-widget-container">
+        <div id="product-filter-widget-title">
+            <span>NARROW YOUR RESULTS</span>
+        </div>
+        <ul id="panelbar">
+            <li id="product-filter-sub-category-list" class="filter-panelbar-item k-state-active">
+                Sub Category
+                <ul>
+
+                </ul>
+            </li>
+            <li class="filter-panelbar-item k-state-active">
+                PRICE
+                <div class="filter-panelbar-price">
+                    <div class="filter-panelbar-price-wrapper">
+                        <span class="filter-panelbar-price-currency-type">$</span>
+                        <input id="filter-panelbar-price-min-amount" class="filter-panelbar-price-amount" />
+                        
+                        <span class="filter-panelbar-price-currency-type"> to $</span>
+                        <input id="filter-panelbar-price-max-amount" class="filter-panelbar-price-amount" />
+                        
+                        <div id="filter-panelbar-price-select"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="filter-panelbar-item k-state-active">
+                DISCOUNT
+                <ul>
+                    <li class="product-filter-menu-item"><input type="checkbox" name="product-filter-discount-checkbox" id="product-filter-discount-checkbox-60" class="product-filter-discount styled" checked /><label class="product-filter-menu-item-label" for="product-filter-discount-checkbox-60">+60% off</label></li>
+                    <li class="product-filter-menu-item"><input type="checkbox" name="product-filter-discount-checkbox" id="product-filter-discount-checkbox-50" class="product-filter-discount styled" checked /><label class="product-filter-menu-item-label" for="product-filter-discount-checkbox-50">+50% off</label></li>
+                    <li class="product-filter-menu-item"><input type="checkbox" name="product-filter-discount-checkbox" id="product-filter-discount-checkbox-40" class="product-filter-discount styled" checked /><label class="product-filter-menu-item-label" for="product-filter-discount-checkbox-40">+40% off</label></li>
+                    <li class="product-filter-menu-item"><input type="checkbox" name="product-filter-discount-checkbox" id="product-filter-discount-checkbox-30" class="product-filter-discount styled" checked /><label class="product-filter-menu-item-label" for="product-filter-discount-checkbox-30">+30% off</label></li>
+                    <li class="product-filter-menu-item"><input type="checkbox" name="product-filter-discount-checkbox" id="product-filter-discount-checkbox-less-30" class="product-filter-discount styled" checked /><label class="product-filter-menu-item-label" for="product-filter-discount-checkbox-less-30">less than 30% off</label></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

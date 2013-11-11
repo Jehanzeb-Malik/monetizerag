@@ -1,3 +1,17 @@
+<script id="slider-popular-sub-categories" type="text/xml">
+    {{#data}}
+    {{#show}}
+    <a href="<?php echo bloginfo('siteurl'); ?>/category/?id={{id}}&layout=3col&sort=1"><span class="region-left-list-item">{{name}}</span></a>
+    {{/show}}
+    {{/data}}
+</script>
+
+<script id="slider-slide-sub-categories" type="text/xml">
+    {{#.}}
+    <li><a href="<?php echo bloginfo('siteurl'); ?>/category/?id={{id}}&layout=3col&sort=1">{{name}}</a></li>
+    {{/.}}
+</script>
+
 <div id="home-page-slider">
     <div id="content-wrapper">
         <div id="region-left">
@@ -6,12 +20,7 @@
                     POPULAR DEPARTMENTS
                 </div>
                 <div id="slider-popular-departments-list">
-                    <a href=""><span class="region-left-list-item">Handbags and Purses</span></a>
-                    <a href=""><span class="region-left-list-item">Jewelry</span></a>
-                    <a href=""><span class="region-left-list-item">Fragrances</span></a>
-                    <a href=""><span class="region-left-list-item">Cosmetics</span></a>
-                    <a href=""><span class="region-left-list-item">Women Clothing</span></a>
-                    <a href=""><span class="region-left-list-item">Kids Clothing</span></a>
+
                 </div>
             </div>
             <div id="slider-popular-more-ways">
@@ -19,11 +28,11 @@
                     MORE WAYS TO SAVE
                 </div>
                 <div id="slider-popular-more-ways-list">
-                    <a href=""><span class="region-left-list-item">60% off</span></a>
-                    <a href=""><span class="region-left-list-item">50% off</span></a>
-                    <a href=""><span class="region-left-list-item">New Arrivals</span></a>
-                    <a href=""><span class="region-left-list-item">Under 20%</span></a>
-                    <a href=""><span class="region-left-list-item">Brands</span></a>
+                    <a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&categoryIds=&percentOffMin=80&resultLimit=24&resultOffset=0&layout=3col&sort=1"><span class="region-left-list-item">80% off</span></a>
+                    <a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&categoryIds=&percentOffMin=60&resultLimit=24&resultOffset=0&layout=3col&sort=1"><span class="region-left-list-item">60% off</span></a>
+                    <a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&categoryIds=&percentOffMin=50&resultLimit=24&resultOffset=0&layout=3col&sort=1"><span class="region-left-list-item">50% off</span></a>
+                    <a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&categoryIds=&percentOffMin=30&resultLimit=24&resultOffset=0&layout=3col&sort=1"><span class="region-left-list-item">30% off</span></a>
+                    <a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&categoryIds=&percentOffMax=20&resultLimit=24&resultOffset=0&layout=3col&sort=1"><span class="region-left-list-item">Under 20%</span></a>
                 </div>
             </div>
         </div>
@@ -55,53 +64,53 @@
             <div class="slide-info" id="slide-1">
                 <div class="slide-title">Fashion</div>
                 <ul>
-                    <li><a href="">Seasonal</a></li>
+<!--                    <li><a href="">Seasonal</a></li>
                     <li><a href="">Clothing</a></li>
                     <li><a href="">Jewelry</a></li>
                     <li><a href="">Bags & Luggage</a></li>
                     <li><a href="">Shoes</a></li>
-                    <li><a href="">Special Occasion</a></li>
+                    <li><a href="">Special Occasion</a></li>-->
                 </ul>
             </div>
             <div class="slide-info" id="slide-2">
                 <div class="slide-title">Beauty<br>&<br>Health</div>
                 <ul>
-                    <li><a href="">Beauty</a></li>
-                    <li><a href="">Vision Care</a></li>
+<!--                    <li><a href="">Beauty</a></li>
+                    <li><a href="">Vision Care</a></li>-->
                 </ul>
             </div>
             <div class="slide-info" id="slide-3">
                 <div class="slide-title">Electronics</div>
                 <ul>
-                    <li><a href="">Computer & Software</a></li>
+<!--                    <li><a href="">Computer & Software</a></li>
                     <li><a href="">Cellphones & Tablets</a></li>
                     <li><a href="">Audio & Video</a></li>
                     <li><a href="">Photography</a></li>
-                    <li><a href="">Accessories</a></li>
+                    <li><a href="">Accessories</a></li>-->
                 </ul>
             </div>
             <div class="slide-info" id="slide-4">
                 <div class="slide-title">Home<br>&<br>Garden</div>
                 <ul>
-                    <li><a href="">Home</a></li>
+<!--                    <li><a href="">Home</a></li>
                     <li><a href="">Garden</a></li>
                     <li><a href="">Food & Drinks</a></li>
-                    <li><a href="">Pets & Animal Gear</a></li>
+                    <li><a href="">Pets & Animal Gear</a></li>-->
                 </ul>
             </div>
             <div class="slide-info" id="slide-5">
                 <div class="slide-title">Free Time</div>
                 <ul>
-                    <li><a href="">Books & Magazines</a></li>
+<!--                    <li><a href="">Books & Magazines</a></li>
                     <li><a href="">Travel</a></li>
-                    <li><a href="">Sports</a></li>
+                    <li><a href="">Sports</a></li>-->
                 </ul>
             </div>
             <div class="slide-info" id="slide-6">
                 <div class="slide-title">Toys<br>&<br>Gifts</div>
                 <ul>
-                    <li><a href="">Gifts Gadgets & Toys</a></li>
-                    <li><a href="">Baby & Kids</a></li>
+<!--                    <li><a href="">Gifts Gadgets & Toys</a></li>
+                    <li><a href="">Baby & Kids</a></li>-->
                 </ul>
             </div>
             <div id="bottom-image"></div>

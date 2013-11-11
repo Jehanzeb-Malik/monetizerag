@@ -1,18 +1,21 @@
 <script id="product_viewer_tpl" type="text/xml">
-    {{#showlayout}}
-    <div id="grid-container" style="margin-left: -5px;">
-    {{/showlayout}}
+    {{#showLayoutWithMargin}}
+    <div id="grid-container" style="margin-left: -5px; width: 103%">
+    {{/showLayoutWithMargin}}
+    {{#showLayoutWithoutMargin}}
+    <div id="grid-container" style="width: 103%">
+    {{/showLayoutWithoutMargin}}
         {{#resultList}}
         <div class="grid-product product-{{layout}}" id="product-{{index}}">
             <div class="product-widget-content">
-                <div class="product-image-holder">
+                <div class="product-image-holder" onclick="drawPopover(search_basic_product_list, {{id}})">
                     <span></span>
                     <img alt="{{name}}" src="{{imageURL}}">
                 </div>
                 <div class="product-title">
-                    <span class="product-name">{{name}}</span>
+                    <span class="product-name" onclick="drawPopover(search_basic_product_list, {{id}})">{{name}}</span>
                     {{#showCategory}}
-                    <span class="product-category">Party Dresses</span>
+                    <span class="product-category">{{subCatName}}</span>
                     {{/showCategory}}
                 </div>
                 <div class="product-price">
@@ -24,7 +27,7 @@
                 </div>
                 <div class="product-merchant-logo">
                     <span></span>
-                    <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/{{layout}}_affiliate_logo.png" >
+                    <img src="" >
                 </div>
             </div>
             <div class="product-widget-dropshadow"></div>
@@ -81,14 +84,14 @@
                     if (isset($_GET['layout'])) {
                     if ($_GET['layout'] == '2col') {
                     ?>
-                    <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_2x2_active.png">
+                    <img class="selected-layout" src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_2x2_active.png">
                     <?php } else {
                     ?>
                     <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_2x2_inactive.png">
                     <?php
                     }
                     } else{ ?>
-                    <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_2x2_active.png">
+                    <img class="selected-layout" src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_2x2_active.png">
                     <?php }
                     ?>
                 </div>
@@ -97,7 +100,7 @@
                     if (isset($_GET['layout'])) {
                     if ($_GET['layout'] == '3col') {
                     ?>
-                    <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_3x3_active.png">
+                    <img class="selected-layout" src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_3x3_active.png">
                     <?php } else {
                     ?>
                     <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_3x3_inactive.png">
@@ -113,7 +116,7 @@
                     if (isset($_GET['layout'])) {
                     if ($_GET['layout'] == '4col') {
                     ?>
-                    <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_4x4_active.png">
+                    <img class="selected-layout" src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_4x4_active.png">
                     <?php } else {
                     ?>
                     <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/product-viewer/btn_product_viewer_4x4_inactive.png">

@@ -1,83 +1,61 @@
-#main #error_msg{
-    position: relative;
-    bottom: 0px;
-    padding-bottom: 500px;
-    margin-left: -130px;
-    margin-top: -62px;
-}
-
-#main #error_msg #one {
-    font-family: 'helvetica_cyrillic_uprightRg', Myriad Pro;
-    position: absolute;
-    font-weight: bold;
-    font-size: 145px;
-    color: #346ea0;
-    top: -10px;
-    left: 420px;
-}
-#main #error_msg #two{
-    font-family: Myriad Pro;
-    position: absolute;
-    font-weight: lighter;
-    font-size: 63px;
-    color: #808080;
-    top: 125px;
-    left: 675px;
-}
-#main #error_msg #three{
-    font-family: Myriad Pro;
-    position: absolute;
-    font-weight: lighter;
-    font-size: 28px;
-    color: #808080;
-    top: 224px;
-    left: 680px;
-    width: 150px;
-}
-#main #error_msg #four{
-    font-family: Calibri;
-    position: absolute;
-    font-weight: lighter;
-    font-size: 18px;
-    color: #346ea0;
-    top: 274px;
-    left: 420px;
-    width: 430px;
-}
-#main #error_msg #four{
-    position: absolute;
-    top: 274px;
-    left: 420px;
-}
-#main #error_msg #five{
-    position: absolute;
-    top: 334px;
-    left: 400px;
-    width: 500px;
-}
-#main #error_msg #five #search{
-    width: 240px;
-    height: 36px;
+#not-found-widget-wrapper{
+    width: 981px;
     overflow: hidden;
-    border: 1px solid #d9d9d9;
-    color: #656565;
-    padding: 2px 10px;
-    font-family: calibri; font-size: 17px;
 }
-#main #error_msg #five .search-label{
-    position: absolute;
-    font-family: Calibri; font-weight: bold; font-size: 18px; color: white;
-    display: inline-block;
-    padding: 10px 12px 10px 12px;
-    margin: 0px 5px 0px 7px;
-    background-color: #ed7500;
 
+#not-found-widget-wrapper #widget-container{
+    width: 435px;
+    height: 227px;
+    margin: 40px auto;
 }
-#main #error_msg #five .search-label1-404{
-    position: absolute;
-    left: 385px;
-    display: inline-block;
-    padding: 12px 16px 11px 16px;
-    background-color: #346ea0;
-    margin: 0px 5px 0px 26px;
+
+#not-found-widget-wrapper #widget-container #not-found-message{
+    width: 435px;
+    height: 85px;
+    margin: 20px auto;
+    font-family: Calibri;
+    font-size: 18px;
+    color: #303030;
+    float: left;
+}
+
+#not-found-widget-wrapper #widget-container #not-found-search{
+    width: 435px;
+    height: 42px;
+    margin: 0;
+    font-family: Calibri;
+    font-size: 18px;
+    color: #303030;
+    float: left;
+}
+
+#not-found-widget-wrapper #widget-container #not-found-search #not-found-search-input{
+    width: 233px;
+    height: 36px;
+    border: 1px solid #d9d9d9;
+    border-right: 0px;
+    padding: 0px 5px;
+    font-family: Calibri;
+    font-size: 18px;
+    color: #303030;
+    float: left;
+}
+
+#not-found-widget-wrapper #widget-container #not-found-search #drop-down-search{
+    width: 131px;
+    height: 38px;
+    margin: 0px;
+    padding: 0px;
+    background: url('../images/not-found-search-all.png');
+    float: left;
+}
+
+#not-found-widget-wrapper #widget-container #not-found-search #page-not-found-search-btn{
+    width: 50px;
+    height: 38px;
+    margin-left: 5px;
+    padding: 0px;
+    background: url('../images/404-search-btn.png');
+    float: left;
+    cursor: pointer;
 }

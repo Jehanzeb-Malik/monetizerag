@@ -10,7 +10,6 @@ function loadMerchants(){
         function( jsResponse )
         {
             Commons.consoleLogger.debug( JSON.stringify(jsResponse) );
-        
             var merchantList = [];
             merchantList['A'] = [];
             merchantList['A'].list = [];
@@ -257,6 +256,7 @@ function loadMerchants(){
             //                jQuery("#link_box").append(output);
             //            }
             }
+            jQuery("#container_all_sellers .loading-container").hide();
             jQuery("#container_all_sellers").append(output);
             jQuery("#link_box #list").html(output_header);
             

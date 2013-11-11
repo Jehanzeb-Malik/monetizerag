@@ -33,7 +33,7 @@ jQuery(document).ready(function(){
         var newClass = 'product-' + layout;
         
         try{
-            jQuery('#grid-container').hide(500, function(){
+            jQuery('#grid-container').fadeOut(500, function(){
                 if(layout == '4col'){
                     jQuery('.product-category').hide();
                     jQuery('#grid-container').css({
@@ -51,7 +51,7 @@ jQuery(document).ready(function(){
                     });
                 }
                 jQuery('.grid-product').removeClass(currentClass).addClass(newClass);
-                jQuery('#grid-container').show(500);
+                jQuery('#grid-container').fadeIn(500);
             });
         } catch (e) {
             console.log(e.message);

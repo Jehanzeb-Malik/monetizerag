@@ -8,19 +8,23 @@
 ?>
 <?php get_header(); ?>
 
-<div id="error_msg">
-
-    <p id="one">404</p>
-    <p id="two">PAGE</p>
-    <p id="three">NOT FOUND</p>
-    <p id="four">The page you were looking for could not be found. Please 
-        try the search below to find what you are looking for.</p>
-    <p id="five">
-        <input id="search" type="text" name="SEARCH" placeholder="Search for a product or a brand">
-        <label class="search-label">SEARCH ALL <i class="icon-down-dir" style="color: white; font-size: 13px; padding-left: 5px;"></i></label>
-        <label class="search-label1"><i class="icon-search" style="color: white; font-size: 13px;"></i></label>
-    </p>
-
+<div id="not-found-widget-wrapper">
+    <div id="widget-container">
+        <span style="float: left; display: block; width: 260px; height: 104px; color: #005794; font-size: 138px; line-height: 105px; font-family: Arial; font-weight: bold;">404</span>
+        <span style="float: left; display: block; width: 175px; height: 104px; color: #808080; font-size: 63px; line-height: 58px; font-family: 'helvetica_neuethin';">PAGE<p style="display: block; line-height: 2px; font-family: 'helvetica_neuethin'; font-size: 29px;">NOT FOUND</p></span>
+        <div id="not-found-message">The page you were looking for could not be found.Please try the search below to find what you are looking for.</div>
+        <div id="not-found-search">
+            <input id="not-found-search-input" value="Search for a product or brand" onclick="javascript:if(this.value == 'Search for a product or brand'){this.value='';}" onfocus="javascript: if (this.defaultValue==this.value)this.value = '';" onblur="javascript:if(this.value == ''){this.value = 'Search for a product or brand';}"/>
+            <div id="drop-down-search" style="float: left;">
+<!--                <ul class="sf-menu" id="departments-dropdown">
+                    <li class="current">
+                        <input class="styled-list" readonly placeholder="Shop by Departments" style="background:  url('<?php // bloginfo('template_directory'); ?>/images/button-1.png') no-repeat 100%; padding: 2px 10px;"></input>
+                    </li>
+                </ul>-->
+            </div>
+            <div id="page-not-found-search-btn"></div>
+        </div>
+    </div>
 </div>
 
 <?php get_footer(); ?>

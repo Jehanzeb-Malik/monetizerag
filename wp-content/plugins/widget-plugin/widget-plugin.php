@@ -1,7 +1,6 @@
 <?php
 /*
   Plugin Name: Widget Plugin
-  Plugin URI: http://www.wpexplorer.com/
   Description: A simple plugin that adds a simple widget
   Version: 1.0
   Author: Abdur Rahman
@@ -10,62 +9,9 @@
  */
 
 
-//************************************************************************************************************************************************************
-//********************************************************    api_scripts_method    **************************************************************************
-//************************************************************************************************************************************************************
-//include(dirname(__FILE__) . '/config.php');
-//add_action('wp_head', 'api_widget_style', 1);
-add_action('wp_enqueue_scripts', 'api_scripts_method');
-
-//add_action('widgets_init', 'api_widget_load');
-//echo '<pre>'; print_r($_REQUEST);die();
-//************************************************************************************************************************************************************
-//************************************************    Adding scripts and style sheets    *********************************************************************
-//************************************************************************************************************************************************************
-
-
-function api_scripts_method() {
-
-    wp_enqueue_script('jquery');
-    
-    wp_enqueue_style('jquery-ui-effects-style', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
-    
-    wp_deregister_script('jquery-ui-effects-style');
-    wp_register_script('jquery-ui-effects-style', 'http://code.jquery.com/ui/1.10.3/jquery-ui.js', array('jquery'));
-    wp_enqueue_script('jquery-ui-effects-style');
-    
-    wp_deregister_script('script-common');
-    wp_register_script('script-common', plugins_url() . '/widget-plugin/Script/script-common.js');
-    wp_enqueue_script('script-common');
-    
-    wp_deregister_script('mustache');
-    wp_register_script('mustache', plugins_url() . '/widget-plugin/Script/mustache.min.js');
-    wp_enqueue_script('mustache');
-
-    /////////////////////////// kreon font \\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//    wp_enqueue_style('stylesheet', plugins_url() . '/widget-plugin/Style/stylesheet.css');
-    //If template is for coupon bought
-    if (is_page_template("template-widget.php")) {
-
-        /////////////////////////// testing_widget_1 \\\\\\\\\\\\\\\\\\\\\\\\\\\\
-        wp_register_script('testing_widget_1', plugins_url() . '/widget-plugin/Script/testing_widget_1.js');
-        wp_enqueue_script('testing_widget_1');
-
-        wp_enqueue_style('testing_widget_1', plugins_url() . '/widget-plugin/Style/testing_widget_1.css');
-    }
-
-    //  echo plugins_url();exit;
-}
-
 function wp_my_plugin_load() {
     register_widget('wp_my_plugin');
 }
-
-//************************************************************************************************************************************************************
-//*************************************************************    wp_my_plugin     **************************************************************************
-//************************************************************************************************************************************************************
-
-
 
 class wp_my_plugin extends WP_Widget {
 
@@ -141,32 +87,14 @@ class wp_my_plugin extends WP_Widget {
                  <h3><a href="#">No title</a></h3>
                 <div>';
         }
-//                } else {
-//                    echo '<div>
-////                 <h3><a href="#">' . $title . '</a></h3>      
-//                <div>';
-//                }
-//        echo 'Title: '. $title;exit;
-
 
         foreach ($this->widget_lists() as $key => $value) {
             if ($value == $title) {
                 $abc = $key;
                 break;
             }
-            // echo $key;
-            //  echo $title;
         }
 
-//                $key = array_search($title, $this->widget_lists()); {
-//                    echo $key;
-//                    // echo $key;
-//                    //  echo $title;
-//                }
-//        foreach($lists as $key => $value) {
-//           echo($key);
-//        }
-//        
         /* Before widget (defined by themes). */
         /** @noinspection PhpUndefinedVariableInspection */
         if ($title && $title != ' ') {
@@ -179,12 +107,9 @@ class wp_my_plugin extends WP_Widget {
             $title = $before_title . $title . $after_title;
         }
         /* Display name from widget settings if one was input. */
-//                echo 'key';
-//                echo $key;
-        if ($name && !empty($name)) {    /////////////////////////????????????????????????????????????
-            //$this->define_view($name, $page, $title);
+
+        if ($name && !empty($name)) {
             $func_name = 'load_' . $abc;
-//            echo $func_name;exit;
             $this->$func_name($page, $title);
         }
         /* After widget (defined by themes). */
@@ -199,13 +124,6 @@ class wp_my_plugin extends WP_Widget {
      * @return array
      */
 
-
-
-    /*
-     * Widget lists
-     * Dependancy: widget function name
-     */
-
 //************************************************************************************************************************************************************
 //***********************************************************    Widget lists    ******************************************************************************
 //************************************************************************************************************************************************************
@@ -216,103 +134,125 @@ class wp_my_plugin extends WP_Widget {
             'Monetizer101_Home_Slider' => 'Monetizer101 Home Page Slider',
             'Monetizer101_Home_Department' => 'Monetizer101 Home Page Department box',
             'all_sellers' => 'All Sellers Widget',
-            'Monetizer101_Narrow_Results' => 'Monetizer101 Narrow Results Widget',
-            'Monetizer101_Pop_up_widget' => 'Monetizer101 Product Popup Widget',
+            'product_filter_category_basic' => 'Product Filter Category Basic',
+            'product_filter_search_basic' => 'Product Filter Search Basic',
             'product_viewer' => 'Product Viewer',
             'category_basic' => 'Category Basic',
-            'search_basic' => 'Search Basic'
+            'search_basic' => 'Search Basic',
+            'category_header' => 'Category Header Widget',
+            'best_seller' => 'Best Sellers Widget',
+            'product_popover' => 'Product Popover'
         );
         return $lists;
     }
 
-    /**
-     * Displays the widget settings controls on the widget panel.
-     * Make use of the get_field_id() and get_field_name() function
-     * when creating your form elements. This handles the confusing stuff.
-     * @param $instance
-     */
+    ///////////////////////// Product Filter Category Basic \\\\\\\\\\\\\\\\\\\\\\\\
 
-    ///////////////////////// Monetizer101_Narrow_Results \\\\\\\\\\\\\\\\\\\\\\\\
+    function load_product_filter_category_basic($page, $title) {
 
-    function load_Monetizer101_Narrow_Results($page, $title) {
+        include('View/product_filter_category_basic.html');
+        
+        wp_deregister_script('product_filter_category_basic_script');
+        wp_register_script('product_filter_category_basic_script', plugins_url() . '/widget-plugin/Script/product_filter_category_basic.js', array('jquery'));
+        wp_enqueue_script('product_filter_category_basic_script');
 
-        include('View/Monetizer101_Narrow_Results.html');
-        //  echo(plugins_url().'/widget-plugin/Script/Monetizer101_Narrow_Results.js');
-
-        wp_register_script('Monetizer101_Narrow_Results', plugins_url() . '/widget-plugin/Script/Monetizer101_Narrow_Results.js');
-        wp_enqueue_script('Monetizer101_Narrow_Results');
-
-        wp_enqueue_style('Monetizer101_Narrow_Results', plugins_url() . '/widget-plugin/Style/Monetizer101_Narrow_Results.css');
+        wp_enqueue_style('product_filter_category_basic_style', plugins_url() . '/widget-plugin/Style/product_filter_category_basic.css');
     }
 
-    ///////////////////////// Monetizer101_Narrow_Results \\\\\\\\\\\\\\\\\\\\\\\\
+    ///////////////////////// Product Filter Category Basic \\\\\\\\\\\\\\\\\\\\\\\\
+
+    function load_product_filter_search_basic($page, $title) {
+
+        include('View/product_filter_search_basic.html');
+        
+        wp_deregister_script('product_filter_search_basic_script');
+        wp_register_script('product_filter_search_basic_script', plugins_url() . '/widget-plugin/Script/product_filter_search_basic.js', array('jquery'));
+        wp_enqueue_script('product_filter_search_basic_script');
+
+        wp_enqueue_style('product_filter_search_basic_style', plugins_url() . '/widget-plugin/Style/product_filter_search_basic.css');
+    }
+
+    ///////////////////////// Monetizer101 Product Viewer \\\\\\\\\\\\\\\\\\\\\\\\
 
     function load_product_viewer($page, $title) {
 
         include('View/product_viewer.html');
-        //  echo(plugins_url().'/widget-plugin/Script/Monetizer101_Narrow_Results.js');
-
-        wp_register_script('product_viewer_script', plugins_url() . '/widget-plugin/Script/product_viewer.js');
+        
+        wp_deregister_script('product_viewer_script');
+        wp_register_script('product_viewer_script', plugins_url() . '/widget-plugin/Script/product_viewer.js', array('jquery'));
         wp_enqueue_script('product_viewer_script');
 
-        wp_register_script('hover_intent', plugins_url() . '/widget-plugin/Script/hoverIntent.js');
+        wp_deregister_script('hover_intent');
+        wp_register_script('hover_intent', plugins_url() . '/widget-plugin/Script/hoverIntent.js', array('jquery'));
         wp_enqueue_script('hover_intent');
 
         wp_enqueue_style('product_viewer_style', plugins_url() . '/widget-plugin/Style/product_viewer.css');
         wp_enqueue_style('superfish_vertical', plugins_url() . '/widget-plugin/Style/superfish-vertical.css');
     }
 
-    ///////////////////////// Monetizer101_Home_Slider \\\\\\\\\\\\\\\\\\\\\\\\
+    ///////////////////////// Monetizer101 Home Slider \\\\\\\\\\\\\\\\\\\\\\\\
 
     function load_Monetizer101_Home_Slider($page, $title) {
 
         include('View/Monetizer101_Home_Slider.html');
 
-        wp_register_script('Monetizer101_Home_Slider', plugins_url() . '/widget-plugin/Script/Monetizer101_Home_Slider.js');
-        
-        wp_register_script('flexslider', plugins_url() . '/widget-plugin/Script/jquery.flexslider-min.js');
+        wp_deregister_script('Monetizer101_Home_Slider');
+        wp_register_script('Monetizer101_Home_Slider', plugins_url() . '/widget-plugin/Script/Monetizer101_Home_Slider.js', array('jquery'));
+        wp_enqueue_script('Monetizer101_Home_Slider');
+
+        wp_deregister_script('flexslider');
+        wp_register_script('flexslider', plugins_url() . '/widget-plugin/Script/jquery.flexslider-min.js', array('jquery'));
+        wp_enqueue_script('flexslider');
 
         wp_enqueue_style('Monetizer101_Home_Slider_Style', plugins_url() . '/widget-plugin/Style/Monetizer101_Home_Slider.css');
         wp_enqueue_style('flexslider_style', plugins_url() . '/widget-plugin/Style/flexslider.css');
     }
 
-    ///////////////////////// Monetizer101_Home_Department \\\\\\\\\\\\\\\\\\\\\\\\
+    ///////////////////////// Monetizer101 Home Department \\\\\\\\\\\\\\\\\\\\\\\\
 
     function load_Monetizer101_Home_Department($page, $title) {
 
         include('View/Monetizer101_Home_Department.html');
 
-        wp_register_script('Monetizer101_Home_Department', plugins_url() . '/widget-plugin/Script/Monetizer101_Home_Department.js');
-        wp_enqueue_script('Monetizer101_Home_Department');
+        wp_deregister_script('Monetizer101_Home_Department_Script');
+        wp_register_script('Monetizer101_Home_Department_Script', plugins_url() . '/widget-plugin/Script/Monetizer101_Home_Department.js', array('jquery'));
+        wp_enqueue_script('Monetizer101_Home_Department_Script');
 
         wp_register_style('Monetizer101_Home_Department_Style', plugins_url() . '/widget-plugin/Style/Monetizer101_Home_Department.css');
         wp_enqueue_style('Monetizer101_Home_Department', plugins_url() . '/widget-plugin/Style/Monetizer101_Home_Department.css');
     }
-    
-    ///////////////////////// Monetizer101_All_Sellers \\\\\\\\\\\\\\\\\\\\\\\\
+
+    ///////////////////////// Monetizer101 All Sellers \\\\\\\\\\\\\\\\\\\\\\\\
 
     function load_all_sellers($page, $title) {
 
         include('View/all_sellers.html');
 
-        wp_register_script('all_sellers_script', plugins_url() . '/widget-plugin/Script/all_sellers.js');
-        
+        wp_deregister_script('all_sellers_script');
+        wp_register_script('all_sellers_script', plugins_url() . '/widget-plugin/Script/all_sellers.js', array('jquery'));
+        wp_enqueue_script('all_sellers_script');
+
+        wp_deregister_script('hover_intent');
+        wp_register_script('hover_intent', plugins_url() . '/widget-plugin/Script/hoverIntent.js', array('jquery'));
+        wp_enqueue_script('hover_intent');
+
         wp_enqueue_style('all_sellers_style', plugins_url() . '/widget-plugin/Style/all_sellers.css');
+        wp_enqueue_style('superfish_vertical', plugins_url() . '/widget-plugin/Style/superfish-vertical.css');
     }
-    
+
     ///////////////////////// Category Basic \\\\\\\\\\\\\\\\\\\\\\\\
 
     function load_category_basic($page, $title) {
 
         include('View/category_basic.html');
 
-        wp_deregister_script('all_sellers_script');
-        wp_register_script('all_sellers_script', plugins_url() . '/widget-plugin/Script/category_basic.js');
-        wp_enqueue_script('all_sellers_script');
-        
-        wp_enqueue_style('all_sellers_style', plugins_url() . '/widget-plugin/Style/category_basic.css');
+        wp_deregister_script('category_script');
+        wp_register_script('category_script', plugins_url() . '/widget-plugin/Script/category_basic.js', array('jquery'));
+        wp_enqueue_script('category_script');
+
+        wp_enqueue_style('category_style', plugins_url() . '/widget-plugin/Style/category_basic.css');
     }
-    
+
     ///////////////////////// Search Basic \\\\\\\\\\\\\\\\\\\\\\\\
 
     function load_search_basic($page, $title) {
@@ -320,66 +260,74 @@ class wp_my_plugin extends WP_Widget {
         include('View/search_basic.html');
 
         wp_deregister_script('search_basic_script');
-        wp_register_script('search_basic_script', plugins_url() . '/widget-plugin/Script/search_basic.js');
+        wp_register_script('search_basic_script', plugins_url() . '/widget-plugin/Script/search_basic.js', array('jquery'));
         wp_enqueue_script('search_basic_script');
-        
+
         wp_enqueue_style('search_basic_style', plugins_url() . '/widget-plugin/Style/search_basic.css');
     }
-    
+
     ///////////////////////// Sub Category Basic \\\\\\\\\\\\\\\\\\\\\\\\
 
     function load_sub_category_basic($page, $title) {
 
         include('View/sub_category_basic.html');
 
-        wp_deregister_script('all_sellers_script');
-        wp_register_script('all_sellers_script', plugins_url() . '/widget-plugin/Script/sub_category_basic.js');
-        wp_enqueue_script('all_sellers_script');
-        
-        wp_enqueue_style('all_sellers_style', plugins_url() . '/widget-plugin/Style/category_basic.css');
-    }
-      
-    ///////////////////////// Monetizer101_Pop_up_widget \\\\\\\\\\\\\\\\\\\\\\\\
+        wp_deregister_script('sub_category_script');
+        wp_register_script('sub_category_script', plugins_url() . '/widget-plugin/Script/sub_category_basic.js', array('jquery'));
+        wp_enqueue_script('sub_category_script');
 
-    function load_Monetizer101_Pop_up_widget($page, $title) {
-
-        include('View/Monetizer101_Pop_up_widget.html');
-
-        wp_register_script('Monetizer101_Pop_up_widget', plugins_url() . '/widget-plugin/Script/Monetizer101_Pop_up_widget.js');
-        wp_enqueue_script('Monetizer101_Pop_up_widget');
-        
-        wp_enqueue_style('Monetizer101_Pop_up_widget', plugins_url() . '/widget-plugin/Style/Monetizer101_Pop_up_widget.css');
+        wp_enqueue_style('sub_category_style', plugins_url() . '/widget-plugin/Style/category_basic.css');
     }
 
+    ///////////////////////// Category Header \\\\\\\\\\\\\\\\\\\\\\\\
+
+    function load_category_header($page, $title) {
+
+        include('View/category_header.html');
+
+        wp_deregister_script('category_header_script');
+        wp_register_script('category_header_script', plugins_url() . '/widget-plugin/Script/category_header.js', array('jquery'));
+        wp_enqueue_script('category_header_script');
+
+        wp_enqueue_style('category_header_style', plugins_url() . '/widget-plugin/Style/category_header.css');
+    }
+
+    ///////////////////////// Best Seller \\\\\\\\\\\\\\\\\\\\\\\\
+
+    function load_best_seller($page, $title) {
+
+        include('View/best_seller.html');
+
+        wp_deregister_script('best_seller_script');
+        wp_register_script('best_seller_script', plugins_url() . '/widget-plugin/Script/best_seller.js', array('jquery'));
+        wp_enqueue_script('best_seller_script');
+
+        wp_deregister_script('flexslider');
+        wp_register_script('flexslider', plugins_url() . '/widget-plugin/Script/jquery.flexslider-min.js', array('jquery'));
+        wp_enqueue_script('flexslider');
+
+        wp_enqueue_style('best_seller_style', plugins_url() . '/widget-plugin/Style/best_seller.css');
+        wp_enqueue_style('flexslider_style', plugins_url() . '/widget-plugin/Style/flexslider.css');
+    }
+
+    ///////////////////////// Product Popover \\\\\\\\\\\\\\\\\\\\\\\\
+
+    function load_product_popover($page, $title) {
+
+        include('View/product_popover.html');
+
+        wp_deregister_script('product_popover_script');
+        wp_register_script('product_popover_script', plugins_url() . '/widget-plugin/Script/product_popover.js', array('jquery'));
+        wp_enqueue_script('product_popover_script');
+
+        wp_enqueue_style('product_popover_style', plugins_url() . '/widget-plugin/Style/product_popover.css');
+    }
 
 }
 
-add_action('wp_footer', 'print_my_script');
+add_action('wp_footer', 'print_my_scripts');
 
-function print_my_script() {
-    
-        
-    //Add Conditional Statements Here
-    wp_print_scripts('Monetizer101_Home_Slider');
-    wp_print_scripts('Monetizer101_Home_Slider');
-    wp_print_scripts('flexslider');
-    wp_print_scripts('flexslider_style');
-    
-    //Add Conditional Statements Here
-    wp_print_scripts('all_sellers_style');
-    wp_print_scripts('all_sellers_script');
-    wp_print_scripts('superfish_vertical');
-    wp_print_scripts('hover_intent');
-        
-    //Add Conditional Statements Here
-    wp_print_scripts('product_viewer_style');
-    wp_print_scripts('product_viewer_script');
-    wp_print_scripts('superfish_vertical');
-    wp_print_scripts('hover_intent');
-    
-    //Add Conditional Statements Here
-    wp_print_scripts('Monetizer101_Narrow_Results_Script');
-    wp_print_scripts('Monetizer101_Narrow_Results_Style');
+function print_my_scripts() {
     wp_print_scripts('unslider');
 }
 
@@ -387,15 +335,6 @@ add_action('init', 'register_widget_scripts');
 
 function register_widget_scripts() {
 
-    //Results Filter - Start
-//    wp_deregister_script('Monetizer101_Narrow_Results_Script');
-//    wp_register_script('Monetizer101_Narrow_Results_Script', plugins_url() . '/widget-plugin/Script/Monetizer101_Narrow_Results.js', null, false, true);
-//
-//    wp_deregister_script('unslider');
-//    wp_register_script('unslider', plugins_url() . '/widget-plugin/Script/unslider.min.js');
-//
-//    wp_register_style('Monetizer101_Narrow_Results_Style', plugins_url() . '/widget-plugin/Style/Monetizer101_Narrow_Results.css');
-    //Results Filter - End
 }
 
 // register widget

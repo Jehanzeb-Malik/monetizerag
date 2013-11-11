@@ -4,7 +4,7 @@
         <p id='alphabet'>{{tag}}</p>
         <ul id='seller_links'>
             {{#list}}
-            <li><a href="<?php echo bloginfo('siteurl'); ?>/seller/?id={{id}}&layout=2col&sort=1">{{name}}</a></li>
+            <li><a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&merchantIds={{id}}&percentOffMin=&resultLimit=24&resultOffset=0&layout=3col&sort=1">{{name}}</a></li>
             {{/list}}
         </ul>
         <div id='bottom_line'>
@@ -31,6 +31,11 @@
         <ul id="list">
 
         </ul>
+    </div>
+    <div class="loading-container">
+        <img src="<?php echo bloginfo('siteurl'); ?>/wp-content/themes/monetizer_theme/images/loading_spinner.gif" width="100px" height="100px" >
+        <br>
+        <div class="loading-container-text">LOADING...</div>
     </div>
 
 </div>

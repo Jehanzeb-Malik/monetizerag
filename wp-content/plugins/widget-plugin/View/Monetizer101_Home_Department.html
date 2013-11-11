@@ -4,16 +4,16 @@
             <div class="department-item-region-left">
                 <div class="department-item-image-holder">
                     <span></span>
-                    <img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/home-departments-widget/categories-images/{{name}}_70x70.jpg">
+                    <a href="<?php echo bloginfo('siteurl'); ?>/category/?id={{id}}&layout=3col&sort=1"><img src="<?php echo plugins_url(); ?>/widget-plugin/Style/images/home-departments-widget/categories-images/{{id}}_70x70.jpg"></a>
                 </div>
             </div>
             <div class="department-item-region-right">
                 <div class="department-item-title">
-                    <a href="<?php echo bloginfo('siteurl'); ?>/category/?id={{id}}&layout=2col&sort=1"><span>{{name}}</span></a>
+                    <a href="<?php echo bloginfo('siteurl'); ?>/category/?id={{id}}&layout=3col&sort=1"><span>{{name}}</span></a>
                 </div>
                 <div class="department-item-sub-list">
                     {{#children}}
-                    <a href="<?php echo bloginfo('siteurl'); ?>/sub-category/?id={{id}}&layout=2col&sort=1"><span class="department-item-sub-list-item">{{name}}</span></a>
+                    <a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&categoryIds={{id}}&percentOffMin=&resultLimit=24&resultOffset=0&layout=3col&sort=1"><span class="department-item-sub-list-item">{{name}}</span></a>
                     {{/children}}
                 </div>
             </div>

@@ -1,0 +1,52 @@
+<script id="home_best_seller_widget_tpl" type="text/xml">
+    <div id="grid-container" style="margin-left: 0px;">
+        <ul class="slides">
+            {{#data}}
+            <li>
+                <div class="grid-product product-3col" id="product-{{index}}">
+                    <div class="product-widget-content">
+                        <div class="product-image-holder" onclick="drawPopover(best_seller_product_list, {{id}})">
+                            <span></span>
+                            <img alt="{{name}}" src="{{imageURL}}">
+                        </div>
+                        <div class="product-title">
+                            <span class="product-name" onclick="drawPopover(best_seller_product_list, {{id}})">{{name}}</span>
+                            <span class="product-category"><a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&categoryIds={{categoryId}}&percentOffMin=&resultLimit=24&resultOffset=0&layout=3col&sort=1">{{subCatName}}</a></span>
+                        </div>
+                        <div class="product-price">
+                            <div class="product-price-tag">
+                                <span class="product-original-price">&#{{currencyType}} {{retailPrice}}</span>
+                                <span class="product-discounted-price">&#{{currencyType}} {{salePrice}}</span>
+                            </div>
+                            <div class="product-price-next-btn"></div>
+                        </div>
+                        <a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&merchantIds={{merchantId}}&percentOffMin=&resultLimit=24&resultOffset=0&layout=3col&sort=1">
+                            <div class="product-merchant-logo">
+                                <span></span>
+                                <img src="{{merchantLogoUrl}}">
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="product-widget-dropshadow"></div>
+                </div>
+            </li>
+            {{/data}}
+        </ul>
+    </div>
+</script>
+
+<div id="best-seller-widget">
+    <div id="best-seller-widget-header">
+        <div id="best-seller-widget-title">BEST SELLERS</div>
+        <div id="best-seller-widget-seperator"></div>
+    </div>
+    <div id="best-seller-widget-items">
+        <div class="loading-container">
+            <img src="<?php echo bloginfo('siteurl'); ?>/wp-content/themes/monetizer_theme/images/loading_spinner.gif" width="100px" height="100px" >
+            <br>
+            <div class="loading-container-text">LOADING...</div>
+        </div>
+    </div>
+    <div class="best-seller-control-nav"></div>
+</div>

@@ -1,0 +1,83 @@
+#category-header-wrapper{
+    width: 733px;
+    height: 285px;
+    margin-bottom: 20px;
+}
+
+#category-header-wrapper #category-header-container{
+    width: 731px;
+    height: 283px;
+    border: 1px solid #dbdbdb;
+}
+
+#category-header-wrapper #category-header-container #category-image-wrapper{
+    width: 425px;
+    height: 283px;
+    border-right: 1px solid #dbdbdb;
+    background: #ffffff;
+    float: left;
+}
+
+#category-header-wrapper #category-header-container #category-image-container{
+    width: 430px;
+    height: 283px;
+}
+
+#category-header-wrapper #category-header-container #category-image-container{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    left: -5px;
+    top: 0px;
+    position: relative;
+    z-index: 50;
+}
+
+#category-header-wrapper #category-header-container #category-image-container * {
+    vertical-align: middle;
+}
+
+#category-header-wrapper #category-header-container #category-image-container {
+    display: block;
+}
+
+#category-header-wrapper #category-header-container #category-image-container span {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+}
+
+#category-header-wrapper #category-header-container #category-image-container img{
+    max-width: 425px;
+    max-height: 283px;
+}
+
+#category-header-wrapper #category-header-container #category-header-details{
+    width: 290px;
+    height: 283px;
+    padding-left: 15px;
+    background: #f4fbff;
+    float: left;
+}
+
+#category-header-wrapper #category-header-container #category-header-details #category-title{
+    width: 99%;
+    height: 37px;
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #096fae;
+    float: left;
+}
+
+#category-header-wrapper #category-header-container #category-header-details #category-details{
+    width: 98%;
+    height: 210px;
+    font-family: Calibri;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #303030;
+    float: left;
+}

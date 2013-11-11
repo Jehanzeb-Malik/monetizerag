@@ -1,0 +1,35 @@
+<script id="product_popover_tpl" type="text/xml">
+    {{#.}}
+    <div id="product-popover-wrapper">
+        <div class="product-image-container">
+            <span></span>
+            <img src="{{imageURL}}" />
+        </div>
+        <div class="product-detail">
+            <div class="clear-both"></div>
+            <div class="product-title">{{name}}</div>
+            <div class="product-detail-seperator"></div>
+            <div class="product-detail-price">
+                <div class="product-detail-retail-price">&#{{currencyType}} {{salePrice}}</div>
+                <div class="product-detail-sale-price">&#{{currencyType}} {{retailPrice}}</div>
+            </div>
+            <div class="product-detail-seperator"></div>
+            <div class="merchant-logo-holder">
+                <span></span>
+                <a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&merchantIds={{merchantId}}&percentOffMin=&resultLimit=24&resultOffset=0&layout=3col&sort=1"><img src="{{merchantLogoUrl}}" ></a>
+            </div>
+            <div class="visit-store-btn">
+                <a href="{{deepLink}}" target="_blank"></a>
+            </div>
+            <div class="product-detail-seperator"></div>
+            <div class="product-detail-description">{{description}}</div>
+            <div class="product-detail-view-more">
+                View more
+            </div>
+            <div class="product-detail-design-arrow"></div>
+            <div class="product-detail-close-btn"></div>
+        </div>
+    </div>
+    {{/.}}
+</script>
+<div class="clear-both"></div>

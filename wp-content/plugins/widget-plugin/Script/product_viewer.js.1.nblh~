@@ -1,0 +1,53 @@
+jQuery('#product-viewer .styled-list').attr('placeholder', jQuery('#product-viewer .styled-list').attr('placeholder').trim());
+
+jQuery(document).ready(function(){
+    jQuery('#product-viewer-sort-dropdown').superfish({
+        animation: {
+            height:'show'
+        }
+    });
+});
+
+function loadProducts(){
+    ShopManager.getCategoryWidget({
+        isoCurrencyCode : sessionStorage.isoCurrencyCode,
+//        categoryId: parseInt(getParameterByName('catId'),10),
+        categoryId: 239,
+        productLimit: 24
+    },
+    function( jsResponse )
+    {
+        Commons.consoleLogger.debug( JSON.stringify(jsResponse) );
+        
+        var layout = getParameterByName('layout');
+        var showCategory = false;
+        
+        console.log(jsResponse);
+        
+        if(layout == ''){
+            layout = '2col';
+        }
+        
+        var temp = jsResponse.data;
+        jsResponse.layout = layout;
+        if(layout == '2col' || layout == '4col'){
+            jsResponse.showlayout = true;
+        } else{
+            jsResponse.showlayout = false;
+        }
+
+        for(var i=0 ; i<temp.length ; i++){
+            temp[i].currencyType = getCurrencyCode(temp[i].currency);
+            temp[i].layout = layout;
+            temp[i].index = i+1;
+            if(layout != '4col'){
+                temp[i].showCategory = true;
+            } else{
+                temp[i].showCategory = false;
+            }
+        }
+        
+        var output = Mustache.render(jQuery("#product_viewer_tpl").html(), jsResponse);
+        jQuery("#product-viewer-content").html(output);
+    });
+}

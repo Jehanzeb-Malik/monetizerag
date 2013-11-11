@@ -1,0 +1,434 @@
+#product-viewer #product-viewer-header{
+    width: 731px;
+    height: 96px;
+    border: 1px solid #dde4e8;
+    background: #f6fcff;
+    position: relative;
+}
+
+#product-viewer #product-viewer-header #drop-down-sort{
+    width:251px;
+    height:66px;
+    position: relative;
+    top: 12px;
+    left: 12px;
+    float: left;
+}
+
+#product-viewer-sort-dropdown{
+    margin-top: 5px;
+}
+
+#product-viewer-sort-dropdown > li.current > input.styled-list{
+    padding: 2px 10px;
+    height: 33px;
+    width: 228px;
+}
+
+#product-viewer-sort-dropdown li{
+    height: 37px;
+    width: 248px;
+}
+
+#product-viewer-sort-dropdown a{
+    padding: 8px 15px;
+}
+
+#product-viewer-sort-dropdown > li li{
+    width: 249px;
+}
+
+#product-viewer-sort-dropdown > li ul{
+    min-width: 249px;
+    width: 249px;
+}
+
+#product-viewer-header span.product-viewer-header-title{
+    color: #62737a;
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    display: block;
+}
+
+#product-viewer #product-viewer-header #product-viewer-layout-selector{
+    width: 180px;
+    height: 66px;
+    position: relative;
+    top: 12px;
+    left: 48px;
+    float: left;
+}
+
+#product-viewer #product-viewer-header #product-viewer-layout-selector #view-btn-holder{
+    width: 180px;
+    height: 39px;
+    position: relative;
+    top: 5px;
+}
+
+#product-viewer #product-viewer-header #product-viewer-layout-selector #view-btn-holder .view-layout-btn{
+    width: 60px;
+    height: 39px;
+    float: left;
+}
+
+#product-viewer .product-viewer-paginator{
+    min-width: 185px;
+    height: 39px;
+    position: relative;
+    float: left;
+}
+
+#product-viewer #product-viewer-header #product-viewer-paginator-header{
+    top: 39px;
+    left: 88px;
+}
+
+#product-viewer .product-viewer-paginator .btn-prev{
+    width: 42px;
+    height: 39px;
+    float: left;
+    cursor: pointer;
+    background: url('images/product-viewer/btn_prev_inactive.png') no-repeat;
+}
+
+#product-viewer .product-viewer-paginator .btn-prev:hover{
+    background: url('images/product-viewer/btn_prev_active.png') no-repeat;
+}
+
+#product-viewer .product-viewer-paginator .page-counter{
+    width: auto;
+    margin: 10px 13px;
+    font-family: Calibri;
+    font-size: 18px;
+    color: #303030;
+    height: 22px;
+    float: left;
+}
+
+#product-viewer .product-viewer-paginator .btn-next{
+    width: 42px;
+    height: 39px;
+    float: left;
+    cursor: pointer;
+    background: url('images/product-viewer/btn_next_inactive.png') no-repeat;
+}
+
+#product-viewer .product-viewer-paginator .btn-next:hover{
+    background: url('images/product-viewer/btn_next_active.png') no-repeat;
+}
+
+#product-viewer #product-viewer-content{
+    overflow: hidden;
+    margin-top: 20px;
+    width: 744px;
+}
+
+/* Widget Design for 4 Column Design - Start */
+#product-viewer #product-viewer-content #4col-container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-left: -5px;
+}
+
+#product-viewer #product-viewer-content .product-4col{
+    width: 180px;
+    height: 303px;
+    margin-bottom: 15px;
+    float: left;
+}
+
+#product-viewer #product-viewer-content .product-4col:not(:nth-child(4n)) {
+    margin-right: 8px;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content{
+    width: 168px;
+    height: 293px;
+    margin: 0 auto;
+    border: 1px solid #dbdbdb;
+    font-family: Helvetica Neue (TT);
+    font-weight: lighter;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-image-holder{
+    width: 168px;
+    height: 135px;
+    border-bottom: 1px solid #dbdbdb;
+    background: #fff;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-image-holder{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    top: 0px;
+    position: relative;
+    z-index: 50;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-image-holder * {
+    vertical-align: middle;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-image-holder {
+    display: block;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-image-holder span {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-image-holder img{
+    max-width: 168px;
+    max-height: 135px;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-title{
+    width: 168px;
+    height: 89px;
+    margin: 0 auto;
+    border-bottom: 1px solid #dbdbdb;
+    background: #fff;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-title .product-name{
+    width: 142px;
+    height: 55px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #096fae;
+    position: relative;
+    top: 17px;
+    left: 13px;
+    display: block;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-price{
+    width: 168px;
+    height: 29px;
+    margin: 0 auto;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-price .product-price-tag{
+    width: 135px;
+    height: 29px;
+    margin: 0 auto;
+    float: left;
+    border-right: 1px solid #dbdbdb;
+    background: #fff;
+    text-align: center;
+    font-size: 11px;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-price .product-price-tag .product-original-price{
+    width: 67px;
+    height: 29px;
+    margin: 7px auto;
+    float: left;
+    color: #827676;
+    text-decoration: line-through;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-price .product-price-tag .product-discounted-price{
+    width: 67px;
+    height: 29px;
+    margin: 7px auto;
+    float: left;
+    color: #096fae;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-price .product-price-next-btn{
+    width: 32px;
+    height: 29px;
+    margin: 0 auto;
+    float: left;
+    cursor: pointer;
+    background: url('images/product-viewer/4col_product_next.png') no-repeat;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-content .product-merchant-logo{
+    width: 168px;
+    height: 37px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+#product-viewer #product-viewer-content .product-4col .product-widget-dropshadow{
+    width: 180px;
+    height: 9px;
+    background: url('images/product-viewer/4col_dropshadow.png') no-repeat;
+}
+/* Widget Design for 4 Column Design - End */
+
+/* Widget Design for 3 Column Design - Start */
+#product-viewer #product-viewer-content #3col-container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#product-viewer #product-viewer-content .product-3col{
+    width: 229px;
+    height: 421px;
+    margin-bottom: 15px;
+    float: left;
+}
+
+#product-viewer #product-viewer-content .product-3col:not(:nth-child(3n)) {
+    margin-right: 22px;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content{
+    width: 227px;
+    height: 411px;
+    margin: 0 auto;
+    border: 1px solid #dbdbdb;
+    font-family: Helvetica Neue (TT);
+    font-weight: lighter;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-image-holder{
+    width: 227px;
+    height: 202px;
+    border-bottom: 1px solid #dbdbdb;
+    background: #fff;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-image-holder{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    top: 0px;
+    position: relative;
+    z-index: 50;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-image-holder * {
+    vertical-align: middle;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-image-holder {
+    display: block;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-image-holder span {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-image-holder img{
+    max-width: 227px;
+    max-height: 202px;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-title{
+    width: 227px;
+    height: 108px;
+    margin: 0 auto;
+    border-bottom: 1px solid #dbdbdb;
+    background: #fff;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-title .product-name{
+    width: 200px;
+    height: 45px;
+    overflow: hidden;
+    font-size: 15px;
+    color: #096fae;
+    position: relative;
+    top: 19px;
+    left: 14px;
+    display: block;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-title .product-category{
+    width: 200px;
+    height: 40px;
+    overflow: hidden;
+    font-size: 16px;
+    color: #827676;
+    position: relative;
+    top: 19px;
+    left: 14px;
+    display: block;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-price{
+    width: 227px;
+    height: 41px;
+    margin: 0 auto;
+    float: left;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-price .product-price-tag{
+    width: 182px;
+    height: 41px;
+    margin: 0 auto;
+    float: left;
+    border-right: 1px solid #dbdbdb;
+    background: #fff;
+    text-align: center;
+    font-size: 15px;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-price .product-price-tag .product-original-price{
+    width: 91px;
+    height: 41px;
+    margin: 10px auto;
+    float: left;
+    color: #827676;
+    text-decoration: line-through;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-price .product-price-tag .product-discounted-price{
+    width: 91px;
+    height: 41px;
+    margin: 10px auto;
+    float: left;
+    color: #096fae;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-price .product-price-next-btn{
+    width: 44px;
+    height: 41px;
+    margin: 0 auto;
+    float: left;
+    cursor: pointer;
+    background: url('images/product-viewer/3col_product_next.png') no-repeat;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-content .product-merchant-logo{
+    width: 227px;
+    height: 57px;
+    margin: 0 auto;
+    float: left;
+    background: #fff;
+}
+
+#product-viewer #product-viewer-content .product-3col .product-widget-dropshadow{
+    width: 227px;
+    height: 8px;
+    background: url('images/product-viewer/3col_dropshadow.png') no-repeat;
+}
+/* Widget Design for 3 Column Design - End */
+
+#product-viewer #product-viewer-footer{
+    width: 731px;
+    height: 39px;
+    margin: 18px auto;
+    position: relative;
+}
+
+#product-viewer #product-viewer-footer #product-viewer-paginator-footer{
+    position: relative;
+    left: 520px;
+}

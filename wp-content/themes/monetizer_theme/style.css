@@ -615,3 +615,65 @@ select {
     float: left;
     margin-left: -18px;
 }
+
+/*** Get it in its place ***/
+.product-name, .product-image-holder{
+    cursor: pointer !important;
+}
+
+.k-window-titlebar{
+    display: none;
+}
+
+.k-window{
+    -webkit-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
+#window{
+    display: none;
+    background: rgba(20,20,20,0.7);
+    position: fixed;
+    z-index: 1000000;
+}
+
+#nav-bar-header{
+    float: left;
+    border: 1px solid #e4e4e4;
+    width: 784px;
+    height: 32px;
+    color: #e4e4e4;
+    margin: 0px;
+    padding: 12px 0px 0px 0px;
+}
+
+.nav-bar-first-list{
+    top: -11px;
+    height: 43px !important;
+    margin-right: 2px !important;
+}
+
+.nav-bar-first-level{
+    border: 0px !important;
+    color: #303030 !important;
+    display: block !important;
+    height: 32px !important;
+    list-style-image: none !important;
+    list-style-position: outside !important;
+    list-style-type: none !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 2px !important;
+    margin-top: 11px !important;
+    padding: 0px 16px 0px 16px !important;
+    position: relative !important;
+    text-align: left !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    zoom: 1 !important;
+    font-family: Calibri !important;
+    font-size: 16px !important;
+}
+
+.sf-menu li.sfHover{
+/*    background: #ed7500 !important;*/
+}

@@ -1,26 +1,4 @@
-var ShopModel = {
-	localProducts: null,
-	putAllLocally: function( listOfProducts )
-	{
-		if( ! _.isArray(listOfProducts) )
-			return;
-		
-		if( this.localProducts == null )
-			this.localProducts = new Backbone.Collection( listOfProducts );
-		
-		else
-			for( var i = 0; i < listOfProducts.length; i++ )
-			{
-				if( this.localProducts.get(listOfProducts[i].id) == null )
-				{
-					this.localProducts.push(listOfProducts[i]);
-				}
-			}
-
-	}
-};
-
-/** This is the Manager for remote calls to the shop * */
+/** This is the Manager for remote calls to the shop **/
 var ShopManager = {
 		
 	endpoint: Commons.connection.endpoint,
@@ -30,6 +8,7 @@ var ShopManager = {
 	merchantUrl: null,
 	categoryUrl: null,
 	
+	merchantsCache: null,
 	categoryTreeCache: null,
 	subCategoriesCache: null,
 	
@@ -39,15 +18,52 @@ var ShopManager = {
 		this.merchantUrl = this.endpoint + '/shop/' + params.key + '/merchant/list';
 		this.searchUrl   = this.endpoint + '/shop/' + params.key + '/product/search';
 		this.widgetUrl   = this.endpoint + '/shop/' + params.key + '/widget';
+		this.shopUrl     = this.endpoint + '/shop/';
 	},
 	
-	/*
+	/**
+	 * @param params type Map 
+	 *  may contain:
+	 *  {
+	 *    'shopCode':   {String}, mandatory.
+	 *  }
+	 *  
+	 * @param onSuccess the function to be called on service response success.
+	 * @param onFailure the function to be called on service response failure.
+	 * 
+	 * NOTE: This service is intended to be called server side only (from server to server).
+	 * 
+	 * @return the shop account related to the given code.
+	 * The shop account has the form: 
+	 * {
+	 *   id:           {Integer} unique identifier for the shop.
+	 *   name:         {String}  the shop name to display.
+	 *   websiteURL:   {String}  the related website URL (optional).
+	 *   logoImageURL: {String} the website logo URL (optional).
+	 *   shopCode:     {Integer} unique identification code for the shop.
+	 * }
+	 */
+	getShop: function( params, onSuccess, onFailure )
+	{
+		
+		var call = {
+				endpoint: this.shopUrl,
+				event: 'shop:getShop',
+				params: params
+		};
+		
+		RestService.perform( call, onSuccess, onFailure );
+		
+	},
+	
+	/**
 	 * @param params type Map 
 	 *  may contain:
 	 *  {
 	 *    'isoCurrencyCode': {String} (accepted values: 'USD', 'GBP'), mandatory.
 	 *  }
-	 * @param callback the function to be called on service response.
+	 * @param onSuccess the function to be called on service response success.
+	 * @param onFailure the function to be called on service response failure.
 	 * 
 	 * @return the list of all available merchants for the given currency.
 	 * Each merchant has the following data:
@@ -60,44 +76,39 @@ var ShopManager = {
 	 *   category: {Category} uninteresting (optional).
 	 * }
 	 */
-	getMerchants : function( params, callback )
+	getMerchants : function( params, onSuccess, onFailure )
 	{
 		
-		var serviceResponse = {	type : 'xhr' };
-		serviceResponse.params = params;
-		
-		jQuery.ajax({
-			
-			url:      this.merchantUrl,
-			type:     "GET",
-			data:     params,
-			dataType: "json",
-			
-			success: function( json, textStatus, jqXHR )
-			{
-				serviceResponse.event = 'shop:getMerchants:success';
-				Commons.onAjaxSuccess( serviceResponse, json, textStatus, jqXHR );
-				callback( serviceResponse );
-			},
-			
-			error: function( jqXHR, textStatus, errorThrown )
-			{
-				serviceResponse.event = 'shop:getMerchants:error';
-				Commons.onAjaxError( serviceResponse, textStatus, jqXHR );
-				callback( serviceResponse );
-			}
-			
+		var call = {
+			endpoint: this.merchantUrl,
+			event: 'shop:getMerchants',
+			params: params
+		};
+				
+		RestService.perform( call,
+					
+		function( serviceResponse )
+		{
+			ShopManager.merchantsCache = ShopManager._buildMerchantMap( serviceResponse.data );
+			_safelyCall( onSuccess, serviceResponse );
+		},
+					
+		function( serviceResponse )
+		{
+			ShopManager.merchantsCache = null;
+			_safelyCall( onFailure, serviceResponse );
 		});
-
+		
 	},
 	
-	/*
+	/**
 	 * @param params type Map 
 	 *  may contain:
 	 *  {
 	 *    'isoCurrencyCode': {String} (accepted values: 'USD', 'GBP'), mandatory.
 	 *  }
-	 * @param callback the function to be called on service response.
+	 * @param onSuccess the function to be called on service response success.
+	 * @param onFailure the function to be called on service response failure.
 	 * 
 	 * @return a list of category trees.
 	 * A node in the category tree may has the form:
@@ -113,26 +124,31 @@ var ShopManager = {
 	 *   merchants: [Merchant] uninteresting (optional).
 	 * }
 	 */
-	getCategories : function( params, callback )
+	getCategories : function( params, onSuccess, onFailure )
 	{
 		
-		var serviceResponse = {	type : 'xhr' };
-		serviceResponse.event = 'shop:getCategories';
-		serviceResponse.params = params;
-		
-		if( ShopManager.categoryTreeCache == null )
+		if( _exists(ShopManager.categoryTreeCache) )
 		{
-			this._loadCategoryTree( params, callback, serviceResponse );			
+			
+			var serviceResponse = {
+				type : 'local',
+				params: params,
+				event: 'shop:getCategories'
+			};
+			
+			serviceResponse.data = ShopManager.categoryTreeCache;
+			Commons.onAjaxSuccess( serviceResponse, null, null );
+			_safelyCall( onSuccess, serviceResponse );
+			
 		}
 		else
 		{
-			Commons.onAjaxSuccess( serviceResponse, null, null, null );
-			callback( serviceResponse );
+			this._loadCategoryTree( params, onSuccess, onFailure );			
 		}
 		
 	},
 	
-	/*
+	/**
 	 * @param params type Map 
 	 *  may contain:
 	 *  {
@@ -149,7 +165,9 @@ var ShopManager = {
      *    'resultOffset: {Integer} value greater or equal than 0, optional.
      *    'facets': [String] list of values in: ['CATEGORY','MERCHANT','DISCOUNT'], optional.
 	 *  }
-	 * @param callback the function to be called on service response.
+	 * 
+	 * @param onSuccess the function to be called on service response success.
+	 * @param onFailure the function to be called on service response failure.
 	 * 
 	 * @return an object representing the paginated result of the search.
 	 * The result pagination object is in the form:
@@ -188,36 +206,31 @@ var ShopManager = {
 	 *    In this case the facet "category" relates each category_id with the count of
 	 *    products that belongs to the category with such ID.  
 	 */
-	search: function( params, callback )
+	search: function( params, onSuccess, onFailure )
 	{
 	
-		var serviceResponse = { type : 'xhr' };
-		serviceResponse.params = params;
+		var call = {
+			endpoint: this.searchUrl,
+			event: 'shop:search',
+			params: params
+		};
 		
-		jQuery.ajax(
+		RestService.perform( call,
+				
+		function( serviceResponse )
 		{
-			url: this.searchUrl,
-			type: "GET",
-			data: params,
-			dataType: "json",
-			success: function( json, textStatus, jqXHR )
+			if( _exists(serviceResponse.data) && _exists(serviceResponse.data.resultList) )
 			{
-				serviceResponse.event = 'shop:search:success';
-				Commons.onAjaxSuccess( serviceResponse, json, textStatus, jqXHR );
-				ShopModel.putAllLocally( json.resultList );
-				callback( serviceResponse );
-			},
-			error: function( jqXHR, textStatus, errorThrown )
-			{
-				serviceResponse.event = 'shop:search:error';
-				Commons.onAjaxError( serviceResponse, textStatus, jqXHR );
-				callback( serviceResponse );
+				ShopManager._fillMerchantInfo( serviceResponse.data.resultList, params.isoCurrencyCode );
 			}
-		});
+			_safelyCall( onSuccess, serviceResponse );
+		},
 
+		onFailure );		
+		
 	},
 	
-	/*
+	/**
 	 * @param params type Map 
 	 *  may contain:
 	 *  {
@@ -225,7 +238,9 @@ var ShopManager = {
 	 *    'categoryId':      {Integer} (the ID of the category related to the widget), mandatory.
 	 *    'productLimit':    {Integer} limit of product to be returned (value between 0 and 100), optional (default 100).
 	 *  }
-	 * @param callback the function to be called on service response.
+	 * 
+	 * @param onSuccess the function to be called on service response success.
+	 * @param onFailure the function to be called on service response failure.
 	 * 
 	 * @return a list of the products contained into the widget.
 	 * A product is in the form:
@@ -238,153 +253,184 @@ var ShopManager = {
      *   deepLink: {URL} the URL to redirect to during buy operation.
      *   imageURL: {URL} the URL of the big image.
      *   thumbnailURL: {URL} the URL of the thumbnail image.
+     *   merchantLogoURL: {URL} the URL of the logo image of the merchant.   
      *   currency: {String} one between 'USD' and 'GBP'.
      *   salePrice: {Double} the actual price of the product.
      *   retailPrice: {Double} the retail price of the product.
      *   expiry: {Date} the expiration date of the offer.
 	 * }
 	 */
-	getCategoryWidget: function( params, callback )
+	getCategoryWidget: function( params, onSuccess, onFailure )
 	{
-		var serviceResponse = { type : 'xhr' };
-		serviceResponse.params = params;
 		
-		jQuery.ajax({
-		
-			url: this.widgetUrl + '/category',
-			type: "GET",
-			data: params,
-			dataType: "json",
+		var call = {
+				endpoint: this.widgetUrl + '/category',
+				event: 'shop:getCategoryWidget',
+				params: params
+		};
 			
-			success: function( json, textStatus, jqXHR )
-			{
-			
-				serviceResponse.event = 'shop:getCategoryWidget:success';
-				Commons.onAjaxSuccess( serviceResponse, json, textStatus, jqXHR );
-				ShopModel.putAllLocally( json );
-				callback( serviceResponse );
+		RestService.perform( call,
+				
+		function( serviceResponse )
+		{
+			ShopManager._decorateProducts( serviceResponse.data, params.isoCurrencyCode );
+			_safelyCall( onSuccess, serviceResponse );
+		},
 
-			},
-			
-			error: function( jqXHR, textStatus, errorThrown )
-			{
-			
-				serviceResponse.event = 'shop:getCategoryWidget:error';
-				Commons.onAjaxError( serviceResponse, textStatus, jqXHR );
-				callback( serviceResponse );
-			}
-			
-		});
+		onFailure );
+		
 	},
 	
 	
-	/*
+	/**
 	 * @param params type Map 
 	 *  may contain:
 	 *  {
 	 *    'isoCurrencyCode': {String}  (accepted values: 'USD', 'GBP'), mandatory.
 	 *  }
-	 * @param callback the function to be called on service response.
+	 *  
+	 * @param onSuccess the function to be called on service response success.
+	 * @param onFailure the function to be called on service response failure.
 	 * 
 	 * @return the most popular of the category tree roots returned by the getCategories() function.
 	 */
-	getPopularRootCategory:  function( params, callback )
+	getPopularRootCategory: function( params, onSuccess, onFailure )
 	{
+
+		var localResponse = {
+			event: 'shop:getPopularRootCategory',
+			params: params,
+			type: 'local'
+		};
 		
-		var localResponse = { event: 'shop:getPopularRootCategory', params: params };
-		localResponse.params = params;
-		
-		if( ShopManager.categoryTreeCache == null )
+		if( _exists(ShopManager.categoryTreeCache) )
 		{
-			localResponse.type = 'xhr';
-			this._loadCategoryTree( params, function( serviceResponse )
-			{
-				localResponse.data = ShopManager._getRandomCategory( serviceResponse.data );
-				callback( localResponse );
-			}, localResponse );			
+			localResponse.data = ShopManager._getRandomCategory( ShopManager.categoryTreeCache );
+			Commons.onAjaxSuccess( localResponse, null, null );
+			_safelyCall( onSuccess, localResponse );
 		}
 		else
 		{
-			localResponse.type = 'local';
-			localResponse.event = localResponse.event + ':success'; 
-			Commons.onAjaxSuccess( localResponse, null, null, null );
 			
-			localResponse.data = ShopManager._getRandomCategory( ShopManager.categoryTreeCache );
-			callback( localResponse );
+			this._loadCategoryTree( params,
+			
+			function( serviceResponse )
+			{
+				localResponse.data = ShopManager._getRandomCategory( serviceResponse.data );
+				Commons.onAjaxSuccess( localResponse, null, null );
+				_safelyCall( onSuccess, localResponse );
+			},
+
+			function( serviceResponse )
+			{
+				localResponse.data = null;
+				Commons.onAjaxError( localResponse, null, null );				
+				_safelyCall( onFailure, localResponse );
+			});			
 		}
 		
 	},
 	
 	
-	/*
+	/**
 	 * @param params type Map 
 	 *  may contain:
 	 *  {
 	 *    'isoCurrencyCode': {String}  (accepted values: 'USD', 'GBP'), mandatory.
 	 *    'limit':           {Integer} limit of sub-categories to be returned, optional (default unbounded).
 	 *  }
-	 * @param callback the function to be called on service response.
+	 * 
+     * @param onSuccess the function to be called on service response success.
+	 * @param onFailure the function to be called on service response failure.
 	 * 
 	 * @return the most popular sub-categories.
 	 */
-	getPopularSubCategories:  function( params, callback )
+	getPopularSubCategories:  function( params, onSuccess, onFailure )
 	{
 		
-		var localResponse = { event: 'shop:getPopularSubCategories', params: params };
-		if( ShopManager.categoryTreeCache == null )
+		var localResponse = {
+			event: 'shop:getPopularSubCategories',
+			params: params,
+			type: 'local'
+		};
+		
+		if( _exists(ShopManager.categoryTreeCache) )
 		{
-			localResponse.type = 'xhr';
-			this._loadCategoryTree( params, function( serviceResponse )
-			{
-				localResponse.data = ShopManager._getRandomSubCategories( serviceResponse.data );
-				callback( localResponse );
-			}, localResponse );			
+			localResponse.data = ShopManager._getRandomSubCategories( ShopManager.categoryTreeCache );
+			Commons.onAjaxSuccess( localResponse, null, null );
+			_safelyCall( onSuccess, localResponse );
 		}
 		else
 		{
-			localResponse.type = 'local';
-			localResponse.event = localResponse.event + ':success'; 
-			Commons.onAjaxSuccess( localResponse, null, null, null );
+			this._loadCategoryTree( params,
+					
+			function( serviceResponse )
+			{
+				localResponse.data = ShopManager._getRandomSubCategories( serviceResponse.data );
+				Commons.onAjaxSuccess( localResponse, null, null );
+				_safelyCall( onSuccess, localResponse );
+			},
 			
-			localResponse.data = ShopManager._getRandomSubCategories( ShopManager.categoryTreeCache );
-			callback( localResponse );
+			function( serviceResponse )
+			{
+				localResponse.data = null;
+				Commons.onAjaxError( localResponse, null, null );				
+				_safelyCall( onFailure, localResponse );
+			});			
 		}
 		
 	},
 	
 	
-	/*
+	/**
 	 * @param params type Map 
 	 *  may contain:
 	 *  {
 	 *    'isoCurrencyCode': {String}  (accepted values: 'USD', 'GBP'), mandatory.
 	 *    'limit':           {Integer} limit of products to be returned, optional (default unbounded).
 	 *  }
-	 * @param callback the function to be called on service response.
+	 *  
+	 * @param onSuccess the function to be called on service response success.
+	 * @param onFailure the function to be called on service response failure.
 	 * 
 	 * @return the most popular products.
 	 */
-	getPopularProducts:  function( params, callback )
+	getPopularProducts:  function( params, onSuccess, onFailure )
 	{
+		
+		this.getPopularSubCategories( params,
 				
-		this.getPopularSubCategories( params, function( subCategoryResponse )
+		function( subCategoryResponse )
 		{
+			
+			var localResponse = {
+				event: 'shop:getPopularProducts',
+				params: params,
+				type: 'local' };
 			
 			var category = ShopManager._getRandomCategory( subCategoryResponse.data );
 			if( category == null ) return;
 			
 			params.categoryId = category.id;
-			ShopManager.getCategoryWidget( params, function( productWidgetResponse )
+			ShopManager.getCategoryWidget( params,
+					
+			function( productWidgetResponse )
 			{
-				
-				var localResponse = { event: 'shop:getPopularProducts:success', params: params, type: 'local' };
-				Commons.onAjaxSuccess( localResponse, null, null, null );
-				
+				Commons.onAjaxSuccess( localResponse, null, null );
 				localResponse.data = productWidgetResponse.data;
-				callback( localResponse );
-			});
+				_safelyCall( onSuccess, localResponse );
+			},
 			
-		} );
+			function( productWidgetResponse )
+			{
+				localResponse.data = null;
+				Commons.onAjaxError( localResponse, null, null );				
+				_safelyCall( onFailure, localResponse );
+			} );
+			
+		},
+		
+		onFailure );
 		
 	},
 	
@@ -397,57 +443,126 @@ var ShopManager = {
 	/*  The following methods are not intended to be used  */
 	/*  directly, are for internal use only.               */
 	/* *************************************************** */
-	
 
-	_loadCategoryTree: function( params, callback, serviceResponse )
+	
+	_loadCategoryTree: function( params, onSuccess, onFailure )
 	{
-	
-		jQuery.ajax({
-			
-			url:      this.categoryUrl,
-			type:     "GET",
-			data:     params,
-			dataType: "json",
-			
-			success: function( json, textStatus, jqXHR )
-			{
-				serviceResponse.event = serviceResponse.event + ':success';
-				Commons.onAjaxSuccess( serviceResponse, json, textStatus, jqXHR );
-				ShopManager.categoryTreeCache = serviceResponse.data;
-				callback( serviceResponse );
-			},
-			
-			error: function( jqXHR, textStatus, errorThrown )
-			{
-				serviceResponse.event = serviceResponse.event + ':error';
-				Commons.onAjaxError( serviceResponse, textStatus, jqXHR );
-				ShopManager.categoryTreeCache = null;
-				callback( serviceResponse );
-			}
 		
+		var call = {
+				endpoint: this.categoryUrl,
+				event: 'shop:getCategories',
+				params: params
+		};
+		
+		RestService.perform( call,
+				
+		function( serviceResponse )
+		{
+			ShopManager.categoryTreeCache = serviceResponse.data;
+			_safelyCall( onSuccess, serviceResponse );
+		},
+				
+		function( serviceResponse )
+		{
+			ShopManager.categoryTreeCache = null;
+			_safelyCall( onFailure, serviceResponse );
 		});
+		
+	},
 	
+	_decorateProducts: function( products, isoCurrencyCode )
+	{
+		
+		if( ! _exists(products) ) return;
+		
+		if( _exists(ShopManager.merchantsCache) )
+		{	
+			ShopManager._fillMerchantInfo( products );
+		}
+		else
+		{
+			
+			ShopManager.getMerchants(
+				
+				{isoCurrencyCode: isoCurrencyCode},
+				
+				function( serviceResponse )
+				{
+					if( _exists(ShopManager.merchantsCache) )
+					{
+						ShopManager._fillMerchantInfo( products );
+					}
+				}
+					
+			);
+		}
+		
+		
+	},
+
+	_fillMerchantInfo: function( products )
+	{
+		
+		if( _exists(ShopManager.merchantsCache) )
+		{	
+			for( var index in products )
+			{
+				var product = products[index];
+				var merchant = ShopManager.merchantsCache[product.merchantId];
+				if( merchant != null )
+				{
+					product.merchantLogoUrl = merchant.logoUrl;
+				}
+				else
+				{
+					product.merchantLogoUrl = '';
+				}
+			}
+		}
+		
+	},
+	
+	_buildMerchantMap: function( merchants )
+	{
+		
+		var merchantMap = {};
+		
+		if( _exists(merchants) )
+		{	
+			for( var index in merchants )
+			{
+				var merchant = merchants[index];
+				merchantMap[merchant.id] = merchant;
+			}
+		}
+		
+		return merchantMap;
+		
 	},
 
 	_getRandomCategory: function( categories )
 	{
 		
-		if( categories == null || categories.length == 0 )
+		if( _exists(categories) )
+		{		
+			var index = Math.floor( Math.random() * categories.length );
+			return categories[index];
+		}
+		else
+		{
 			return null;
-		
-		var index = Math.floor( Math.random() * categories.length );
-		return categories[index];
+		}
 		
 	},
 
 	_getRandomSubCategories: function( categories, limit )
 	{
 						
-		if( this.subCategoriesCache == null )
+		if( ! _exists(this.subCategoriesCache) )
 		{
 		
 			var subcategories = new Array();
-			if( categories != null )
+			if( _exists(categories) )
 			{
 			
 				var index = 0;
@@ -456,8 +571,7 @@ var ShopManager = {
 					var children = categories[parent].children;
 					for( var child in children )
 					{
-						subcategories[index] = children[child];
-						index = index + 1;
+						subcategories[index++] = children[child];
 					}
 				}
 				
@@ -489,9 +603,9 @@ var ShopManager = {
 	_subArray: function( array, limit )
 	{
 		
-		if( array == null ) return null;
+		if( ! _exists(array) ) return null;
 		
-		if( limit == null || array.length >= limit ) return array;
+		if( ! _exists(limit) || array.length <= limit ) return array;
 		
 		var subArray = new Array( limit );
 		for( var index = 0; index < limit; index++ )

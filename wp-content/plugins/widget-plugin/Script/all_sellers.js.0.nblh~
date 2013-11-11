@@ -1,0 +1,194 @@
+jQuery(document).ready(function(){
+    
+    });
+
+function loadMerchants(){
+    ShopManager.getMerchants({
+        isoCurrencyCode: sessionStorage.isoCurrencyCode
+    },
+    function( jsResponse )
+    {
+        Commons.consoleLogger.debug( JSON.stringify(jsResponse) );
+        console.log(jsResponse.data);
+        
+        var merchantList = [];
+        merchantList['A'] = [];
+        merchantList['A'].list = [];
+        merchantList['B'] = [];
+        merchantList['B'.list] = [];
+        merchantList['C'] = [];
+        merchantList['C'].list = [];
+        merchantList['D'] = [];
+        merchantList['D'].list = [];
+        merchantList['E'] = [];
+        merchantList['E'].list = [];
+        merchantList['F'] = [];
+        merchantList['F'].list = [];
+        merchantList['G'] = [];
+        merchantList['G'].list = [];
+        merchantList['H'] = [];
+        merchantList['H'].list = [];
+        merchantList['I'] = [];
+        merchantList['I'].list = [];
+        merchantList['J'] = [];
+        merchantList['J'].list = [];
+        merchantList['K'] = [];
+        merchantList['K'].list = [];
+        merchantList['L'] = [];
+        merchantList['L'].list = [];
+        merchantList['M'] = [];
+        merchantList['M'].list = [];
+        merchantList['N'] = [];
+        merchantList['N'].list = [];
+        merchantList['O'] = [];
+        merchantList['O'].list = [];
+        merchantList['P'] = [];
+        merchantList['P'].list = [];
+        merchantList['Q'] = [];
+        merchantList['Q'].list = [];
+        merchantList['R'] = [];
+        merchantList['R'].list = [];
+        merchantList['S'] = [];
+        merchantList['S'].list = [];
+        merchantList['T'] = [];
+        merchantList['T'].list = [];
+        merchantList['U'] = [];
+        merchantList['U'].list = [];
+        merchantList['V'] = [];
+        merchantList['V'].list = [];
+        merchantList['W'] = [];
+        merchantList['W'].list = [];
+        merchantList['X'] = [];
+        merchantList['X'].list = [];
+        merchantList['Y'] = [];
+        merchantList['Y'].list = [];
+        merchantList['Z'] = [];
+        merchantList['Z'].list = [];
+        merchantList['#'] = [];
+        merchantList['#'].list = [];
+        var temp = jsResponse.data;
+        for(var i=0 ; i < temp.length ; i++){
+            temp[i].tag = temp[i].name.charAt(0).toUpperCase();
+            if(temp[i].tag == 'A'){
+                merchantList['A'].tag = 'A';
+                merchantList['A'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'B'){
+                merchantList['B'].tag = 'B';
+                merchantList['B'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'C'){
+                merchantList['C'].tag = 'C';
+                merchantList['C'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'D'){
+                merchantList['D'].tag = 'D';
+                merchantList['D'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'E'){
+                merchantList['E'].tag = 'E';
+                merchantList['E'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'F'){
+                merchantList['F'].tag = 'F';
+                merchantList['F'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'G'){
+                merchantList['G'].tag = 'G';
+                merchantList['G'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'H'){
+                merchantList['H'].tag = 'H';
+                merchantList['H'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'I'){
+                merchantList['I'].tag = 'I';
+                merchantList['I'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'J'){
+                merchantList['J'].tag = 'J';
+                merchantList['J'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'K'){
+                merchantList['K'].tag = 'K';
+                merchantList['K'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'L'){
+                merchantList['L'].tag = 'L';
+                merchantList['L'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'M'){
+                merchantList['M'].tag = 'M';
+                merchantList['M'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'N'){
+                merchantList['N'].tag = 'N';
+                merchantList['N'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'O'){
+                merchantList['O'].tag = 'O';
+                merchantList['O'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'P'){
+                merchantList['P'].tag = 'P';
+                merchantList['P'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'Q'){
+                merchantList['Q'].tag = 'Q';
+                merchantList['Q'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'R'){
+                merchantList['R'].tag = 'R';
+                merchantList['R'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'S'){
+                merchantList['S'].tag = 'S';
+                merchantList['S'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'T'){
+                merchantList['T'].tag = 'T';
+                merchantList['T'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'U'){
+                merchantList['U'].tag = 'U';
+                merchantList['U'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'V'){
+                merchantList['V'].tag = 'V';
+                merchantList['V'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'W'){
+                merchantList['W'].tag = 'W';
+                merchantList['W'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'X'){
+                merchantList['X'].tag = 'X';
+                merchantList['X'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'Y'){
+                merchantList['Y'].tag = 'Y';
+                merchantList['Y'].list.push(temp[i]);
+            }
+            else if(temp[i].tag == 'Z'){
+                merchantList['Z'].tag = 'Z';
+                merchantList['Z'].list.push(temp[i]);
+            }
+            else{
+                merchantList['#'].tag = '#';
+                merchantList['#'].list.push(temp[i]);
+            }
+        }
+        
+        temp.sort(compare);
+        
+        console.log(merchantList);
+    });
+}
+
+function compare(a,b) {
+    if (a.tag < b.tag)
+        return -1;
+    if (a.tag > b.tag)
+        return 1;
+    return 0;
+}

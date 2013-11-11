@@ -1,0 +1,566 @@
+
+
+<style type="text/css">
+
+    #container{
+        min-height: 724px;
+        position: relative;
+        width: 228px;
+        border: 1px solid #e6eaed;
+        margin-bottom: 10px;
+    }
+
+    #container #title1{
+        position: absolute;
+        font-family: Calibri;
+        left: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0866a6;
+    }
+
+    .faq-row {
+        background-color: #fff;
+
+        margin-bottom: 12px;
+        font-family: calibri;
+    }
+
+    .faq-row-handle {
+        background-color: #f4fbff;
+        border-top: 1px solid #e6eaed;
+        border-bottom: 1px solid #e6eaed;
+        font-family: Calibri;
+        size: 18px;
+        color: #0866a6;
+        display: block;
+        font-weight: normal;
+        padding: 12px 30px 12px 18px;
+        line-height: 20px;
+        text-decoration: none;
+        outline: 0;
+    }
+
+    .faq-row.open .faq-row-handle {
+        color: #0866a6;
+    }
+
+    .faq-row-content {
+
+        font-weight: normal;
+        line-height: 150%;
+        font-size: 18px; font-family: calibri; font-weight: normal; color: #303030;
+        display: none;
+    }
+
+    .faq-row-content p {
+        padding: 0 14px 10px 14px;
+    }
+
+    #container #dress_occasion{
+        position: relative;
+        font-size: 18px; font-family: calibri;
+        font-weight: normal;
+        color: #303030;
+    }
+
+    /* SQUARED THREE */
+    input[type=checkbox] {
+        visibility: hidden;
+    } 
+    .input_text{
+        position: absolute;
+        left: -50px;
+        top: -1px;
+        width: 165px;
+    }  
+    .squaredThree {
+        width: 20px;	
+        margin: 20px auto;
+        position: relative;
+    }
+    .squaredThree label {
+        cursor: pointer;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        left: -80px;
+        background-color: white;
+        border: 1px solid #a1c8e0;
+    }
+    .squaredThree label:after {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 3px;
+        left: 2px;
+        border: 2px solid #a1c8e0;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .squaredThree label:hover::after {
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+    }
+    .squaredThree input[type=checkbox]:checked + label:after {
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+    .squaredThree2 {
+        width: 20px;	
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .squaredThree2 label {
+        cursor: pointer;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        left: -80px;
+        background-color: white;
+        border: 1px solid #a1c8e0;
+    }
+    .squaredThree2 label:after {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 3px;
+        left: 2px;
+        border: 2px solid #a1c8e0;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .squaredThree2 label:hover::after {
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+    }
+    .squaredThree2 input[type=checkbox]:checked + label:after {
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+    .squaredThree3 {
+        width: 20px;	
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .squaredThree3 label {
+        cursor: pointer;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        left: -80px;
+        background-color: white;
+        border: 1px solid #a1c8e0;
+    }
+    .squaredThree3 label:after {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 3px;
+        left: 2px;
+        border: 2px solid #a1c8e0;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .squaredThree3 label:hover::after {
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+    }
+    .squaredThree3 input[type=checkbox]:checked + label:after {
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+    .squaredThree4 {
+        width: 20px;	
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .squaredThree4 label {
+        cursor: pointer;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        left: -80px;
+        background-color: white;
+        border: 1px solid #a1c8e0;
+    }
+    .squaredThree4 label:after {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 3px;
+        left: 2px;
+        border: 2px solid #a1c8e0;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .squaredThree4 label:hover::after {
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+    }
+    .squaredThree4 input[type=checkbox]:checked + label:after {
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+    .squaredThree5 {
+        width: 20px;	
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .squaredThree5 label {
+        cursor: pointer;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        left: -80px;
+        background-color: white;
+        border: 1px solid #a1c8e0;
+    }
+    .squaredThree5 label:after {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 3px;
+        left: 2px;
+        border: 2px solid #a1c8e0;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .squaredThree5 label:hover::after {
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+    }
+    .squaredThree5 input[type=checkbox]:checked + label:after {
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+    .squaredThree6 {
+        width: 20px;	
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .squaredThree6 label {
+        cursor: pointer;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        left: -80px;
+        background-color: white;
+        border: 1px solid #a1c8e0;
+    }
+    .squaredThree6 label:after {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 3px;
+        left: 2px;
+        border: 2px solid #a1c8e0;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .squaredThree6 label:hover::after {
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+    }
+    .squaredThree6 input[type=checkbox]:checked + label:after {
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+    .squaredThree7 {
+        width: 20px;	
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .squaredThree7 label {
+        cursor: pointer;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        left: -80px;
+        background-color: white;
+        border: 1px solid #a1c8e0;
+    }
+    .squaredThree7 label:after {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 3px;
+        left: 2px;
+        border: 2px solid #a1c8e0;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .squaredThree7 label:hover::after {
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+    }
+    .squaredThree7 input[type=checkbox]:checked + label:after {
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+    .squaredThree8 {
+        width: 20px;	
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .squaredThree8 label {
+        cursor: pointer;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        left: -80px;
+        background-color: white;
+        border: 1px solid #a1c8e0;
+    }
+    .squaredThree8 label:after {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 3px;
+        left: 2px;
+        border: 2px solid #a1c8e0;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .squaredThree8 label:hover::after {
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+    }
+    .squaredThree8 input[type=checkbox]:checked + label:after {
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+    .squaredThree9 {
+        width: 20px;	
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .squaredThree9 label {
+        cursor: pointer;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        left: -80px;
+        background-color: white;
+        border: 1px solid #a1c8e0;
+    }
+    .squaredThree9 label:after {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 3px;
+        left: 2px;
+        border: 2px solid #a1c8e0;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .squaredThree9 label:hover::after {
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+    }
+    .squaredThree9 input[type=checkbox]:checked + label:after {
+        filter: alpha(opacity=100);
+        opacity: 1;
+    }
+
+    #price{
+        margin-left: 6px;
+    }
+
+</style>
+
+
+
+<div id="container">
+
+    <p id="title1">NARROW YOUR RESULTS</p>
+
+    <div id='tabs' style="padding: 50px 0px 20px 0px"> 
+        <div class="faq-row-container">
+
+            <!--Start [ row ]-->
+            <div class="faq-row open">
+                <a href="javascript:;" class="faq-row-handle" ID='title2'>DRESS OCCASION</a>
+                <div class="faq-row-content" style="display:block;">
+                    <div id='dress_occasion'>
+                        <div class="squaredThree">
+                            <input type="checkbox" value="None" id="squaredThree" name="check" />
+                            <label for="squaredThree"></label><span class='input_text'>Wear to work</span>
+                        </div>
+                        <div class="squaredThree2">
+                            <input type="checkbox" value="None" id="squaredThree2" name="check" />
+                            <label for="squaredThree2"></label><span class='input_text'>Party</span>
+                        </div>
+                        <div class="squaredThree3">
+                            <input type="checkbox" value="None" id="squaredThree3" name="check" />
+                            <label for="squaredThree3"></label><span class='input_text'>Evening and formal</span>
+                        </div>
+                        <div class="squaredThree4">
+                            <input type="checkbox" value="None" id="squaredThree4" name="check" />
+                            <label for="squaredThree4"></label><span class='input_text'>Casual</span>
+                        </div>
+                        <div class="squaredThree5">
+                            <input type="checkbox" value="None" id="squaredThree5" name="check" />
+                            <label for="squaredThree5"></label><span class='input_text'>Wedding guest</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End [ row ]-->
+
+            <!--Start [ row ]-->
+            <div class="faq-row">
+                <a href="javascript:;" class="faq-row-handle">PRICE</a>
+                <div class="faq-row-content" style="display:block;">
+                    <div id='price'>
+                        <p> $ <input type="text" style='width: 42px; height: 28px; border: 1px #cdd6dd solid; color: #0866a6; padding: 1px 4px 1px 4px;'> to $ 
+                            <input type="text"  style='width: 42px; height: 28px; border: 1px #cdd6dd solid; color: #0866a6; padding: 1px 4px 1px 4px;'> 
+                            <label style='padding: 1px 7px 3px 8px; border: 1px #cdd6dd solid; background-color: #eff8ff; cursor: pointer; margin-left: 4px;'>
+                                <i class="icon-right-dir" style="color: #588fab; font-size: 15px;"></i> </label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--End [ row ]-->    
+
+
+            <!--Start [ row ]-->
+            <div class="faq-row">
+                <a href="javascript:;" class="faq-row-handle">DISCOUNTS</a>
+                <div class="faq-row-content" style="display:block;">
+                    <div id='discounts'>
+                        <div class="squaredThree6">
+                            <input type="checkbox" value="None" id="squaredThree6" name="check" />
+                            <label for="squaredThree6"></label><span class='input_text'>+60% off</span>
+                        </div>
+                        <div class="squaredThree7">
+                            <input type="checkbox" value="None" id="squaredThree7" name="check" />
+                            <label for="squaredThree7"></label><span class='input_text'>+50% off</span>
+                        </div>
+                        <div class="squaredThree8">
+                            <input type="checkbox" value="None" id="squaredThree8" name="check" />
+                            <label for="squaredThree8"></label><span class='input_text'>+40% off</span>
+                        </div>
+                        <div class="squaredThree9">
+                            <input type="checkbox" value="None" id="squaredThree9" name="check" />
+                            <label for="squaredThree9"></label><span class='input_text'>+30% off</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End [ row ]-->
+
+        </div> 
+
+    </div>
+
+
+</div>
+

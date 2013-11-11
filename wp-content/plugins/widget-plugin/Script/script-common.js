@@ -2,23 +2,49 @@
 /*    Globals to hold re-usable data                                 */
 /*********************************************************************/
 var global_CategoriesList = '';
+var global_MerchantList = '';
 
 /*********************************************************************/
 /*    Function called when api load is successful (in header.php)    */
 /*********************************************************************/
 function onReady(){
-    if(jQuery('body').hasClass('page-template-template-cat-grid-php')){
-        loadProducts();
-    } else if(jQuery('body').hasClass('page-template-template-all-sellers-php')){
-        loadMerchants();
-    } else if(jQuery('body').hasClass('page-template-template-homepage-php')){
-        loadHomeWidgets();
-    } else if(jQuery('body').hasClass('page-template-template-category-grid-php') || jQuery('body').hasClass('page-template-template-sub-category-grid-php') || jQuery('body').hasClass('page-template-template-seller-grid-php')){
-        loadCategoryWidgets();
-    } else if(jQuery('body').hasClass('page-template-template-search-grid-php')){
-        loadSearchWidgets();
-    }
     
+    ShopManager.getMerchants({
+        isoCurrencyCode: sessionStorage.isoCurrencyCode
+    },
+    function( merchantResponse )
+    {
+        global_MerchantList = merchantResponse.data;
+        ShopManager.getCategories({
+            isoCurrencyCode: sessionStorage.isoCurrencyCode
+        },
+        function( jsResponse )
+        {
+            Commons.consoleLogger.debug( JSON.stringify(jsResponse) );
+            
+            global_CategoriesList = jsResponse.data;
+            loadHomeWidgets();
+            if(jQuery('body').hasClass('page-template-template-cat-grid-php')){
+                loadProducts();
+            } else if(jQuery('body').hasClass('page-template-template-all-sellers-php')){
+                loadMerchants();
+            } else if(jQuery('body').hasClass('page-template-template-homepage-php')){
+                loadHomeSliderWidget();
+                loadHomeDepartmentWidget();
+                loadBestSellerWidget()
+            } else if(jQuery('body').hasClass('page-template-template-category-grid-php') || jQuery('body').hasClass('page-template-template-sub-category-grid-php') || jQuery('body').hasClass('page-template-template-seller-grid-php')){
+                loadCategoryWidgets();
+                if(jQuery('body').hasClass('page-template-template-category-grid-php')){
+                    loadCategoryHeaderWidget();
+                    loadNarrowResultsWidget();
+                }
+            } else if(jQuery('body').hasClass('page-template-template-search-grid-php')){
+                loadSearchWidgets();
+            } else if(jQuery('body').hasClass('error404')){
+                loadPageNotFoundSearchWidget();
+            }
+        });
+    });
 }
 
 /********************************************/
@@ -62,11 +88,6 @@ function getParameterByName(name)
     }
 }
 
-
-/********************************************/
-/*    Get Category name against ID       */
-/********************************************/
-
 function getCategoryName(data, id, name){
     try {
         var category_name = name;
@@ -81,6 +102,25 @@ function getCategoryName(data, id, name){
         }
         
         return category_name;
+    } catch (e) {
+        console.log(e.message);
+    }
+}
+
+function getCategoryChildren(data, id, name){
+    try {
+        var categoryChildren = name;
+        for(var x in data){
+            if(data[x].name == id){
+                categoryChildren = data[x].children;
+                break;
+            }
+            else if(data[x].children && data[x].children.length > 0 && name != ''){
+                categoryChildren = getCategoryChildren(data[x].children, id, categoryChildren);
+            }
+        }
+        
+        return categoryChildren;
     } catch (e) {
         console.log(e.message);
     }

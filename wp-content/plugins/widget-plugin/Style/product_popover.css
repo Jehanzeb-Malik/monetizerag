@@ -1,0 +1,203 @@
+#product-popover-wrapper{
+    width: 810px;
+    height: 573px;
+    background: #ffffff;
+    margin-top: 12px;
+}
+
+#product-popover-wrapper .product-image-container{
+    width: 357px;
+    height: 573px;
+    background: #ffffff;
+    float: left;
+    position: relative;
+}
+
+#product-popover-wrapper .product-image-container{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    top: 0px;
+    position: relative;
+    z-index: 50;
+}
+
+#product-popover-wrapper .product-image-container * {
+    vertical-align: middle;
+}
+
+#product-popover-wrapper .product-image-container {
+    display: block;
+}
+
+#product-popover-wrapper .product-image-container span {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+}
+
+#product-popover-wrapper .product-image-container img{
+    max-width: 350px;
+    max-height: 573px;
+}
+
+#product-popover-wrapper .product-detail{
+    width: 451px;
+    height: 571px;
+    border: 1px solid #d7d7d7;
+    position: relative;
+    left: 357px;
+}
+
+#product-popover-wrapper .product-detail .product-title{
+    width: 412px;
+    height: 52px;
+    margin-left: 33px;
+    color: #096fae;
+    font-family: 'helvetica_neuelight';
+    font-size: 19px;
+    position: relative;
+    float: left;
+    top: -553px;
+}
+
+#product-popover-wrapper .product-detail .product-detail-seperator{
+    width: 391px;
+    height: 1px;
+    margin-left: 33px;
+    background: #c8c8c8;
+    position: relative;
+    clear: both;
+    top: -553px;
+}
+
+#product-popover-wrapper .product-detail .product-detail-price{
+    width: 412px;
+    height: 53px;
+    margin-left: 33px;
+    font-family: 'helvetica_neueregular';
+    font-size: 22px;
+    position: relative;
+    float: left;
+    top: -542px;
+}
+
+#product-popover-wrapper .product-detail .product-detail-price .product-detail-retail-price{
+    width: 95px;
+    height: 45px;
+    position: relative;
+    color: #ed7500;
+    float: left;
+}
+
+#product-popover-wrapper .product-detail .product-detail-price .product-detail-sale-price{
+    width: 95px;
+    height: 45px;
+    position: relative;
+    color: #a0a0a0;
+    text-decoration:line-through;
+    float: left;
+}
+
+#product-popover-wrapper .product-detail .merchant-logo-holder{
+    width: 100px;
+    height: 47px;
+    margin-left: 33px;
+    position: relative;
+    float: left;
+    top: -542px;
+    display: block;
+}
+
+#product-popover-wrapper .product-detail .merchant-logo-holder{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    z-index: 50;
+}
+
+#product-popover-wrapper .product-detail .merchant-logo-holder * {
+    vertical-align: middle;
+}
+
+#product-popover-wrapper .product-detail .merchant-logo-holder {
+    display: block;
+}
+
+#product-popover-wrapper .product-detail .merchant-logo-holder span {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+}
+
+#product-popover-wrapper .product-detail .merchant-logo-holder img{
+    max-width: 98px;
+    max-height: 70px;
+}
+
+#product-popover-wrapper .product-detail .visit-store-btn{
+    width: 138px;
+    height: 68px;
+    margin-left: 33px;
+    float: left;
+    position: relative;
+    top: -536px;
+    display: block;
+}
+
+#product-popover-wrapper .product-detail .visit-store-btn a{
+    width: 138px;
+    height: 36px;
+    background: url('images/product-popover/visit_store_btn.png');
+    display: block;
+}
+
+#product-popover-wrapper .product-detail .product-detail-description{
+    width: 412px;
+    height: 325px;
+    margin-left: 33px;
+    color: #303030;
+    font-family: Calibri;
+    font-size: 18px;
+    position: relative;
+    float: left;
+    top: -542px;
+}
+
+#product-popover-wrapper .product-detail .product-detail-view-more{
+    width: 95px;
+    height: 30px;
+    color: #096fae;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: Calibri;
+    font-size: 18px;
+    position: relative;
+    float: left;
+    top: -542px;
+    left: 340px;
+}
+
+#product-popover-wrapper .product-detail .product-detail-design-arrow{
+    width: 29px;
+    height: 47px;
+    background: url('images/product-popover/design-arrow.png');
+    position: absolute;
+    top: 36px;
+    left: -29px;
+    display: block;
+    z-index: 10000;
+}
+
+#product-popover-wrapper .product-detail .product-detail-close-btn{
+    width: 28px;
+    height: 28px;
+    background: url('images/product-popover/close-btn.png');
+    position: absolute;
+    top: -11px;
+    left: 436px;
+    cursor: pointer;
+    display: block;
+    z-index: 10000;
+}
