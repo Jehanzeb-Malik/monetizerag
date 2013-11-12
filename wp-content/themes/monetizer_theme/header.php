@@ -82,7 +82,7 @@
                                     ?
                                 </span> 
                                 <p>
-                                    <a href="<?php echo bloginfo('siteurl'); ?>/how-it-works/" style="color:black;">How does it works?</a>
+                                    <a href="<?php echo bloginfo('siteurl'); ?>/how-it-works/" style="color:black;">How does it work?</a>
                                 </p>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                                         ?
                                     </span> 
                                     <p>
-                                        <a href="<?php echo bloginfo('siteurl'); ?>/how-it-works/" style="color:black;">How does it works?</a>
+                                        <a href="<?php echo bloginfo('siteurl'); ?>/how-it-works/" style="color:black;">How does it work?</a>
                                     </p>
                                 </div>
                             </div>

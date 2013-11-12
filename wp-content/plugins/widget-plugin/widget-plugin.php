@@ -227,10 +227,11 @@ class wp_my_plugin extends WP_Widget {
     function load_all_sellers($page, $title) {
 
         include('View/all_sellers.html');
-
+        
         wp_deregister_script('all_sellers_script');
         wp_register_script('all_sellers_script', plugins_url() . '/widget-plugin/Script/all_sellers.js', array('jquery'));
         wp_enqueue_script('all_sellers_script');
+        
 
         wp_deregister_script('hover_intent');
         wp_register_script('hover_intent', plugins_url() . '/widget-plugin/Script/hoverIntent.js', array('jquery'));

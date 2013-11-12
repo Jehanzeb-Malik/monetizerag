@@ -8,6 +8,7 @@
     width: 731px;
     height: 283px;
     border: 1px solid #dbdbdb;
+    background: #f4fbff;
 }
 
 #category-header-wrapper #category-header-container #category-image-wrapper{
@@ -48,12 +49,12 @@
 }
 
 #category-header-wrapper #category-header-container #category-image-container img{
-    max-width: 425px;
+    max-width: 424px;
     max-height: 283px;
 }
 
 #category-header-wrapper #category-header-container #category-header-details{
-    width: 290px;
+    width: 289px;
     height: 283px;
     padding-left: 15px;
     background: #f4fbff;

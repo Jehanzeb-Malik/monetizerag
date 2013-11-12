@@ -1,6 +1,6 @@
 #not-found-widget-wrapper{
     width: 981px;
-    overflow: hidden;
+    height: 600px;
 }
 
 #not-found-widget-wrapper #widget-container{
@@ -20,7 +20,7 @@
 }
 
 #not-found-widget-wrapper #widget-container #not-found-search{
-    width: 435px;
+    width: 455px;
     height: 42px;
     margin: 0;
     font-family: Calibri;
@@ -53,9 +53,23 @@
 #not-found-widget-wrapper #widget-container #not-found-search #page-not-found-search-btn{
     width: 50px;
     height: 38px;
-    margin-left: 5px;
+    margin-left: 22px;
     padding: 0px;
     background: url('../images/404-search-btn.png');
     float: left;
     cursor: pointer;
+}
+
+#drop-down-search .sf-menu{
+    width: 140px;
+    position: absolute;
+}
+
+#drop-down-search .sf-menu > li{
+    width: 130px
+}
+
+#drop-down-search .sf-menu > li > input{
+    width: 125px;
+    height: 32px;
 }

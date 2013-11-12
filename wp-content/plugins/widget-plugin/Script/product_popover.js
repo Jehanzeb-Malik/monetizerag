@@ -16,7 +16,6 @@ function drawPopover(data, id){
             break;
         }
     }
-    console.log(data[productIndex]);
     if(productIndex != -1){
         var output = Mustache.render(jQuery("#product_popover_tpl").html(), data[productIndex]);
         var setMarginLeft = ((parseInt(jQuery(window).width(), 10) - 810)/2);

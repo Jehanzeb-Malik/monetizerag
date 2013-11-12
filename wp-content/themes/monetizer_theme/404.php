@@ -16,11 +16,11 @@
         <div id="not-found-search">
             <input id="not-found-search-input" value="Search for a product or brand" onclick="javascript:if(this.value == 'Search for a product or brand'){this.value='';}" onfocus="javascript: if (this.defaultValue==this.value)this.value = '';" onblur="javascript:if(this.value == ''){this.value = 'Search for a product or brand';}"/>
             <div id="drop-down-search" style="float: left;">
-<!--                <ul class="sf-menu" id="departments-dropdown">
+                <ul class="sf-menu" id="not-found-search-dropdown">
                     <li class="current">
-                        <input class="styled-list" readonly placeholder="Shop by Departments" style="background:  url('<?php // bloginfo('template_directory'); ?>/images/button-1.png') no-repeat 100%; padding: 2px 10px;"></input>
+                        <input class="styled-list" readonly placeholder="SEARCH ALL" style="background:  url('<?php // bloginfo('template_directory'); ?>/images/button-1.png') no-repeat 100%; padding: 2px 10px;"></input>
                     </li>
-                </ul>-->
+                </ul>
             </div>
             <div id="page-not-found-search-btn"></div>
         </div>

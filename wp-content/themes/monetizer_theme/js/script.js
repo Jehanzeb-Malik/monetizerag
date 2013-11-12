@@ -110,6 +110,51 @@ function createMarkup(markup, data, flag, level){
     }
 }
 
+function createMarkupNotFound(markup, data, flag, level){
+    try {
+        if(flag){
+            markup += '<ul id="departments-dropdown" class="sf-menu">';
+            markup += '<li class="current"><input class="styled-list" readonly placeholder="SEARCH ALL" style="background: url(\'wp-content/themes/monetizer_theme/images/button-1.png\') no-repeat 100%; padding: 2px 10px;"></input>';
+            markup += '<ul>';
+        }
+        else{
+            markup += '<ul>';
+        }
+    
+        for(var x in data){
+            if(flag){
+                markup += '<li class="current"><a tabindex="0">'+data[x].name+'</a>';
+            }
+            else{
+                if(level == 1){
+                    markup += '<li class="current" style="cursor: pointer;" onclick="pageNotFoundCat(' + data[x].id + ')"><a tabindex="0" >'+data[x].name+'</a>';
+                }
+                else if(level == 2){
+                    markup += '<li class="current" style="cursor: pointer;" onclick="pageNotFoundCat(' + data[x].id + ')"><a tabindex="0" onClick="pageNotFoundSubCat({{id}})">'+data[x].name+'</a>';
+                }
+            }
+
+            if(data[x].children && data[x].children.length > 0){
+                level++;
+                markup += createMarkupNotFound('', data[x].children, false, level);
+                level--;
+            }
+            markup += '</li>';
+        }
+        if(flag){
+            markup += '</ul>';
+            markup += '</li>';
+            markup += '</ul>';
+        }
+        else{
+            markup += '</ul>';
+        }
+        return markup;
+    } catch (e) {
+        console.log(e.message);
+    }
+}
+
 function createMarkupSearch(markup, data, flag, level){
     try {
         if(flag){
@@ -156,9 +201,18 @@ function createMarkupSearch(markup, data, flag, level){
 }
 
 function loadPageNotFoundSearchWidget(){
+    jQuery('#drop-down-search').html(createMarkupNotFound('', global_CategoriesList, true, 0));
+    var example = jQuery('#not-found-search-dropdown').superfish({
+        width: '246px'
+    });
 }
 
 var wait = function( execute )
+{
+    window.setTimeout( execute, 1000 );
+}
+
+var waitReMargin = function( execute )
 {
     window.setTimeout( execute, 1000 );
 }
@@ -199,4 +253,20 @@ function createMarkupNavBar(markup, data, flag, level){
     } catch (e) {
         console.log(e.message);
     }
+}
+
+function pageNotFoundSubCat(id){
+    var searchKeywords = jQuery('#not-found-search-input').val();
+    if(searchKeywords == 'Search for a product or brand'){
+        searchKeywords = '';
+    }
+    window.location.href =  monetizer_site_url + '/search/?keywords=' + searchKeywords + '&categoryIds=' + id + '&percentOffMin=&resultLimit=24&resultOffset=0&layout=3col&sort=1';
+}
+
+function pageNotFoundCat(id){
+    var searchKeywords = jQuery('#not-found-search-input').val();
+    if(searchKeywords == 'Search for a product or brand'){
+        searchKeywords = '';
+    }
+    window.location.href =  monetizer_site_url + '/search/?keywords=' + searchKeywords + '&categoryIds=' + id + '&percentOffMin=&resultLimit=24&resultOffset=0&layout=3col&sort=1';
 }

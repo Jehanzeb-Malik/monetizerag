@@ -30,8 +30,7 @@ function loadHomeSliderWidget(){
         function( jsResponse )
         {
             Commons.consoleLogger.debug( JSON.stringify(jsResponse) );
-            console.log('jsResponse');
-            console.log(jsResponse);
+            
             var temp = jsResponse.data;
             var limit = 6,
             amount = temp.length,
@@ -66,9 +65,8 @@ function loadHomeSliderWidget(){
     var categoryList = ['Fashion','Beauty & Health','Electronics','Home & Garden','Free Time','Toys & Gifts'];
     for(var y = 1 ; y < 7 ; y++){
         var childrenList = getCategoryChildren(global_CategoriesList, categoryList[y-1]);
-        console.log(categoryList[y-1]);
-        console.log(childrenList);
         var output = Mustache.render(jQuery("#slider-slide-sub-categories").html(), childrenList);
+        
         jQuery('#region-right #slide-'+y+' ul').html(output);
     }
 }

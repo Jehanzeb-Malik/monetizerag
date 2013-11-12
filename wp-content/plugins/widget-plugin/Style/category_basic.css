@@ -130,9 +130,8 @@
 /* Widget Design for 4 Column Design - Start */
 /*Check*/
 .grid-container{
-    width: 100%;
-    height: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 #product-viewer #product-viewer-content .product-4col{
@@ -214,6 +213,7 @@
     height: 29px;
     margin: 0 auto;
     border-bottom: 1px solid #dbdbdb;
+    background: #fff;
 }
 
 #product-viewer #product-viewer-content .product-4col .product-widget-content .product-price .product-price-tag{
@@ -245,7 +245,7 @@
 }
 
 #product-viewer #product-viewer-content .product-4col .product-widget-content .product-price .product-price-next-btn{
-    width: 32px;
+    width: 31px;
     height: 29px;
     margin: 0 auto;
     float: left;
@@ -431,7 +431,7 @@
 }
 
 #product-viewer #product-viewer-content .product-3col .product-widget-content .product-price .product-price-next-btn{
-    width: 44px;
+    width: 43px;
     height: 41px;
     margin: 0 auto;
     float: left;
@@ -514,7 +514,7 @@
 }
 
 #product-viewer #product-viewer-content .product-2col .product-widget-content .product-image-holder{
-    width: 135px;
+    width: 134px;
     height: 222px;
     border-bottom: 1px solid #dbdbdb;
     background: #fff;
@@ -545,7 +545,7 @@
 }
 
 #product-viewer #product-viewer-content .product-2col .product-widget-content .product-image-holder img{
-    max-width: 130px;
+    max-width: 128px;
     max-height: 222px;
 }
 
@@ -620,7 +620,7 @@
 }
 
 #product-viewer #product-viewer-content .product-2col .product-widget-content .product-price .product-price-next-btn{
-    width: 54px;
+    width: 53px;
     height: 49px;
     margin: 0 auto;
     float: left;

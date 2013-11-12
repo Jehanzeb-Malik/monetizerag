@@ -4,13 +4,13 @@
 }
 
 #product-filter-widget-wrapper #product-filter-widget-container{
-    width: 226px;
+    width: 225px;
     overflow: hidden;
     border-bottom: 1px solid #e6eaed;
 }
 
 #product-filter-widget-wrapper #product-filter-widget-container #product-filter-widget-title{
-    width: 224px;
+    width: 223px;
     height: 52px;
     border-left: 1px solid #e6eaed;
     border-top: 1px solid #e6eaed;
@@ -207,8 +207,9 @@ input.styled {
     width: 41px;
     height: 25px;
     border: 1px solid rgba(63, 99, 124, 0.3);
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-align: right;
     margin-top: -7px;
 }
 

@@ -31,83 +31,65 @@ jQuery(document).ready(function(){
                 height:'show'
             }
         });
+        jQuery(document).on('click', '.view-layout-btn', function(){
+            try{
+                jQuery('.selected-layout').attr('src', jQuery('.selected-layout').attr('src').replace('active', 'inactive'));
+                jQuery('.selected-layout').removeClass('selected-layout');
+            
+                jQuery('#' + jQuery(this).attr('id') + ' img').attr('src', jQuery('#' + jQuery(this).attr('id') + ' img').attr('src').replace('inactive', 'active'));
+                jQuery('#' + jQuery(this).attr('id') + ' img').addClass('selected-layout');
+            }
+            catch (e) {
+                console.log(e.message);
+            }
+        
+            var layout = jQuery(this).attr('id').substring(0,4);
+            var currentClasses = jQuery.trim(jQuery('.grid-product').attr('class').replace('grid-product', '')).split(' ');
+            var currentClass = '';
+            var newClass = 'product-' + layout;
+            
+            for(var x = 0 ; x < currentClasses.length ; x++){
+                if(currentClasses[x].indexOf("product-") != -1){
+                    currentClass = currentClasses[x];
+                    break;
+                }
+            }
+            
+            try{
+                jQuery('#grid-container').fadeOut(500, function(){
+                    if(layout == '4col'){
+                        jQuery('.product-category').hide();
+                        jQuery('#grid-container').css({
+                            'marginLeft' : '-5px' 
+                        });
+                    } else if(layout == '3col'){
+                        jQuery('.product-category').show();
+                        jQuery('#grid-container').css({
+                            'marginLeft' : '0px' 
+                        });
+                    } else if(layout == '2col'){
+                        jQuery('.product-category').show();
+                        jQuery('#grid-container').css({
+                            'marginLeft' : '-5px' 
+                        });
+                    }
+                    jQuery('.grid-product').removeClass(currentClass).addClass(newClass);
+                    jQuery('#grid-container').fadeIn(500);
+                    reMargin();
+                });
+            } catch (e) {
+                console.log(e.message);
+            }
+        });
     } catch (e) {
         console.log(e.message);
     }
-    
-    jQuery(document).on('click', '.view-layout-btn', function(){
-        
-        try{
-            jQuery('.selected-layout').attr('src', monetizer_site_url + '/wp-content/plugins/widget-plugin/Style/images/product-viewer/btn_product_viewer_4x4_inactive.png');
-            jQuery('.selected-layout').removeClass('selected-layout');
-            
-            jQuery('#' + jQuery(this).attr('id') + ' img').attr('src', monetizer_site_url + '/wp-content/plugins/widget-plugin/Style/images/product-viewer/btn_product_viewer_' + jQuery(this).attr('id').replace('column', '') + 'x' + jQuery(this).attr('id').replace('column', '') + '_active.png')
-            jQuery('#' + jQuery(this).attr('id') + ' img').addClass('selected-layout');
-        }
-        catch (e) {
-            console.log(e.message);
-        }
-        
-        var layout = jQuery(this).attr('id').substring(0,4);
-        var currentClass = jQuery.trim(jQuery('.grid-product').attr('class').replace('grid-product', ''));
-        var newClass = 'product-' + layout;
-        
-        try{
-            jQuery('#grid-container').fadeOut(500, function(){
-                if(layout == '4col'){
-                    jQuery('.product-category').hide();
-                    jQuery('#grid-container').css({
-                        'marginLeft' : '-5px' 
-                    });
-                } else if(layout == '3col'){
-                    jQuery('.product-category').show();
-                    jQuery('#grid-container').css({
-                        'marginLeft' : '0px' 
-                    });
-                } else if(layout == '2col'){
-                    jQuery('.product-category').show();
-                    jQuery('#grid-container').css({
-                        'marginLeft' : '-5px' 
-                    });
-                }
-                jQuery('.grid-product').removeClass(currentClass).addClass(newClass);
-                jQuery('#grid-container').fadeIn(500);
-            });
-        } catch (e) {
-            console.log(e.message);
-        }
-        
-    //        var currentURL = document.URL;
-    //        currentURL = currentURL.split('?');
-    //        
-    //        if(currentURL[1] == undefined){
-    //            document.location.href = currentURL[0] + '?layout=' + layout;
-    //        } else if(currentURL[1].indexOf('layout=') == -1){
-    //            document.location.href = currentURL[0] + '?layout=' + layout + '&' + currentURL[1];
-    //        } else {
-    //            currentURL = currentURL.join('?');
-    //            currentURL = currentURL.replace(/(layout=)[^\&]+/, '$1' + layout);
-    //            document.location.href = currentURL;
-    //        }
-    })
 });
 
 function loadSearchWidgets(){
     try{
         var params = {};
-        if(getParameterByName('merchantIds') != ''){
-            params = {
-                isoCurrencyCode : sessionStorage.isoCurrencyCode,
-                keywords: getParameterByName('keywords'),
-                merchantIds: getParameterByName('merchantIds'),
-                percentOffMin: getParameterByName('percentOffMin'),
-                resultLimit: getParameterByName('resultLimit'),
-                resultOffset: getParameterByName('resultOffset'),
-                orderBy: 'price',
-                facets: 'MERCHANT'
-            }
-        }
-        else{
+        if(getParameterByName('categoryIds') != ''){
             params = {
                 isoCurrencyCode : sessionStorage.isoCurrencyCode,
                 keywords: getParameterByName('keywords'),
@@ -119,9 +101,22 @@ function loadSearchWidgets(){
                 facets: 'CATEGORY'
             }
         }
+        else{
+            params = {
+                isoCurrencyCode : sessionStorage.isoCurrencyCode,
+                keywords: getParameterByName('keywords'),
+                merchantIds: getParameterByName('merchantIds'),
+                percentOffMin: getParameterByName('percentOffMin'),
+                resultLimit: getParameterByName('resultLimit'),
+                resultOffset: getParameterByName('resultOffset'),
+                orderBy: 'price',
+                facets: 'MERCHANT'
+            }
+        }
         ShopManager.search(params, function( jsResponse ){
             Commons.consoleLogger.debug( JSON.stringify(jsResponse) );
-            
+            console.log(params);
+            console.log(jsResponse);
             var layout = getParameterByName('layout');
             var showCategory = false;
         

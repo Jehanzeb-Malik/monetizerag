@@ -154,7 +154,7 @@
 }
 
 #best-seller-widget-items .product-3col .product-widget-content .product-price .product-price-next-btn{
-    width: 44px;
+    width: 43px;
     height: 41px;
     margin: 0 auto;
     float: left;
@@ -259,3 +259,8 @@
     height: 35px;
     background: url('images/best-seller-widget/carousel-btn-next-hover.png') no-repeat;
 }*/
+
+.best-seller-control-nav{
+    position: absolute;
+    display: none;
+}

@@ -1,3 +1,4 @@
+<!-- IMPORTANT: Do not add another class besides "grid-product" containing "product-" substring other than "product-{{layout}}". Restriction for script management -->
 <script id="product_viewer_tpl" type="text/xml">
     {{#showLayoutWithMargin}}
     <div id="grid-container" style="margin-left: -5px; width: 103%">
@@ -15,7 +16,7 @@
                 <div class="product-title">
                     <span class="product-name" onclick="drawPopover(search_basic_product_list, {{id}})">{{name}}</span>
                     {{#showCategory}}
-                    <span class="product-category">{{subCatName}}</span>
+                    <a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords=&categoryIds={{categoryId}}&percentOffMin=&resultLimit=24&resultOffset=0&layout=3col&sort=1"><span class="product-category">{{subCatName}}</span></a>
                     {{/showCategory}}
                 </div>
                 <div class="product-price">
@@ -23,7 +24,7 @@
                         <span class="product-original-price">&#{{currencyType}} {{retailPrice}}</span>
                         <span class="product-discounted-price">&#{{currencyType}} {{salePrice}}</span>
                     </div>
-                    <div class="product-price-next-btn"></div>
+                    <a href="<?php echo bloginfo('siteurl'); ?>/search/?keywords={{name}}&categoryIds={{categoryId}}&percentOffMin=&resultLimit=24&resultOffset=0&layout=3col&sort=1"><div class="product-price-next-btn" data-category-id="{{categoryId}}" data-category-name="{{name}}"></div></a>
                 </div>
                 <div class="product-merchant-logo">
                     <span></span>

@@ -125,3 +125,46 @@ function getCategoryChildren(data, id, name){
         console.log(e.message);
     }
 }
+
+function reMargin(){
+    waitReMargin( function()
+    {
+        var layout = jQuery('.selected-layout').parent().attr('id').replace('umn', '');
+        var itemList = jQuery(".grid-product:visible");
+        if(layout == '2col'){
+            jQuery(".grid-product").css({
+                "marginRight": '16px'
+            });
+            for(var x = 1 ; x <= itemList.length ; x++){
+                if((x%2) == 0){
+                    jQuery(itemList[x-1]).css({
+                        "margin-right": '0px'
+                    });
+                }
+            }
+        } else if(layout == '3col'){
+            jQuery(".grid-product").css({
+                "marginRight": '23px'
+            });
+            for(var i = 1 ; i <= itemList.length ; i++){
+                if((i%3) == 0){
+                    jQuery(itemList[i-1]).css({
+                        "margin-right": '0px'
+                    });
+                }
+            }
+        } else if(layout == '4col'){
+            jQuery(".grid-product").css({
+                "marginRight": '8px'
+            });
+            for(var y = 1 ; y <= itemList.length ; y++){
+                if((y%4) == 0){
+                    jQuery(itemList[y-1]).css({
+                        "margin-right": '0px'
+                    });
+                }
+            }
+        }
+    });
+    
+}

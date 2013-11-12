@@ -9,6 +9,7 @@ jQuery(document).ready(function() {
                 jQuery(visibleProducts[x]).fadeOut(500);
             }
         }
+        reMargin();
     });
     jQuery('.filter-panelbar-price-amount').on('keypress', function(e){
         if(e.which != 8 && isNaN(String.fromCharCode(e.which))){
@@ -19,7 +20,6 @@ jQuery(document).ready(function() {
 
 
 function loadProductFilterPrice(){
-    //    console.log(filter-panelbar-price-min-amount);
     jQuery('#filter-panelbar-price-min-amount').val(category_basic_min_price);
     jQuery('#filter-panelbar-price-max-amount').val(category_basic_max_price);
 }

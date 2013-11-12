@@ -1,10 +1,10 @@
 <!-- IMPORTANT: Do not add another class besides "grid-product" containing "product-" substring other than "product-{{layout}}". Restriction for script management -->
 <script id="product_viewer_tpl" type="text/xml">
     {{#showLayoutWithMargin}}
-    <div id="grid-container" style="display: none; margin-left: -5px; width: 103%">
+    <div id="grid-container" style="display: none; overflow: hidden; width: 772px; margin-left: -5px;">
     {{/showLayoutWithMargin}}
     {{#showLayoutWithoutMargin}}
-    <div id="grid-container" style="display: none; width: 103%">
+    <div id="grid-container" style="display: none; overflow: hidden; width: 772px;">
     {{/showLayoutWithoutMargin}}
         {{#data}}
         <div class="grid-product product-{{layout}}{{classes}} sub-catgeory-{{categoryId}}" id="product-{{index}}">
@@ -69,9 +69,9 @@
                            <?php }
                            ?>" style="background:  url('<?php bloginfo('template_directory'); ?>/images/product-viewer-sort.png') no-repeat 100%; padding: 2px 10px;"></input>
                     <ul>
-                        <li class="current"><a tabindex="0" onclick="sortItemsDiscount();">Biggest Discount</a></li>
-                        <li><a tabindex="0" onclick="sortItemsPriceAscending();">Price: Lowest First</a></li>
-                        <li><a tabindex="0" onclick="sortItemsPriceDescending();">Price: Highest First</a></li>
+                        <li class="current"><a tabindex="0" onclick="sortItemsDiscount(); reMargin();">Biggest Discount</a></li>
+                        <li><a tabindex="0" onclick="sortItemsPriceAscending(); reMargin();">Price: Lowest First</a></li>
+                        <li><a tabindex="0" onclick="sortItemsPriceDescending(); reMargin();">Price: Highest First</a></li>
 <!--                        <li><a href="#">Newest</a></li>-->
                     </ul>
                 </li>
